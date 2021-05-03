@@ -1,0 +1,165 @@
+.dokuwiki div.section_highlight
+{
+    border-color: #55a5d9;
+	background-color: #CAE9FF;
+	background-image:
+		-webkit-gradient(linear, 0 0, 100% 100%,
+			color-stop(.25, #E7F8FC),
+			color-stop(.25, transparent),
+			color-stop(.5, transparent),
+			color-stop(.5, #E7F8FC),
+			color-stop(.75, #E7F8FC),
+			color-stop(.75, transparent),
+			to(transparent)
+		);
+	-webkit-background-size: 7px 7px;
+}
+
+div.error, div.info, div.success, div.notify
+{
+	margin-bottom: 30px;
+}
+
+#config__manager fieldset
+{
+	margin: 0 0 1em 0;
+}
+
+#acl_manager .footnotes
+{
+	font-size: 75%;
+}
+
+#config__manager td input.edit
+{
+	width: 100%;
+}
+
+#config__manager td.label span.outkey
+{
+	background-color: transparent;
+	font-size: 80%;
+	font-weight: bold;
+}
+
+#config__manager td.label
+{
+	padding-bottom: 2em;
+	overflow-wrap: anywhere;
+}
+
+#config__manager fieldset td.value
+{
+	width: auto;
+}
+
+#config__manager td .input
+{
+	width: auto;
+}
+
+.dokuwiki .secedit button
+{
+    font-size: 75%;
+	font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: gray;
+	box-shadow: none;
+}
+
+#config__manager .selection,
+#config__manager .selectiondefault
+{
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	width: auto;
+	overflow-wrap: anywhere;
+}
+
+#config__manager .selection label,
+#config__manager .selectiondefault label
+{
+	float: none;
+	width: auto;
+	margin-right: auto;
+	margin-left: 5px;
+}
+
+#config__manager td:first-child
+{
+	width: 50%;
+}
+
+#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault
+{
+    width: 100%;
+}
+
+#config__manager tr .input, #config__manager tr input, #config__manager tr textarea, #config__manager tr select
+{
+	width:100%;
+}
+
+#config__manager tr input[type="checkbox"]
+{
+	width: auto;
+}
+
+#config__manager td
+{
+	border-bottom: solid 1px lightgray;
+}
+
+
+#config__manager
+{
+	overflow-x: auto;
+}
+
+#config__manager td.label img
+{
+	padding: 0 0 0 5px;
+	vertical-align: top;
+	float: none;
+}
+
+#config__manager tr:last-child td
+{
+	border-bottom: none;
+}
+
+#config__manager td.label span.outkey
+{
+	margin-top: 0px;
+	margin-bottom: .5em;
+}
+
+#config__manager select {
+	padding: 4px 0;
+}
+
+#config__manager tr .input, #config__manager tr input, #config__manager tr textarea, #config__manager tr select,
+#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault
+{
+	border: solid 1px #ccc;
+}
+
+#config__manager input[type="checkbox"]
+{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#config__manager td.label label
+{
+    margin-left: -.7em;
+}
+
+#config__manager code
+{
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}

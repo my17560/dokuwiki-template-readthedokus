@@ -1,0 +1,51 @@
+<?php
+/**
+ * DokuWiki ReadtheDokus Template
+ *
+ * @link     http://dokuwiki.org/template:readthedokus
+ * @author   Masaki Yasutake <my17560@gmail.com>
+ * @license  MIT
+ */
+
+if (!defined('DOKU_INC')) die();
+$showSidebar = page_findnearest($conf['sidebar']);
+?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>"
+  lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <?php tpl_metaheaders() ?>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
+    <?php tpl_includeFile('tpl_parts/tpl_meta.html') ?>
+    <?php tpl_includeFile('meta.html') ?>
+</head>
+<body id="dokuwiki__top">
+    <div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
+		<!-- Header -->
+        <?php tpl_includeFile('tpl_parts/tpl_header.html') ?>
+
+        <div class="wrapper group">
+			<!-- Sidebar -->
+           	<?php tpl_includeFile('tpl_parts/tpl_sidebar.html') ?>
+
+			<!-- Content -->
+			<main id="dokuwiki__content">
+        		<?php tpl_includeFile('tpl_parts/tpl_mobileheader.html') ?>
+				<div class="group">
+            		<?php tpl_includeFile('tpl_parts/tpl_content.html') ?>
+				</div>
+			</main>
+        </div>
+
+		<!-- Footer -->
+        <?php tpl_includeFile('tpl_parts/tpl_footer.html') ?>
+    </div>
+
+    <div class="no" style="display:none"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
+</body>
+</html>

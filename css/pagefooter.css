@@ -1,0 +1,45 @@
+#pagefooter
+{
+	color: gray;
+	margin-top: 100px;
+}
+
+#pagefooter p
+{
+	margin-bottom: 12px;
+}
+
+#pagefooter #btn-nextpage,
+#pagefooter #btn-prevpage
+{
+	display: none;
+}
+
+#pagefooter .tools
+{
+	background-color: #2980b9;
+	color: white;
+	padding: 15px;
+	margin-top: 30px;
+	font-size: 90%;
+}
+
+#pagefooter .tools a
+{
+	color: white;
+}
+
+#pagefooter .tools .doc
+{
+	margin-top: 20px;
+	text-align:right;
+	display: block;
+	padding-top: 10px;
+	border-top: solid 1px;
+}
+
+#pagefooter #dokuwiki__pagetools,
+#pagefooter #dokuwiki__usertools
+{
+	margin-left: 30px;
+}
