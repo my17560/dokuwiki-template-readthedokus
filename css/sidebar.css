@@ -1,49 +1,16 @@
 #dokuwiki__aside
 {
-	position: fixed;
-	top: 0;
 	bottom: 0;
+	background-color: #343131;
 	left: 0;
-	padding-bottom: 2em;
-	width: 300px;
+	min-height: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	min-height: 100%;
-	color: #9b9b9b;
-	background: #343131;
-	z-index: 200;
-
 	padding-bottom: 3em;
-}
-
-#dokuwiki__aside a
-{
-	display: inline-block;
-	line-height: 18px;
-	padding: .4045em 1.618em;
-	display: block;
-	position: relative;
-	font-size: 90%;
-	color: #d9d9d9;
-}
-
-#dokuwiki__aside p
-{
-	color: #55a5d9;
-	height: 32px;
-	line-height: 32px;
-	padding: 0 1.618em;
-	margin: 12px 0 0;
-	display: block;
-	font-weight: 700;
-	text-transform: uppercase;
-	font-size: 85%;
-	white-space: nowrap;
-}
-
-#dokuwiki__aside .aside > ul > li > div.li:hover
-{
-	background-color: #4e4a4a;
+	position: fixed;
+	top: 0;
+	width: 300px;
+	z-index: 200;
 }
 
 #dokuwiki__aside > .aside {
@@ -53,148 +20,184 @@
 	width: 320px;
 }
 
-#dw__toc
+#dokuwiki__aside p strong
+{
+	color: #55a5d9;
+	display: block;
+	font-size: 85%;
+	font-weight: bold;
+	height: 32px;
+	line-height: 32px;
+	margin: 12px 0 0;
+	padding: 0 1.618em;
+	/* text-transform: uppercase; */
+	white-space: nowrap;
+}
+
+#dokuwiki__aside ul > li > div.li > a,
+#dokuwiki__aside ul > li > div.li > span > a
+{
+	color: #d9d9d9;
+	display: block;
+	font-size: 90%;
+	line-height: 18px;
+	padding: .4045em 1.618em;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+#dokuwiki__aside > .aside > ul > li > div.li > a:hover,
+#dokuwiki__aside > .aside > ul > li > div.li > span > a:hover
+{
+	background-color: #4e4a4a;
+}
+
+#dokuwiki__aside #dw__toc
 {
 	float: none;
 	margin: 0;
 	width: 100%;
-	background-color: #e3e3e3;
 }
 
-#dw__toc a
+#dokuwiki__aside #dw__toc ul.toc
 {
-	color: #404040;
+	padding-left: 0;
 }
 
-#dw__toc ul li div.li
+#dokuwiki__aside #dw__toc > div[aria-expanded="true"]
 {
 	padding: 0;
 }
 
-#dw__toc .btn-expand
+#dokuwiki__aside #dw__toc > h3
+{
+	display: none;
+}
+
+#dokuwiki__aside #dw__toc ul > li > div.li
+{
+	padding: 0;
+}
+
+#dokuwiki__aside #dw__toc ul > li > div.li > a
+{
+	color: #404040;
+}
+
+#dokuwiki__aside #dw__toc .btn-expand
 {
 	display: inline-block;
+	/*
 	position: absolute;
 	top: 9px;
 	left: 8px;
+	*/
 	/*
 	margin-left: -15px;
 	margin-right: 5px;
 	height: 11px;
 	width: 11px;
 	*/
-}
-#dw__toc .btn-expand i
-{
-	position: absolute;
+
+	/* position: absolute; */
+	/*
 	top: -3px;
 	left: 0;
-	font-size: .8em;
-	line-height: 1.6em;
-	color: #333;
+	*/
 }
 
-#dw__toc .btn-expand img
+#dokuwiki__aside #dw__toc .btn-expand i
+{
+	color: #333;
+	display: inline-block;
+	font-size: .8em;
+	line-height: 1.6em;
+	margin-right: 5px;
+}
+
+#dokuwiki__aside #dw__toc .btn-expand img
 {
 	position: absolute;
-	top: 0;
+	top: 5px;
 	left: 0;
 	width: 11px;
 	height: 11px;
 }
 
-#dw__toc ul > li.level2 > div.li > a
+#dokuwiki__aside #dw__toc ul > li.level1 > div.li > a .btn-expand,
+#dokuwiki__aside #dw__toc ul > li.level2 > div.li > a .btn-expand,
+#dokuwiki__aside #dw__toc ul > li.level3 > div.li > a .btn-expand,
+#dokuwiki__aside #dw__toc ul > li.level4 > div.li > a .btn-expand
 {
-	padding: .4045em 2.427em;
+	margin-left: -1em;
 }
 
-#dw__toc ul > li.level3 > div.li > a
-{
-	font-size: 80%;
-	padding-left: 4.045em;
-}
-
-#dw__toc ul li.level2 > div.li > a .btn-expand i
-{
-	color: #a3a3a3;
-}
-
-#dw__toc ul li.level2 > div.li > a .btn-expand
-{
-	left: 21px;
-}
-
-#dw__toc ul li.level3 > div.li > a .btn-expand
-{
-	left: 35px;
-}
-
-#dw__toc ul li.level4 div.li a
-{
-	font-size: 80%;
-	padding-left: 4.427em;
-}
-
-#dw__toc ul li.level4 > div.li > a .btn-expand
-{
-	left: 40px;
-}
-
-#dw__toc ul li.level5 div.li a
-{
-	font-size: 80%;
-	padding-left: 5.427em;
-}
-
-#dw__toc ul ul
-{
-	padding-left: 0;
-}
-
-#dw__toc .toc .level1
-{
-    background: #e3e3e3;
-}
-
-#dw__toc > h3
-{
-	display: none;
-}
-
-#dw__toc > div
-{
-	padding: 0;
-}
-
-
-/* #dw__toc > div > .toc > li:first-child > div.li */
-#dw__toc > div > .toc > .level1 > div.li:first-child
+#dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child > a
 {
     border-bottom: solid 1px #c9c9c9;
     border-top: solid 1px #c9c9c9;
 	background-color: #fcfcfc;
 }
 
-/* #dw__toc > div > .toc > li:first-child > div.li a { */
-#dw__toc > div > .toc > .level1 > div.li:first-child a
+#dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child > a
 {
-	font-weight: 700;
+	font-weight: bold;
 }
 
-/*#dw__toc .level2:hover {*/
-#dw__toc ul li div.li:hover
+#dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li > a.current
+{
+	background-color: #c9c9c9;
+	font-weight: bold;
+}
+
+#dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li > a:hover
 {
 	background-color: #d6d6d6;
 }
 
-#dw__toc ul li div.li a.current
+#dokuwiki__aside #dw__toc ul > li.level2 > div.li > a .btn-expand i,
+#dokuwiki__aside #dw__toc ul > li.level3 > div.li > a .btn-expand i,
+#dokuwiki__aside #dw__toc ul > li.level4 > div.li > a .btn-expand i
 {
-	background-color: #c9c9c9;
+	color: #a3a3a3;
 }
 
-#dw__toc .btn-expand
+#dokuwiki__aside #dw__toc ul > li.level2 > div.li > a
 {
-	display: inline-block;
+	padding-left: 2.427em;
+}
+
+#dokuwiki__aside #dw__toc ul > li.level2 > div.li > a .btn-expand
+{
+	left: 1.8em;
+}
+
+#dokuwiki__aside #dw__toc ul > li.level3 > div.li > a
+{
+	/* font-size: 80%; */
+	padding-left: 3.236em;
+}
+
+#dokuwiki__aside #dw__toc ul > li.level3 > div.li > a .btn-expand
+{
+	left: 2.6em;
+}
+
+#dokuwiki__aside #dw__toc ul > li.level4 > div.li > a
+{
+	/* font-size: 80%; */
+	padding-left: 4.045em;
+}
+
+#dokuwiki__aside #dw__toc ul > li.level4 > div.li > a .btn-expand
+{
+	left: 3.4em;
+}
+
+#dokuwiki__aside #dw__toc ul > li.level5 > div.li > a
+{
+	/* font-size: 80%; */
+	padding-left: 4.854em;
 }
 
 /*@media only screen and (max-width: 42em)*/
