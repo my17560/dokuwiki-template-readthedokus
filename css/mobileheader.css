@@ -49,6 +49,17 @@
 		left: 0;
 	}
 
+	#mobileheader #btn-mobilemenu .icon-menu:before{
+		background:#fff;
+		border-radius:2px;
+		box-shadow:0 10px #fff, 0 20px #fff;
+		content:'';
+		display:block;
+		height:5px;
+		width:30px;
+		-webkit-box-shadow:0 10px #fff, 0 20px #fff;
+	}
+
 	#mobileheader #btn-mobilemenu i {
 		font-size: 30px;
 		position: absolute;
