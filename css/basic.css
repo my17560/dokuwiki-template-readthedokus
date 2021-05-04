@@ -40,23 +40,28 @@ h1, h2, h3, h4, h5, h6, legend {
 }
 
 h1 {
-	font-size: 175%
+	font-size: 175%;
+	margin: 0.83em 0;
 }
 
 h2 {
-	font-size: 150%
+	font-size: 150%;
+	margin: 0.83em 0;
 }
 
 h3 {
-	font-size: 125%
+	font-size: 125%;
+	margin: 0.83em 0;
 }
 
 h4 {
-	font-size: 115%
+	font-size: 115%;
+	margin: 0.83em 0;
 }
 
 h5 {
-	font-size: 110%
+	font-size: 110%;
+	margin: 0.83em 0;
 }
 
 h6 {
@@ -157,6 +162,7 @@ input[type=color], input[type=date], input[type=datetime-local], input[type=date
 	-webkit-transition: border .3s linear;
 	-moz-transition: border .3s linear;
 	transition: border .3s linear;
+	-webkit-font-smoothing: antialiased;
 }
 
 blockquote {
