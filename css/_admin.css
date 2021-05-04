@@ -20,14 +20,14 @@ div.error, div.info, div.success, div.notify
 	margin-bottom: 30px;
 }
 
-#config__manager fieldset
-{
-	margin: 0 0 1em 0;
-}
-
 #acl_manager .footnotes
 {
 	font-size: 75%;
+}
+
+#config__manager fieldset
+{
+	margin: 0 0 1em 0;
 }
 
 #config__manager td input.edit
@@ -50,6 +50,7 @@ div.error, div.info, div.success, div.notify
 
 #config__manager fieldset td.value
 {
+	vertical-align: middle;
 	width: auto;
 }
 
@@ -122,8 +123,8 @@ div.error, div.info, div.success, div.notify
 #config__manager td.label img
 {
 	padding: 0 0 0 5px;
-	vertical-align: top;
 	float: none;
+	margin-top: -7px;
 }
 
 #config__manager tr:last-child td
