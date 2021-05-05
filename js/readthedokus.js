@@ -173,7 +173,7 @@ ReadtheDokus.prototype._initToc = function(toc)
 ReadtheDokus.prototype._installTocSelectHandler = function()
 {
 
-	this._toc.querySelectorAll(".level2 div.li").forEach(function(elem) {
+	this._toc.querySelectorAll(".level1 div.li").forEach(function(elem) {
 		elem.addEventListener("click", function() {
 			// Get level2 parent
 			let p = this._getParent(elem, "level2");
@@ -184,10 +184,13 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 			});
 
 			// Set current to this and level2 parent
-			p.parentNode.classList.add("current");
-			p.classList.add("current");
-			elem.classList.add("current");
-			elem.scrollIntoView(true);
+			if (p)
+			{
+				p.parentNode.classList.add("current");
+				p.classList.add("current");
+				elem.classList.add("current");
+				elem.scrollIntoView(true);
+			}
 
 			// Expand
 			this.expandTocMenu(elem);
@@ -245,7 +248,7 @@ ReadtheDokus.prototype._getParent = function(elem, level)
 
 	let current = elem.parentNode;
 
-	while (current)
+	while (current && !current.classList.contains("level1"))
 	{
 		if (current.classList.contains(level))
 		{
@@ -254,6 +257,8 @@ ReadtheDokus.prototype._getParent = function(elem, level)
 
 		current = current.parentNode.parentNode;
 	}
+
+	return null;
 
 }
 
