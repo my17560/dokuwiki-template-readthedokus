@@ -121,7 +121,7 @@
 	background-color: #c9c9c9;
 }
 
-#dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li > a.current
+#dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li.current > a
 {
 	font-weight: bold;
 }
