@@ -1,7 +1,9 @@
 <div id="sidebarheader">
-	<a href="<?php echo wl(); ?>">
-		<!-- <img src="_static/logo.svg" class="logo" alt="Logo"> -->
-		<i class="fas fa-home"></i> <?php global $conf; echo $conf["title"] ?>
-	</a>
+	<div class="home">
+		<a href="<?php echo wl(); ?>">
+			<!-- <img src="_static/logo.svg" class="logo" alt="Logo"> -->
+			<i class="fas fa-home"></i> <?php global $conf; echo $conf["title"] ?>
+		</a>
+	</div>
 	<?php tpl_searchform() ?>
 </div>

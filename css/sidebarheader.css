@@ -9,7 +9,7 @@
 	z-index: 200;
 }
 
-#sidebarheader > a
+#sidebarheader .home > a
 {
 	color: #fcfcfc;
 	display: inline-block;

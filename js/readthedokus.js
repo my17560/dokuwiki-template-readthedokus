@@ -38,6 +38,10 @@ ReadtheDokus.prototype.run = function()
 	// Start page
 	this._startPage = this._getStartPage(this._pages[0], this._delimiter);
 	this._pages.unshift(this._startPage);
+	document.querySelectorAll(".home a").forEach(function(elem) {
+		console.log(this._startPage);
+		elem.href = this._startPage;
+	}.bind(this));
 
 	// Show toc on top of sidebar if item was not found in sidebar
 	if (!isFound)
