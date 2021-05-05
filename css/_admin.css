@@ -164,3 +164,168 @@ div.error, div.info, div.success, div.notify
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
+#config__manager form > p
+{
+	text-align: right;
+}
+
+#popularity_feedback + div + form fieldset
+{
+	border: none;
+	padding: 0;
+	text-align: right;
+	width: 100% !important;
+}
+
+#popularity_feedback + div + form fieldset > label
+{
+	display: block;
+	text-align: left;
+}
+
+#acl_manager > div.clearer
+{
+	margin: 20px 0;
+}
+
+#acl_manager #acl__user
+{
+	display: flex;
+	align-items: center;
+}
+
+#acl_manager #acl__user input
+{
+	flex: 1;
+	margin: 0 10px 0 0;
+}
+
+#acl_manager #acl__user button
+{
+	margin-left: auto;
+}
+
+#acl_manager #acl__user select
+{
+	height: 30px;
+	margin: 0 0 0 10px;
+}
+
+#acl_manager #acl__info fieldset
+{
+	margin: 0;
+	width: 100%;
+}
+
+#acl_manager #acl__info fieldset button
+{
+	margin-left: 10px;
+}
+
+#acl_manager table td
+{
+	border: solid 1px lightgray;
+	padding: 15px 10px;
+}
+
+#acl_manager table td > span
+{
+	display: block;
+}
+
+#acl_manager table th.action
+{
+	padding: 20px 0;
+}
+
+#acl_manager table th.action:hover
+{
+	background-color: white;
+}
+
+#acl_manager table td input[type="radio"]
+{
+	margin: 0 0 0 10px;
+}
+
+#acl_manager > h1 + div
+{
+	display: flex;
+    justify-content: space-between;
+}
+
+#acl_manager #acl__tree
+{
+	float: none;
+	height: auto;
+}
+
+#acl_manager #acl__detail
+{
+	float: none;
+	height: 100%;
+}
+
+
+#plugin__styling table
+{
+	margin: 20px 0;
+	width: 100%;
+}
+
+#plugin__styling table td
+{
+	border: solid 1px lightgray;
+	padding: 10px 10px;
+}
+
+#plugin__styling table td input
+{
+	width: 100%;
+}
+
+#plugin__styling form p
+{
+	text-align: right
+}
+
+#user__manager div
+{
+	margin-bottom: 50px;
+}
+
+div#user__manager > div:nth-child(2) table > tbody:nth-child(3)
+{
+	text-align: right;
+}
+
+#user__manager table
+{
+	width: 100%;
+}
+
+#user__manager table td
+{
+	border: solid 1px lightgray;
+	padding: 10px 10px;
+}
+
+
+#user__manager table input
+{
+	width: 100%;
+}
+
+#user__manager .import_users form
+{
+	align-items: center;
+	border: solid 1px lightgray;
+	display: flex;
+	padding: 10px ;
+	width: 100%;
+}
+
+#user__manager .import_users form > button
+{
+	margin-left: auto;
+}
