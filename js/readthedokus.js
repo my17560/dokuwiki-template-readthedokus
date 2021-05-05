@@ -15,23 +15,18 @@ function ReadtheDokus()
 ReadtheDokus.prototype.run = function()
 {
 
-	var isFound = false;
-	this._pages = [];
-
 	// Enum sidebar items to
 	//   - embed toc in the corresponding sidebar item
 	//   - collect all page links
+	var isFound = false;
+	this._pages = [];
 	if (JSINFO["ACT"] == "show")
 	{
 		this._enumSidebarLinks(function(elem) {
 			// Embed toc
 			if (elem.href.indexOf(this._id) > -1)
 			{
-				this._embedToc(elem);
-				if (this._toc)
-				{
-					this._toc.scrollIntoView(true);
-				}
+				this._embedToc(elem, this._toc);
 				isFound = true;
 			}
 
@@ -40,29 +35,80 @@ ReadtheDokus.prototype.run = function()
 		}.bind(this));
 	}
 
-	var re = new RegExp("\\" + this._delimiter + "[^\\" + this._delimiter + "]*[^\\" + this._delimiter + "]*$");
-	this._startPage = this._pages[0].replace(re, "").replace(re, "") + this._delimiter + "start";
+	// Start page
+	this._startPage = this._getStartPage(this._pages[0], this._delimiter);
 	this._pages.unshift(this._startPage);
 
 	// Show toc on top of sidebar if item was not found in sidebar
 	if (!isFound)
 	{
-		if (this._toc)
-		{
-			this._showToc();
-			this._toc.scrollIntoView(true);
-		}
+		this._showToc(this._toc);
 	}
 
-	if (this._toc)
-	{
-		this._initToc();
-	}
+	this._initToc(this._toc);
 	this._initMobileHeader();
 	this._initPageButtons();
 	this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", "Search docs");
 
+	if (this._toc)
+	{
+		this._toc.scrollIntoView(true);
+	}
+
 };
+
+ReadtheDokus.prototype.toggleTocMenu = function(elem)
+{
+
+	var invisible = elem.parentNode.querySelector(".toc").classList.contains("invisible");
+	if (invisible)
+	{
+		this.expandTocMenu(elem);
+	}
+	else
+	{
+		this.collapseTocMenu(elem);
+	}
+
+}
+
+ReadtheDokus.prototype.expandTocMenu = function(elem, allChildren)
+{
+
+	if (elem && elem.classList.contains("expandable"))
+	{
+		elem.parentNode.querySelector(".toc").classList.remove("invisible");
+
+		var i = elem.children[0].children[0].children[0];
+		i.classList.remove("fa-plus-square");
+		i.classList.add("fa-minus-square");
+
+		var img = elem.children[0].children[0].children[1];
+		img.classList.remove("plus");
+		img.classList.add("minus");
+		img.src="/docs/lib/images/minus.gif";
+	}
+
+}
+
+ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
+{
+
+	if (elem && elem.classList.contains("expandable"))
+	{
+		elem.parentNode.querySelector(".toc").classList.add("invisible");
+
+		var i = elem.children[0].children[0].children[0];
+		i.classList.remove("fa-minus-square");
+		i.classList.add("fa-plus-square");
+
+		var img = elem.children[0].children[0].children[1];
+		img.classList.remove("minus");
+		img.classList.add("plus");
+		img.src="/docs/lib/images/plus.gif";
+	}
+
+}
 
 ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 {
@@ -76,78 +122,117 @@ ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 
 };
 
-ReadtheDokus.prototype._embedToc = function(target)
+ReadtheDokus.prototype._getStartPage = function(basePage, delimiter)
 {
 
-	if (target && this._toc)
+	var result = "";
+
+	if (basePage && delimiter)
 	{
-		target.parentNode.parentNode.appendChild(this._toc);
+		var re = new RegExp("\\" + delimiter + "[^\\" + delimiter + "]*[^\\" + delimiter + "]*$");
+		result = basePage.replace(re, "").replace(re, "") + delimiter + "start";
+	}
+
+	return result;
+
+}
+
+ReadtheDokus.prototype._embedToc = function(target, toc)
+{
+
+	if (target && toc)
+	{
+		target.parentNode.parentNode.appendChild(toc);
 		target.parentNode.style.display = "none";
 	}
 
 };
 
-ReadtheDokus.prototype._showToc = function()
+ReadtheDokus.prototype._showToc = function(toc)
 {
 
-	if (this._toc)
+	if (toc)
 	{
 		this._toc.parentNode.style.display = "block";
 	}
 
 };
 
-ReadtheDokus.prototype._initToc = function()
+ReadtheDokus.prototype._initToc = function(toc)
 {
 
-	this._installTocSelectHandler();
-	this._installTocMenuHandler();
+	if (toc)
+	{
+		this._installTocSelectHandler();
+		this._installTocMenuHandler();
+	}
 
 };
 
+// Install click handler to highlight and expand toc menu
 ReadtheDokus.prototype._installTocSelectHandler = function()
 {
 
-	this._toc.querySelectorAll(".level2 a").forEach(function(elem) {
+	this._toc.querySelectorAll(".level2 div.li").forEach(function(elem) {
 		elem.addEventListener("click", function() {
+			// Get level2 parent
+			let p = this._getParent(elem, "level2");
+
+			// Remove all current
 			this._toc.querySelectorAll(".current").forEach(function(elem) {
 				elem.classList.remove("current");
 			});
-			elem.parentNode.parentNode.classList.add("current");
+
+			// Set current to this and level2 parent
+			p.parentNode.classList.add("current");
+			p.classList.add("current");
 			elem.classList.add("current");
 			elem.scrollIntoView(true);
+
+			// Expand
+			this.expandTocMenu(elem);
+
+			// Fold the other level2 items
+			this._toc.querySelectorAll(".level2 > div.li.expandable").forEach(function(item) {
+				if (item != p)
+				{
+					this.collapseTocMenu(item);
+				}
+			}.bind(this));
 		}.bind(this));
 	}.bind(this));
 
 };
 
+// Install click handler to expand/collapse toc menu
 ReadtheDokus.prototype._installTocMenuHandler = function()
 {
 
-	this._toc.querySelectorAll(".level1 a").forEach(function(elem) {
-		if (elem.parentNode.parentNode.querySelector(".toc"))
+	// Search for toc menu items which have children
+	this._toc.querySelectorAll("div.li").forEach(function(elem) {
+		if (elem.parentNode.querySelector(".toc"))
 		{
-			elem.insertAdjacentHTML("afterbegin", '<div class="btn-expand"><i class="far fa-minus-square"></i><img class="minus" src="/docs/lib/images/minus.gif" alt="−"></div>');
+			elem.classList.add("expandable");
 
-			var i = elem.childNodes[0].querySelector("i");
-			i.addEventListener("click", function(e) {
-				this._toggleTocMenu(i);
+			// Insert +/- fontawesome icon and image
+			elem.children[0].insertAdjacentHTML("afterbegin", '<div class="btn-expand"><i class="far fa-minus-square"></i><img class="minus" src="/docs/lib/images/minus.gif" alt="−"></div>');
 
-				e.stopPropagation();
-				e.preventDefault();
-			}.bind(this));
-
-			/*
-			var img = elem.childNodes[0].querySelector("img");
-			img.addEventListener("click", function(e) {
-				this._toggleTocMenu(i);
+			// Install click handler
+			elem.children[0].children[0].addEventListener("click", function(e) {
+				this.toggleTocMenu(elem);
 
 				e.stopPropagation();
 				e.preventDefault();
 			}.bind(this));
-			*/
+
+			// Only level1 menu items are open at start
+			if (!elem.parentNode.classList.contains("level1"))
+			{
+				this.collapseTocMenu(elem);
+			}
 		}
 
+		// Install click handler to move an clicked item to top
 		elem.addEventListener("click", function() {
 			elem.scrollIntoView(true);
 		});
@@ -155,26 +240,21 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 
 };
 
-ReadtheDokus.prototype._toggleTocMenu = function(elem)
+ReadtheDokus.prototype._getParent = function(elem, level)
 {
 
-	elem.parentNode.parentNode.parentNode.parentNode.querySelector(".toc").classList.toggle("invisible");
+	let current = elem.parentNode;
 
-	if (elem.classList.contains("fa-minus-square"))
+	while (current)
 	{
-		elem.classList.remove("fa-minus-square");
-		elem.classList.add("fa-plus-square");
-	}
-	else
-	{
-		elem.classList.remove("fa-plus-square");
-		elem.classList.add("fa-minus-square");
+		if (current.classList.contains(level))
+		{
+			return current.children[0];
+		}
+
+		current = current.parentNode.parentNode;
 	}
 
-}
-
-ReadtheDokus.prototype._foldMenu = function(elem, foldAllChildren)
-{
 }
 
 ReadtheDokus.prototype._initMobileHeader = function()
