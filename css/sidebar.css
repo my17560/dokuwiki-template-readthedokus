@@ -63,7 +63,7 @@
 	padding-left: 0;
 }
 
-#dokuwiki__aside #dw__toc > div[aria-expanded="true"]
+#dokuwiki__aside #dw__toc > div
 {
 	padding: 0;
 }
