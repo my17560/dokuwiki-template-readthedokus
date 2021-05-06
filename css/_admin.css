@@ -226,6 +226,7 @@ div.error, div.info, div.success, div.notify
 {
 	border: solid 1px lightgray;
 	padding: 15px 10px;
+	vertical-align: middle;
 }
 
 #acl_manager table td > span
