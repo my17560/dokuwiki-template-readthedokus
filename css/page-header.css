@@ -1,0 +1,9 @@
+#page-header .breadcrumbs a
+{
+	padding: 5px;
+}
+
+#page-header .breadcrumbs a:first-child
+{
+	padding-left: 0;
+}

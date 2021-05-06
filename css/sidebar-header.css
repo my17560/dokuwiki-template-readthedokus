@@ -1,4 +1,4 @@
-#sidebarheader
+#sidebar-header
 {
 	background-color: #2980b9;
 	color: #fcfcfc;
@@ -9,7 +9,7 @@
 	z-index: 200;
 }
 
-#sidebarheader .home > a
+#sidebar-header .home > a
 {
 	color: #fcfcfc;
 	display: inline-block;
@@ -19,7 +19,7 @@
 	padding: 4px 6px;
 }
 
-#sidebarheader .search input[type=text]
+#sidebar-header .search input[type=text]
 {
 	border-color: #2472a4;
 	border-radius: 50px;
@@ -27,7 +27,7 @@
 	width: 100%;
 }
 
-#sidebarheader .search button
+#sidebar-header .search button
 {
 	display: none;
 }

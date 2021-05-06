@@ -1,4 +1,4 @@
-#mobileheader
+#mobile-header
 {
 	display: none;
     background: #2980b9;
@@ -10,14 +10,14 @@
     font-size: 100%;
 }
 
-#mobileheader a
+#mobile-header a
 {
 	color: #fff;
 	font-weight: 700;
 	flex: 1;
 }
 
-#mobileheader .menu
+#mobile-header .menu
 {
 	font-size: 30px;
 	float: left;
@@ -28,13 +28,13 @@
 @media (max-width: 42em)
 {
 
-	#mobileheader
+	#mobile-header
 	{
 		display: flex;
 		align-items: center;
 	}
 
-	#mobileheader #btn-mobilemenu
+	#mobile-header #btn-mobilemenu
 	{
 		cursor:pointer;
 		position: relative;
@@ -42,14 +42,14 @@
 		height: 30px;
 	}
 
-	#mobileheader #btn-mobilemenu .icon-menu
+	#mobile-header #btn-mobilemenu .icon-menu
 	{
 		position: absolute;
 		top: 3px;
 		left: 0;
 	}
 
-	#mobileheader #btn-mobilemenu .icon-menu:before{
+	#mobile-header #btn-mobilemenu .icon-menu:before{
 		background:#fff;
 		border-radius:2px;
 		box-shadow:0 10px #fff, 0 20px #fff;
@@ -60,7 +60,7 @@
 		-webkit-box-shadow:0 10px #fff, 0 20px #fff;
 	}
 
-	#mobileheader #btn-mobilemenu i {
+	#mobile-header #btn-mobilemenu i {
 		font-size: 30px;
 		position: absolute;
 		top: 0;

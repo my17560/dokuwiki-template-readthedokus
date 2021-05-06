@@ -1,20 +1,20 @@
-#pagefooter
+#page-footer
 {
 	color: gray;
 }
 
-#pagefooter p
+#page-footer p
 {
 	margin-bottom: 12px;
 }
 
-#pagefooter #btn-nextpage,
-#pagefooter #btn-prevpage
+#page-footer #btn-nextpage,
+#page-footer #btn-prevpage
 {
 	display: none;
 }
 
-#pagefooter .tools
+#page-footer .tools
 {
 	background-color: #2980b9;
 	color: white;
@@ -24,17 +24,17 @@
 	padding: 15px;
 }
 
-#pagefooter .tools a
+#page-footer .tools a
 {
 	color: white;
 }
 
-#pagefooter .tools ul li:hover
+#page-footer .tools ul li:hover
 {
 	text-decoration: underline;
 }
 
-#pagefooter .tools .doc
+#page-footer .tools .doc
 {
 	border-top: solid 1px;
 	display: block;
@@ -43,8 +43,8 @@
 	text-align:right;
 }
 
-#pagefooter #dokuwiki__pagetools,
-#pagefooter #dokuwiki__usertools
+#page-footer #dokuwiki__pagetools,
+#page-footer #dokuwiki__usertools
 {
 	margin-left: 30px;
 }
