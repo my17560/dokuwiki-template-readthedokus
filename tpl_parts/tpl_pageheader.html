@@ -1,4 +1,4 @@
-<?php global $conf, $lang, $ACT, $INFO, $ID ?>
+<?php global $conf, $lang, $ACT, $INFO, $ID, $DOKU_BASE ?>
 
 <div id="pageheader">
 	<!-- Messages -->
@@ -20,7 +20,7 @@
 
 		<!-- Edit this page -->
 		<?php if ($ACT == "show" && $INFO["userinfo"]) { ?>
-			<a style="margin-left:auto" href="/docs/doku.php?id=<?php echo $ID; ?>&do=edit">
+			<a style="margin-left:auto" href="<?php echo $DOKU_BASE ?>doku.php?id=<?php echo $ID; ?>&do=edit">
 				<i class="fas fa-pencil-alt"></i>
 				<span> Edit this page</span>
 			</a>
