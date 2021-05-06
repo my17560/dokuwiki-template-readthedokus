@@ -8,7 +8,7 @@ function ReadtheDokus()
 	this._sidebar =document.querySelector("#dokuwiki__aside");
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
 	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].replaceAll(":", "/"));
-	this._startPage;
+	this._startPage = "";
 
 }
 
@@ -36,12 +36,14 @@ ReadtheDokus.prototype.run = function()
 	}
 
 	// Start page
-	this._startPage = this._getStartPage(this._pages[0], this._delimiter);
-	this._pages.unshift(this._startPage);
-	document.querySelectorAll(".home a").forEach(function(elem) {
-		console.log(this._startPage);
-		elem.href = this._startPage;
-	}.bind(this));
+	if (this._pages.length > 0)
+	{
+		this._startPage = this._getStartPage(this._pages[0], this._delimiter);
+		this._pages.unshift(this._startPage);
+		document.querySelectorAll("#sidebarheader > div.home > a, #pageheader .breadcrumbs > .home > a").forEach(function(elem) {
+			elem.href = this._startPage;
+		}.bind(this));
+	}
 
 	// Show toc on top of sidebar if item was not found in sidebar
 	if (!isFound)
@@ -90,7 +92,7 @@ ReadtheDokus.prototype.expandTocMenu = function(elem, allChildren)
 		var img = elem.children[0].children[0].children[1];
 		img.classList.remove("plus");
 		img.classList.add("minus");
-		img.src="/docs/lib/images/minus.gif";
+		img.src= DOKU_BASE + "lib/images/minus.gif";
 	}
 
 };
@@ -109,7 +111,7 @@ ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
 		var img = elem.children[0].children[0].children[1];
 		img.classList.remove("minus");
 		img.classList.add("plus");
-		img.src="/docs/lib/images/plus.gif";
+		img.src=DOKU_BASE + "lib/images/plus.gif";
 	}
 
 };
@@ -222,7 +224,7 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 			elem.classList.add("expandable");
 
 			// Insert +/- fontawesome icon and image
-			elem.children[0].insertAdjacentHTML("afterbegin", '<div class="btn-expand"><i class="far fa-minus-square"></i><img class="minus" src="/docs/lib/images/minus.gif" alt="−"></div>');
+			elem.children[0].insertAdjacentHTML("afterbegin", '<div class="btn-expand"><i class="far fa-minus-square"></i><img class="minus" src="' + DOKU_BASE + 'lib/images/minus.gif" alt="−"></div>');
 
 			// Install click handler
 			elem.children[0].children[0].addEventListener("click", function(e) {
@@ -294,7 +296,7 @@ ReadtheDokus.prototype._initPageButtons = function()
 	}
 
 	// Show next button
-	if (this._currentPageIndex < this._pages.length - 1)
+	if (this._currentPageIndex > -1 && this._currentPageIndex < this._pages.length - 1)
 	{
 		document.getElementById("btn-nextpage").classList.add("visible");
 		document.getElementById("btn-nextpage").href = this._pages[this._currentPageIndex + 1];
