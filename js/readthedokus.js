@@ -74,7 +74,7 @@ ReadtheDokus.prototype.toggleTocMenu = function(elem)
 		this.collapseTocMenu(elem);
 	}
 
-}
+};
 
 ReadtheDokus.prototype.expandTocMenu = function(elem, allChildren)
 {
@@ -93,7 +93,7 @@ ReadtheDokus.prototype.expandTocMenu = function(elem, allChildren)
 		img.src="/docs/lib/images/minus.gif";
 	}
 
-}
+};
 
 ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
 {
@@ -112,7 +112,7 @@ ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
 		img.src="/docs/lib/images/plus.gif";
 	}
 
-}
+};
 
 ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 {
@@ -139,7 +139,7 @@ ReadtheDokus.prototype._getStartPage = function(basePage, delimiter)
 
 	return result;
 
-}
+};
 
 ReadtheDokus.prototype._embedToc = function(target, toc)
 {
@@ -264,7 +264,7 @@ ReadtheDokus.prototype._getParent = function(elem, level)
 
 	return null;
 
-}
+};
 
 ReadtheDokus.prototype._initMobileHeader = function()
 {
