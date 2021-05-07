@@ -40,7 +40,7 @@ ReadtheDokus.prototype.run = function()
 	{
 		this._startPage = this._getStartPage(this._pages[0], this._delimiter);
 		this._pages.unshift(this._startPage);
-		document.querySelectorAll("#sidebarheader > div.home > a, #pageheader .breadcrumbs > .home > a").forEach(function(elem) {
+		document.querySelectorAll("#sidebar-header > div.home > a, #page-header .breadcrumbs > .home > a").forEach(function(elem) {
 			elem.href = this._startPage;
 		}.bind(this));
 	}
@@ -54,7 +54,7 @@ ReadtheDokus.prototype.run = function()
 	this._initToc(this._toc);
 	this._initMobileHeader();
 	this._initPageButtons();
-	this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", "Search docs");
+	this._sidebar.querySelector("#sidebar-header #qsearch__in").setAttribute("placeholder", "Search docs");
 
 	if (this._toc)
 	{
