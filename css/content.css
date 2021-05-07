@@ -1,9 +1,9 @@
 #dokuwiki__content
 {
-	margin-left: 300px;
-	background: #fcfcfc;
+	margin-left: __width_sidebar__;
 	min-height: 100%;
-	background: rgba(0,0,0,.05);
+	padding-top: __height_header__;
+	padding-bottom: __height_footer__;
 }
 
 #dokuwiki__content > .group
@@ -11,12 +11,12 @@
 	padding: 1.618em 3.236em;
 	height: 100%;
 	margin: 0;
-	background: #fcfcfc;
+	background-color: __background__;
 }
 
 .mode_show #dokuwiki__content > .group
 {
-	max-width: 800px;
+	max-width: __width_content__;
 }
 
 #dokuwiki__content .page p

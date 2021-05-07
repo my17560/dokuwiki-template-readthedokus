@@ -1,8 +1,8 @@
 #mobile-header
 {
 	display: none;
-    background: #2980b9;
-    color: #fff;
+    background: __background_theme__;
+    color: __text_theme__;
     padding: .4045em .809em;
     position: relative;
     line-height: 50px;
@@ -12,7 +12,7 @@
 
 #mobile-header a
 {
-	color: #fff;
+	color: __text_theme__;
 	font-weight: 700;
 	flex: 1;
 }

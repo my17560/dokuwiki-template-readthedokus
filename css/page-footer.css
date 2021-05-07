@@ -1,6 +1,6 @@
 #page-footer
 {
-	color: gray;
+	color: __text_pagefooter__;
 }
 
 #page-footer p
@@ -16,8 +16,8 @@
 
 #page-footer .tools
 {
-	background-color: #2980b9;
-	color: white;
+	background-color: __background_theme__;
+	color: __text_theme__;
 	font-size: 90%;
 	line-height: 20px;
 	margin-top: 30px;
@@ -26,7 +26,7 @@
 
 #page-footer .tools a
 {
-	color: white;
+	color: __text_theme__;
 }
 
 #page-footer .tools ul li:hover

@@ -1,16 +1,14 @@
 #dokuwiki__aside
 {
-	bottom: 0;
-	background-color: #343131;
+	bottom: __height_footer__;
+	background-color: __background_sidebar__;
 	left: 0;
-	min-height: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	padding-bottom: 3em;
+	padding-bottom: 2em;
 	position: fixed;
-	top: 0;
-	width: 300px;
-	z-index: 200;
+	top: __height_header__;
+	width: __width_sidebar__;
 }
 
 #dokuwiki__aside > .aside {
@@ -22,7 +20,7 @@
 
 #dokuwiki__aside p strong
 {
-	color: #55a5d9;
+	color: __text_sidebar_caption__;
 	display: block;
 	font-size: 85%;
 	font-weight: bold;
@@ -37,7 +35,7 @@
 #dokuwiki__aside ul > li > div.li > a,
 #dokuwiki__aside ul > li > div.li > span > a
 {
-	color: #d9d9d9;
+	color: __text_sidebar__;
 	display: block;
 	font-size: 90%;
 	line-height: 18px;
@@ -48,11 +46,12 @@
 #dokuwiki__aside > .aside > ul > li > div.li > a:hover,
 #dokuwiki__aside > .aside > ul > li > div.li > span > a:hover
 {
-	background-color: #4e4a4a;
+	background-color: __background_sidebar_hover__;
 }
 
 #dokuwiki__aside #dw__toc
 {
+	background-color: __background_sidebar_toc__;
 	float: none;
 	margin: 0;
 	width: 100%;
@@ -80,7 +79,7 @@
 
 #dokuwiki__aside #dw__toc ul > li > div.li > a
 {
-	color: #404040;
+	color: __text_sidebar_toc__;
 }
 
 #dokuwiki__aside #dw__toc .btn-expand
@@ -90,7 +89,7 @@
 
 #dokuwiki__aside #dw__toc .btn-expand i
 {
-	color: #333;
+	color: __text_sidebar_expand1__;
 	display: inline-block;
 	font-size: .8em;
 	line-height: 1.6em;
@@ -106,9 +105,9 @@
 
 #dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child > a
 {
-    border-bottom: solid 1px #c9c9c9;
-    border-top: solid 1px #c9c9c9;
-	background-color: #fcfcfc;
+    border-bottom: solid 1px __background_sidebar_toc_highlight__;
+    border-top: solid 1px __background_sidebar_toc_highlight__;
+	background-color: __background__;
 }
 
 #dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child > a
@@ -118,7 +117,7 @@
 
 #dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li.current
 {
-	background-color: #c9c9c9;
+	background-color: __background_sidebar_toc_highlight__;
 }
 
 #dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li.current > a
@@ -128,14 +127,14 @@
 
 #dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li > a:hover
 {
-	background-color: #d6d6d6;
+	background-color: __background_sidebar_toc_hover__;
 }
 
 #dokuwiki__aside #dw__toc ul > li.level2 > div.li > a .btn-expand i,
 #dokuwiki__aside #dw__toc ul > li.level3 > div.li > a .btn-expand i,
 #dokuwiki__aside #dw__toc ul > li.level4 > div.li > a .btn-expand i
 {
-	color: #a3a3a3;
+	color: __text_sidebar_expand2__;
 }
 
 #dokuwiki__aside #dw__toc ul > li.level2 > div.li > a
