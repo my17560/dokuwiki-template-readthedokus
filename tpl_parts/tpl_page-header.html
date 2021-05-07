@@ -12,7 +12,7 @@
 			<?php if ($ACT == "show") { ?>
 				<span class="home"><a href="<?php echo wl(); ?>">Docs</a></span>
 			<?php } else { ?>
-				<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true, '&'); ?>">Admin</a></span>
+				<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true,'&'); ?>">Admin</a></span>
 			<?php } ?>
 
 			 »  <bdi><?php tpl_pagetitle(); ?></bdi>
@@ -20,7 +20,7 @@
 
 		<!-- Edit this page -->
 		<?php if ($ACT == "show" && $INFO["userinfo"]) { ?>
-			<a style="margin-left:auto" href="<?php echo $DOKU_BASE ?>doku.php?id=<?php echo $ID; ?>&do=edit">
+			<a style="margin-left:auto" href="<?php echo wl($ID,array('do'=>'edit'),true,'&'); ?>">
 				<i class="fas fa-pencil-alt"></i>
 				<span> Edit this page</span>
 			</a>
