@@ -40,7 +40,9 @@ ReadtheDokus.prototype.run = function()
 	{
 		this._startPage = this._getStartPage(this._pages[0], this._delimiter);
 		this._pages.unshift(this._startPage);
-		document.querySelectorAll("#sidebar-header > div.home > a, #page-header .breadcrumbs > .home > a").forEach(function(elem) {
+		var list = document.querySelectorAll("#sidebar-header > div.home > a, #page-header .breadcrumbs > .home > a");
+		var nodes = Array.prototype.slice.call(list, 0);
+		nodes.forEach(function(elem) {
 			elem.href = this._startPage;
 		}.bind(this));
 	}
@@ -121,8 +123,8 @@ ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 
 	callback = ( typeof callback === "function" ? callback : function(){} );
 	var links = this._sidebar.querySelectorAll(".aside > ul .level1 a");
-
-	links.forEach(function(elem) {
+	var nodes = Array.prototype.slice.call(links, 0);
+	nodes.forEach(function(elem) {
 		callback(elem);
 	});
 
@@ -179,13 +181,17 @@ ReadtheDokus.prototype._initToc = function(toc)
 ReadtheDokus.prototype._installTocSelectHandler = function()
 {
 
-	this._toc.querySelectorAll(".level1 div.li").forEach(function(elem) {
+	var list = this._toc.querySelectorAll(".level1 div.li");
+	var nodes = Array.prototype.slice.call(list, 0);
+	nodes.forEach(function(elem) {
 		elem.addEventListener("click", function() {
 			// Get level2 parent
 			let p = this._getParent(elem, "level2");
 
 			// Remove all current
-			this._toc.querySelectorAll(".current").forEach(function(elem) {
+			var list2 = this._toc.querySelectorAll(".current");
+			var nodes2 = Array.prototype.slice.call(list2, 0);
+			nodes2.forEach(function(elem) {
 				elem.classList.remove("current");
 			});
 
@@ -202,7 +208,9 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 			this.expandTocMenu(elem);
 
 			// Fold the other level2 items
-			this._toc.querySelectorAll(".level2 > div.li.expandable").forEach(function(item) {
+			var list3 = this._toc.querySelectorAll(".level2 > div.li.expandable");
+			var nodes3 = Array.prototype.slice.call(list3, 0);
+			nodes3.forEach(function(item) {
 				if (item != p)
 				{
 					this.collapseTocMenu(item);
@@ -218,7 +226,9 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 {
 
 	// Search for toc menu items which have children
-	this._toc.querySelectorAll("div.li").forEach(function(elem) {
+	var list = this._toc.querySelectorAll("div.li");
+	var nodes = Array.prototype.slice.call(list, 0);
+	nodes.forEach(function(elem) {
 		if (elem.parentNode.querySelector(".toc"))
 		{
 			elem.classList.add("expandable");
