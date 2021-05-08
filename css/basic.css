@@ -199,6 +199,11 @@ button:hover,
     color: __text_button_hover__;
 }
 
+main
+{
+	display: block;
+}
+
 .visible
 {
 	display: block !important;
@@ -207,26 +212,6 @@ button:hover,
 .invisible
 {
 	display: none;
-}
-
-header
-{
-	background-color: __background_header__;
-	height: __height_header__;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-}
-
-footer
-{
-	background-color: __background_footer__;
-	bottom: 0;
-	height: __height_footer__;
-	left: 0;
-	position: fixed;
-	right: 0;
 }
 
 #dw__toc .btn-expand img {
