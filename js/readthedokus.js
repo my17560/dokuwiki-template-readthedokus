@@ -7,7 +7,7 @@ function ReadtheDokus()
 	this._toc = document.getElementById("dw__toc");
 	this._sidebar =document.querySelector("#dokuwiki__aside");
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
-	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].replaceAll(":", "/"));
+	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].split(":").join("/") );
 	this._startPage = "";
 
 }
