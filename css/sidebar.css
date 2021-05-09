@@ -20,7 +20,7 @@
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 100%;
-	width: 320px;
+	width: calc(__width_sidebar__ + 20);
 }
 
 #dokuwiki__aside p strong

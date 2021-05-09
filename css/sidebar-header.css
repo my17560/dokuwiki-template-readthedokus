@@ -3,10 +3,11 @@
 	background-color: __background_theme__;
 	color: __text_theme__;
 	display: block;
-	margin-bottom: .8em;
 	padding: .8em;
 	text-align: center;
+    width: __width_sidebar__;
 }
+
 
 #sidebar-header .home > a
 {
@@ -28,4 +29,12 @@
 #sidebar-header .search button
 {
 	display: none;
+}
+
+@media (max-width: __media_query_sp__)
+{
+    #dokuwiki__aside #sidebar-header
+    {
+        width: 100%;
+    }
 }
