@@ -204,16 +204,6 @@ main
 	display: block;
 }
 
-.visible
-{
-	display: block !important;
-}
-
-.invisible
-{
-	display: none;
-}
-
 #dw__toc .btn-expand img {
 	display: none;
 }

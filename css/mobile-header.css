@@ -24,8 +24,7 @@
 	cursor: pointer;
 }
 
-/*@media only screen and (max-width: 42em)*/
-@media (max-width: 42em)
+@media (max-width: __media_query_sp__)
 {
 
 	#mobile-header
@@ -49,7 +48,8 @@
 		left: 0;
 	}
 
-	#mobile-header #btn-mobilemenu .icon-menu:before{
+	#mobile-header #btn-mobilemenu .icon-menu:before
+	{
 		background:#fff;
 		border-radius:2px;
 		box-shadow:0 10px #fff, 0 20px #fff;
@@ -66,5 +66,4 @@
 		top: 0;
 		left: 0;
 	}
-
 }

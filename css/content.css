@@ -37,8 +37,7 @@
 	margin-left: 24px;
 }
 
-/*@media only screen and (max-width: 42em)*/
-@media (max-width: 42em)
+@media (max-width: __media_query_sp__)
 {
 
 	#dokuwiki__content

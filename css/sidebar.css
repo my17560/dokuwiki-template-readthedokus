@@ -11,6 +11,11 @@
 	width: __width_sidebar__;
 }
 
+#dokuwiki__aside.invisible
+{
+	display: none;
+}
+
 #dokuwiki__aside > .aside {
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -172,14 +177,18 @@
 	padding-left: 4.8em;
 }
 
-/*@media only screen and (max-width: 42em)*/
-@media (max-width: 42em)
+@media (max-width: __media_query_sp__)
 {
 
 	#dokuwiki__aside
 	{
 		display: none;
 		width: 85%;
+	}
+
+	#dokuwiki__aside.visible
+	{
+		display: block;
 	}
 
 	#dokuwiki__aside > .aside
