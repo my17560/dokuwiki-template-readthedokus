@@ -65,6 +65,13 @@ ReadtheDokus.prototype.run = function()
 
 };
 
+ReadtheDokus.prototype.getMediaQuery = function(elem)
+{
+
+		return getComputedStyle(document.querySelector("#__media_query")).getPropertyValue("--media-query");
+
+};
+
 ReadtheDokus.prototype.toggleTocMenu = function(elem)
 {
 

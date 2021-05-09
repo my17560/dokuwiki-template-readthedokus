@@ -46,6 +46,8 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <?php tpl_includeFile('tpl_parts/tpl_footer.html') ?>
     </div>
 
+	<!-- Utils -->
     <div class="no" style="display:none"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
+	<div id="__media_query"></div>
 </body>
 </html>

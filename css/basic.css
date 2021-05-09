@@ -204,10 +204,34 @@ main
 	display: block;
 }
 
-#dw__toc .btn-expand img {
+#__media_query
+{
+	display: none;
+	--media-query: pc;
+}
+
+@media (max-width: __media_query_tb__)
+{
+	#__media_query
+	{
+		--media-query: tb;
+	}
+}
+
+@media (max-width: __media_query_sp__)
+{
+	#__media_query
+	{
+		--media-query: sp;
+	}
+}
+
+#dw__toc .btn-expand img
+{
 	display: none;
 }
 
-#btn-mobilemenu .icon-menu {
+#btn-mobilemenu .icon-menu
+{
 	display: none;
 }
