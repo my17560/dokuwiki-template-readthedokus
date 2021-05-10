@@ -325,14 +325,19 @@ ReadtheDokus.prototype._installTocJumpHandler = function()
 			var target = document.querySelector(hash);
 			if (target)
 			{
+				if (dokus.getMediaQuery() == "sp")
+				{
+					this.hideSidebar();
+				}
+
 				var top = target.getBoundingClientRect().top;
 				window.scrollTo({top:window.pageYOffset + top - 50});
 			}
 
 			e.preventDefault();
 			return false;
-		});
-	});
+		}.bind(this));
+	}.bind(this));
 
 };
 ReadtheDokus.prototype._getParent = function(elem, level)
