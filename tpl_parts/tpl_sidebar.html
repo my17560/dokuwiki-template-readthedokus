@@ -1,12 +1,14 @@
-<?php global $conf ?>
+<?php global $conf, $lang; ?>
 
-<nav id="dokuwiki__aside" aria-label="<?php echo $lang['sidebar'] ?>"><div class="aside include group">
-	<?php tpl_includeFile('tpl_parts/tpl_sidebar-header.html') ?>
-	<?php tpl_includeFile('sidebar-header.html') ?>
-	<div style="display:none">
-		<?php tpl_toc()?>
+<nav id="dokuwiki__aside" aria-label="<?php echo $lang['sidebar'] ?>">
+	<div class="aside include group">
+		<?php tpl_includeFile('tpl_parts/tpl_sidebar-header.html') ?>
+		<?php tpl_includeFile('sidebar-header.html') ?>
+		<div style="display:none">
+			<?php tpl_toc()?>
+		</div>
+		<?php tpl_include_page($conf['sidebar'], 1, 1) ?>
+		<?php tpl_includeFile('sidebar-footer.html') ?>
+		<?php tpl_includeFile('tpl_parts/tpl_sidebar-footer.html') ?>
 	</div>
-	<?php tpl_include_page($conf['sidebar'], 1, 1) ?>
-	<?php tpl_includeFile('sidebar-footer.html') ?>
-	<?php tpl_includeFile('tpl_parts/tpl_sidebar-footer.html') ?>
-</div></nav>
+</nav>
