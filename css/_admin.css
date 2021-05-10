@@ -30,6 +30,13 @@ div.error, div.info, div.success, div.notify
 	margin: 0 0 1em 0;
 }
 
+#config__manager table,
+#config__manager table th,
+#config__manager table td
+{
+	border: none;
+}
+
 #config__manager td input.edit
 {
 	width: 100%;
@@ -222,6 +229,23 @@ div.error, div.info, div.success, div.notify
 	margin-left: 10px;
 }
 
+#acl_manager table,
+#acl_manager table td
+{
+	border: none;
+}
+
+#acl_manager table th
+{
+	border: solid 1px __border__;
+}
+
+#acl_manager table > tbody > tr:last-child th
+{
+	border: none;
+	border-bottom: none;
+}
+
 #acl_manager table td
 {
 	border: solid 1px lightgray;
@@ -305,12 +329,26 @@ div#user__manager > div:nth-child(2) table > tbody:nth-child(3)
 	width: 100%;
 }
 
+#user__manager table,
+{
+	border: none;
+}
+
+#user__manager table th
+{
+	border: solid 1px __border__;
+}
+
 #user__manager table td
 {
-	border: solid 1px lightgray;
+	/* border: solid 1px lightgray; */
 	padding: 10px 10px;
 }
 
+#user__manager table > tbody:last-child td
+{
+	border: none;
+}
 
 #user__manager table input
 {
