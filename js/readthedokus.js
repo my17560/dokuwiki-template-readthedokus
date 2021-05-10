@@ -49,7 +49,7 @@ ReadtheDokus.prototype.run = function()
 	}
 
 	// Show toc on top of sidebar if item was not found in sidebar
-	if (!isFound)
+	if (!isFound && this._toc)
 	{
 		this._showToc(this._toc);
 		this.showSidebar();

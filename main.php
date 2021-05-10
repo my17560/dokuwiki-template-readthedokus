@@ -25,7 +25,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <?php tpl_includeFile('meta.html') ?>
 </head>
 <body id="dokuwiki__top">
-    <div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ) ?>">
+    <div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ); ?>">
 		<!-- Header -->
         <?php tpl_includeFile('tpl_parts/tpl_header.html') ?>
 
