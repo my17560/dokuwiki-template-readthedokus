@@ -69,7 +69,7 @@ ReadtheDokus.prototype.run = function()
 ReadtheDokus.prototype.getMediaQuery = function(elem)
 {
 
-		return getComputedStyle(document.querySelector("#__media_query")).getPropertyValue("--media-query").trim();
+	return getComputedStyle(document.querySelector("#__media_query")).getPropertyValue("--media-query").trim();
 
 };
 
@@ -125,6 +125,49 @@ ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
 	}
 
 };
+
+ReadtheDokus.prototype.toggleSidebar = function(elem)
+{
+
+	if (dokus.getMediaQuery() == "pc" || dokus.getMediaQuery() == "tb")
+	{
+		document.querySelector("#dokuwiki__site").classList.toggle("showSidebar");
+	}
+	else
+	{
+		document.querySelector("#dokuwiki__site").classList.toggle("showSidebarSP");
+	}
+
+}
+
+ReadtheDokus.prototype.showSidebar = function(elem)
+{
+
+	if (dokus.getMediaQuery() == "pc" || dokus.getMediaQuery() == "tb")
+	{
+		document.querySelector("#dokuwiki__site").classList.add("showSidebar");
+	}
+	else
+	{
+		document.querySelector("#dokuwiki__site").classList.add("showSidebarSP");
+	}
+
+}
+
+ReadtheDokus.prototype.hideSidebar = function(elem)
+{
+
+	if (dokus.getMediaQuery() == "pc" || dokus.getMediaQuery() == "tb")
+	{
+		document.querySelector("#dokuwiki__site").classList.remove("showSidebar");
+	}
+	else
+	{
+		document.querySelector("#dokuwiki__site").classList.remove("showSidebarSP");
+	}
+
+}
+
 
 ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 {
@@ -315,8 +358,7 @@ ReadtheDokus.prototype._initMobileHeader = function()
 
 	// Add click event handler for mobile menu
 	document.getElementById("btn-mobilemenu").addEventListener("click", function(){
-		this._sidebar.classList.toggle("visible");
-		document.querySelector("#dokuwiki__content").classList.toggle("shift");
+		this.toggleSidebar();
 	}.bind(this));
 
 };
