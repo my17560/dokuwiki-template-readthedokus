@@ -375,14 +375,14 @@ ReadtheDokus.prototype._initPageButtons = function()
 	// Show prev button
 	if (this._currentPageIndex > 0)
 	{
-		document.getElementById("btn-prevpage").classList.add("visible");
+		document.getElementById("btn-prevpage").classList.remove("invisible");
 		document.getElementById("btn-prevpage").href = this._pages[this._currentPageIndex - 1];
 	}
 
 	// Show next button
 	if (this._currentPageIndex > -1 && this._currentPageIndex < this._pages.length - 1)
 	{
-		document.getElementById("btn-nextpage").classList.add("visible");
+		document.getElementById("btn-nextpage").classList.remove("invisible");
 		document.getElementById("btn-nextpage").href = this._pages[this._currentPageIndex + 1];
 	}
 

@@ -8,12 +8,6 @@
 	margin-bottom: 12px;
 }
 
-#page-footer #btn-nextpage,
-#page-footer #btn-prevpage
-{
-	display: none;
-}
-
 #page-footer .tools
 {
 	background-color: __background_theme__;
