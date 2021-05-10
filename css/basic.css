@@ -90,15 +90,29 @@ dl,
 ol,
 ul
 {
-	list-style: none;
-	list-style-image: none;
 	margin: 0;
 	padding: 0;
 }
 
 li
 {
-	list-style: none
+	margin-left: 24px;
+}
+
+dl
+{
+	margin-bottom: 24px;
+}
+
+dl dt
+{
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+dl dd
+{
+	margin: 0 0 12px 24px;
 }
 
 pre
@@ -204,6 +218,25 @@ main
 	display: block;
 }
 
+table
+{
+	margin-bottom: 24px;
+	width: 100%;
+}
+
+table th,
+table td
+{
+	border: solid 1px __border__;
+	padding: 10px;
+}
+
+sup
+{
+	font-size: 80%;
+	vertical-align: super;
+}
+
 #__media_query
 {
 	display: none;
@@ -226,6 +259,7 @@ main
 	}
 }
 
+/*:
 #dw__toc .btn-expand img
 {
 	display: none;
@@ -235,3 +269,4 @@ main
 {
 	display: none;
 }
+*/

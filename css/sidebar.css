@@ -23,6 +23,11 @@
 	width: calc(__width_sidebar__ + 20);
 }
 
+#dokuwiki__aside ul li
+{
+	margin-left: 0;
+}
+
 #dokuwiki__aside p strong
 {
 	color: __text_sidebar_caption__;

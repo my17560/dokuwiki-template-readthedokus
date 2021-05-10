@@ -25,16 +25,10 @@
 	margin: 0 0 24px;
 }
 
-#dokuwiki__content .page ul
+#dokuwiki__content .page ul,ol
 {
 	line-height: 24px;
 	margin-bottom: 24px;
-}
-
-.mode_show #dokuwiki__content .page ul li
-{
-	list-style: disc;
-	margin-left: 24px;
 }
 
 @media (max-width: __media_query_sp__)
