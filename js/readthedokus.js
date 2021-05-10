@@ -52,6 +52,7 @@ ReadtheDokus.prototype.run = function()
 	if (!isFound)
 	{
 		this._showToc(this._toc);
+		this.showSidebar();
 	}
 
 	this._initToc(this._toc);
@@ -387,5 +388,3 @@ ReadtheDokus.prototype._initPageButtons = function()
 	}
 
 };
-
-
