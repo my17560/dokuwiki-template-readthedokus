@@ -5,7 +5,8 @@ function ReadtheDokus()
 	this._currentPageIndex;
 	this._pages;
 	this._toc = document.getElementById("dw__toc");
-	this._sidebar =document.querySelector("#dokuwiki__aside");
+	this._header = document.querySelector("header");
+	this._sidebar = document.querySelector("#dokuwiki__aside");
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
 	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].split(":").join("/") );
 	this._startPage = "";
@@ -180,6 +181,7 @@ ReadtheDokus.prototype._initToc = function(toc)
 	{
 		this._installTocSelectHandler();
 		this._installTocMenuHandler();
+		this._installTocJumpHandler();
 	}
 
 };
@@ -266,6 +268,29 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 
 };
 
+// Install click handler to jump to anchor taking fixed header into account
+ReadtheDokus.prototype._installTocJumpHandler = function()
+{
+
+	var headerHight = this._header.height;
+	var list = this._toc.querySelectorAll('a[href*="#"]');
+	var nodes = Array.prototype.slice.call(list, 0);
+	nodes.forEach(function(elem){
+		elem.addEventListener("click", function(e) {
+			var hash = elem.getAttribute("href");
+			var target = document.querySelector(hash);
+			if (target)
+			{
+				var top = target.getBoundingClientRect().top;
+				window.scrollTo({top:window.pageYOffset + top - 50});
+			}
+
+			e.preventDefault();
+			return false;
+		});
+	});
+
+};
 ReadtheDokus.prototype._getParent = function(elem, level)
 {
 
@@ -320,3 +345,5 @@ ReadtheDokus.prototype._initPageButtons = function()
 	}
 
 };
+
+
