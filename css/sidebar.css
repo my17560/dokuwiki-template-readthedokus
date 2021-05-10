@@ -2,6 +2,7 @@
 {
 	bottom: __height_footer__;
 	background-color: __background_sidebar__;
+	color: __text_sidebar__;
 	left: 0;
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -53,8 +54,8 @@
 	position: relative;
 }
 
-#dokuwiki__aside > .aside > ul > li > div.li > a:hover,
-#dokuwiki__aside > .aside > ul > li > div.li > span > a:hover
+#dokuwiki__aside #sidebar > ul > li > div.li > a:hover,
+#dokuwiki__aside #sidebar > ul > li > div.li > span > a:hover
 {
 	background-color: __background_sidebar_hover__;
 }

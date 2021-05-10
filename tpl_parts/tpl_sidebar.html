@@ -4,10 +4,12 @@
 	<div class="aside include group">
 		<?php tpl_includeFile('tpl_parts/tpl_sidebar-header.html') ?>
 		<?php tpl_includeFile('sidebar-header.html') ?>
-		<div style="display:none">
-			<?php tpl_toc()?>
+		<div id="sidebar">
+			<div style="display:none">
+				<?php tpl_toc()?>
+			</div>
+			<?php tpl_include_page($conf['sidebar'], 1, 1) ?>
 		</div>
-		<?php tpl_include_page($conf['sidebar'], 1, 1) ?>
 		<?php tpl_includeFile('sidebar-footer.html') ?>
 		<?php tpl_includeFile('tpl_parts/tpl_sidebar-footer.html') ?>
 	</div>

@@ -174,7 +174,7 @@ ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 {
 
 	callback = ( typeof callback === "function" ? callback : function(){} );
-	var links = this._sidebar.querySelectorAll(".aside > ul .level1 a");
+	var links = this._sidebar.querySelectorAll(".aside > #sidebar > ul .level1 a");
 	var nodes = Array.prototype.slice.call(links, 0);
 	nodes.forEach(function(elem) {
 		callback(elem);
