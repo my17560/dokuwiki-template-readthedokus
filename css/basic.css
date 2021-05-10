@@ -270,6 +270,16 @@ abbr[title], dfn[title] {
 	text-decoration: none;
 }
 
+.visible
+{
+	display: block;
+}
+
+.invisible
+{
+	display: none;
+}
+
 #__media_query
 {
 	display: none;
