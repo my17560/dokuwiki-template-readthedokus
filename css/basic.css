@@ -218,21 +218,56 @@ main
 
 table
 {
+	border: solid 1px __border__;
+    border-collapse: collapse;
+    border-spacing: 0;
 	margin-bottom: 24px;
 	width: 100%;
 }
 
-table th,
+table thead
+{
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+table th
+{
+    border-bottom: solid 2px __border__;
+	font-weight: bold;
+	padding: 8px 16px;
+}
+
 table td
 {
 	border: solid 1px __border__;
-	padding: 10px;
+	padding: 8px 16px;
+}
+
+table tr:nth-child(2n)
+{
+	background-color: #f3f6f6;
 }
 
 sup
 {
 	font-size: 80%;
 	vertical-align: super;
+}
+
+blockquote
+{
+    margin-left: 24px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+abbr[title], dfn[title] {
+    /* border-bottom: none; */
+    cursor: auto;
+	text-decoration: none;
 }
 
 #__media_query
