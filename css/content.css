@@ -6,6 +6,11 @@
 	padding-bottom: __height_footer__;
 }
 
+#dokuwiki__site:not(.showSidebar) #dokuwiki__content
+{
+	margin-left: 0;
+}
+
 #dokuwiki__content > .group
 {
 	padding: 1.618em 3.236em;
@@ -36,10 +41,10 @@
 
 	#dokuwiki__content
 	{
-		margin-left: 0;
+		margin-left: 0 !important;
 	}
 
-	#dokuwiki__content.shift
+	#dokuwiki__site.showSidebarSP #dokuwiki__content
 	{
 		position: fixed;
 		left: 85%;
@@ -47,7 +52,7 @@
 
 	#dokuwiki__content > .group
 	{
-		padding: 1.618em;
+		padding: 1.6em;
 	}
 
 }

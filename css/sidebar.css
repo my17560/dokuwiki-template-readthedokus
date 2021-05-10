@@ -11,6 +11,11 @@
 	width: __width_sidebar__;
 }
 
+#dokuwiki__site:not(.showSidebar) #dokuwiki__aside
+{
+	display: none;
+}
+
 #dokuwiki__aside.invisible
 {
 	display: none;
@@ -192,8 +197,17 @@
 
 	#dokuwiki__aside
 	{
-		display: none;
 		width: 85%;
+	}
+
+	#dokuwiki__site.showSidebarSP #dokuwiki__aside
+	{
+		display: block;
+	}
+
+	#dokuwiki__site:not(.showSidebarSP) #dokuwiki__aside
+	{
+		display: none;
 	}
 
 	#dokuwiki__aside.visible
