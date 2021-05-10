@@ -1,14 +1,14 @@
-#page-footer
+#pagefooter
 {
 	color: __text_pagefooter__;
 }
 
-#page-footer p
+#pagefooter p
 {
 	margin-bottom: 12px;
 }
 
-#page-footer .tools
+#pagefooter .tools
 {
 	background-color: __background_theme__;
 	color: __text_theme__;
@@ -18,17 +18,17 @@
 	padding: 15px;
 }
 
-#page-footer .tools a
+#pagefooter .tools a
 {
 	color: __text_theme__;
 }
 
-#page-footer .tools ul li:hover
+#pagefooter .tools ul li:hover
 {
 	text-decoration: underline;
 }
 
-#page-footer .tools .doc
+#pagefooter .tools .doc
 {
 	border-top: solid 1px;
 	display: block;
@@ -37,8 +37,8 @@
 	text-align:right;
 }
 
-#page-footer #dokuwiki__pagetools,
-#page-footer #dokuwiki__usertools
+#pagefooter #dokuwiki__pagetools,
+#pagefooter #dokuwiki__usertools
 {
 	margin-left: 30px;
 }

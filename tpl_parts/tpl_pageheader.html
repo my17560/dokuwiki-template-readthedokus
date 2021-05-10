@@ -1,6 +1,6 @@
 <?php global $conf, $lang, $ACT, $INFO, $ID, $DOKU_BASE ?>
 
-<div id="page-header">
+<div id="pageheader">
 	<!-- Messages -->
 	<div id="msgarea">
 	    <?php html_msgarea() ?>
@@ -27,7 +27,7 @@
 		<?php } ?>
 	</div>
 
-	<hr>
+	<?php tpl_includeFile('pageheader.html') ?>
 
-	<?php tpl_includeFile('page-header.html') ?>
+	<hr>
 </div>

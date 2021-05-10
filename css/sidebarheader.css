@@ -1,4 +1,4 @@
-#sidebar-header
+#sidebarheader
 {
 	background-color: __background_theme__;
 	color: __text_theme__;
@@ -9,7 +9,7 @@
 }
 
 
-#sidebar-header .home > a
+#sidebarheader .home > a
 {
 	color: __text_theme__;
 	display: inline-block;
@@ -19,21 +19,21 @@
 	padding: 4px 6px;
 }
 
-#sidebar-header .search input[type=text]
+#sidebarheader .search input[type=text]
 {
 	border-radius: 50px;
 	padding: 6px 12px;
 	width: 100%;
 }
 
-#sidebar-header .search button
+#sidebarheader .search button
 {
 	display: none;
 }
 
 @media (max-width: __media_query_sp__)
 {
-    #dokuwiki__aside #sidebar-header
+    #dokuwiki__aside #sidebarheader
     {
         width: 100%;
     }

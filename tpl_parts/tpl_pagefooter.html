@@ -1,7 +1,6 @@
 <?php global $conf, $lang, $ACT, $INFO ?>
 
-<div id="page-footer">
-	<?php tpl_includeFile('page-footer.html') ?>
+<div id="pagefooter">
 
 <?php if ($ACT == "show") { ?>
 	<div class="" style="display:flex">
@@ -11,9 +10,7 @@
 
 	<hr>
 
-<?php if ($conf["copyright"]) { ?>
-	<p class="copyright"><?php $conf["copyright"] ?></p>
-<?php } ?>
+	<?php tpl_includeFile('pagefooter.html') ?>
 
 <?php } ?>
 

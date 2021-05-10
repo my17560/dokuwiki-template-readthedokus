@@ -35,7 +35,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
 			<!-- Content -->
 			<main id="dokuwiki__content">
-        		<?php tpl_includeFile('tpl_parts/tpl_mobile-header.html') ?>
+        		<?php tpl_includeFile('tpl_parts/tpl_mobileheader.html') ?>
 				<div class="group">
             		<?php tpl_includeFile('tpl_parts/tpl_content.html') ?>
 				</div>
