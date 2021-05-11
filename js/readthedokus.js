@@ -25,10 +25,13 @@ ReadtheDokus.prototype.run = function()
 	{
 		this._enumSidebarLinks(function(elem) {
 			// Embed toc
-			if (elem.href.indexOf(this._id) > -1)
+			if (!isFound)
 			{
-				this._embedToc(elem, this._toc);
-				isFound = true;
+				if (elem.href.indexOf(this._id) > -1)
+				{
+					this._embedToc(elem, this._toc);
+					isFound = true;
+				}
 			}
 
 			// Collect page links
