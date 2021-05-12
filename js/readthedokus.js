@@ -319,7 +319,7 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 ReadtheDokus.prototype._installTocJumpHandler = function()
 {
 
-	var headerHeight = this._header.height || 0;
+	var headerHeight = this._header.offsetHeight;
 	var list = this._toc.querySelectorAll('a[href*="#"]');
 	var nodes = Array.prototype.slice.call(list, 0);
 	nodes.forEach(function(elem){
