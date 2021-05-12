@@ -319,7 +319,7 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 ReadtheDokus.prototype._installTocJumpHandler = function()
 {
 
-	var headerHight = this._header.height;
+	var headerHeight = this._header.height || 0;
 	var list = this._toc.querySelectorAll('a[href*="#"]');
 	var nodes = Array.prototype.slice.call(list, 0);
 	nodes.forEach(function(elem){
@@ -334,7 +334,7 @@ ReadtheDokus.prototype._installTocJumpHandler = function()
 				}
 
 				var top = target.getBoundingClientRect().top;
-				window.scrollTo({top:window.pageYOffset + top - 50});
+				window.scrollTo({top:window.pageYOffset + top - headerHeight});
 			}
 
 			e.preventDefault();
