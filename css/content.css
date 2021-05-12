@@ -20,8 +20,6 @@
 	margin-left: __width_sidebar__;
 	min-height: 100%;
 	min-width: 0;
-	padding-top: __height_header__;
-	padding-bottom: __height_footer__;
 }
 
 #dokuwiki__site:not(.showSidebar) #dokuwiki__content
