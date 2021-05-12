@@ -303,6 +303,12 @@ footer
 	{
 		--media-query: tb;
 	}
+
+	/* IE11 workaround */
+	#dokuwiki__site[data-useragent*='Trident'] #__media_query
+	{
+		background-color: tb;
+	}
 }
 
 @media (max-width: __media_query_sp__)
@@ -310,6 +316,12 @@ footer
 	#__media_query
 	{
 		--media-query: sp;
+	}
+
+	/* IE11 workaround */
+	#dokuwiki__site[data-useragent*='Trident'] #__media_query
+	{
+		background-color: sp;
 	}
 }
 
