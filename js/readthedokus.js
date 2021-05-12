@@ -73,7 +73,7 @@ ReadtheDokus.prototype.run = function()
 ReadtheDokus.prototype.getMediaQuery = function(elem)
 {
 
-	return getComputedStyle(document.querySelector("#__media_query")).getPropertyValue("--media-query").trim();
+	return getComputedStyle(document.querySelector("#__media_query")).getPropertyValue("--media-query").trim() || getComputedStyle(document.querySelector("#__media_query"))["-media-query"].trim();
 
 };
 
@@ -133,7 +133,8 @@ ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
 ReadtheDokus.prototype.toggleSidebar = function(elem)
 {
 
-	if (dokus.getMediaQuery() == "pc" || dokus.getMediaQuery() == "tb")
+	var mq = this.getMediaQuery();
+	if (mq == "pc" || mq == "tb")
 	{
 		document.querySelector("#dokuwiki__site").classList.toggle("showSidebar");
 	}
@@ -147,7 +148,8 @@ ReadtheDokus.prototype.toggleSidebar = function(elem)
 ReadtheDokus.prototype.showSidebar = function(elem)
 {
 
-	if (dokus.getMediaQuery() == "pc" || dokus.getMediaQuery() == "tb")
+	var mq = this.getMediaQuery();
+	if (mq == "pc" || mq == "tb")
 	{
 		document.querySelector("#dokuwiki__site").classList.add("showSidebar");
 	}

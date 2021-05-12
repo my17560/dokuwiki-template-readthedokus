@@ -297,6 +297,12 @@ footer
 	--media-query: pc;
 }
 
+/* IE11 workaround */
+body[data-useragent*='Trident'] #__media_query
+{
+	-media-query: pc;
+}
+
 @media (max-width: __media_query_tb__)
 {
 	#__media_query
@@ -305,9 +311,9 @@ footer
 	}
 
 	/* IE11 workaround */
-	#dokuwiki__site[data-useragent*='Trident'] #__media_query
+	body[data-useragent*='Trident'] #__media_query
 	{
-		background-color: tb;
+		-media-query: tb;
 	}
 }
 
@@ -319,9 +325,9 @@ footer
 	}
 
 	/* IE11 workaround */
-	#dokuwiki__site[data-useragent*='Trident'] #__media_query
+	body[data-useragent*='Trident'] #__media_query
 	{
-		background-color: sp;
+		-media-query: sp;
 	}
 }
 

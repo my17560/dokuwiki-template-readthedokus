@@ -17,7 +17,7 @@
 	display: none;
 }
 
-#dokuwiki__site.rightSidebar[data-useragent*='Trident'] #dokuwiki__aside
+body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 {
 	right: calc(~"(-16px + 100vw - "__width_site__~")/2");
 }
