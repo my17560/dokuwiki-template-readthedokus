@@ -10,6 +10,11 @@
     font-size: 100%;
 }
 
+#dokuwiki__site.rightSidebar #mobileheader
+{
+	flex-direction: row-reverse;
+}
+
 #mobileheader a
 {
 	color: __text_theme__;

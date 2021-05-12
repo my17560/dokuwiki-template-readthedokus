@@ -3,7 +3,7 @@
 	bottom: __height_footer__;
 	background-color: __background_sidebar__;
 	color: __text_sidebar__;
-	left: 0;
+	flex-shrink: 0;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	padding-bottom: 2em;
