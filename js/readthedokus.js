@@ -334,7 +334,7 @@ ReadtheDokus.prototype._installTocJumpHandler = function()
 				}
 
 				var top = target.getBoundingClientRect().top;
-				window.scrollTo({top:window.pageYOffset + top - headerHeight});
+				window.scrollTo(0, window.pageYOffset + top - headerHeight);
 			}
 
 			e.preventDefault();
