@@ -17,6 +17,11 @@
 	display: none;
 }
 
+#dokuwiki__site.rightSidebar[data-useragent*='Trident'] #dokuwiki__aside
+{
+	right: calc(~"(-16px + 100vw - "__width_site__~")/2");
+}
+
 #dokuwiki__aside > .aside {
 	overflow-y: scroll;
 	overflow-x: hidden;

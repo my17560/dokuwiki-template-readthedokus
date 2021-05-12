@@ -7,6 +7,8 @@
  * @license  MIT
  */
 
+global $conf, $ID, $INFO;
+
 if (!defined('DOKU_INC')) die();
 $showSidebar = page_findnearest($conf['sidebar']);
 ?>
@@ -24,8 +26,8 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <?php tpl_includeFile('tpl_parts/tpl_meta.html') ?>
     <?php tpl_includeFile('meta.html') ?>
 </head>
-<body id="dokuwiki__top">
-    <div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ); ?>">
+<body id="dokuwiki__top" data-id="<?php echo $ID ?>" data-namespace="<?php echo $INFO['namespace'] ?>">
+	<div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ); ?> rightSidebar" data-useragent="<?php echo $_SERVER['HTTP_USER_AGENT'] ?>>
 		<!-- Header -->
         <?php tpl_includeFile('tpl_parts/tpl_header.html') ?>
 
