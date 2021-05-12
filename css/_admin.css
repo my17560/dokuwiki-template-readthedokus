@@ -1,14 +1,14 @@
 .dokuwiki div.section_highlight
 {
-    border-color: #55a5d9;
-	background-color: #CAE9FF;
+    border-color: __border_edit_highlight__;
+	background-color: __background_edit_highlight1__;
 	background-image:
 		-webkit-gradient(linear, 0 0, 100% 100%,
-			color-stop(.25, #E7F8FC),
+			color-stop(.25, __background_edit_highlight2__),
 			color-stop(.25, transparent),
 			color-stop(.5, transparent),
-			color-stop(.5, #E7F8FC),
-			color-stop(.75, #E7F8FC),
+			color-stop(.5, __background_edit_highlight2__),
+			color-stop(.75, __background_edit_highlight2__),
 			color-stop(.75, transparent),
 			to(transparent)
 		);

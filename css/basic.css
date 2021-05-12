@@ -221,6 +221,7 @@ table
 	border: solid 1px __border__;
     border-collapse: collapse;
     border-spacing: 0;
+	line-height: 18px;
 	margin-bottom: 24px;
 	width: 100%;
 }
@@ -237,7 +238,7 @@ table th
 {
     border-bottom: solid 2px __border__;
 	font-weight: bold;
-	padding: 8px 16px;
+	padding: 8px 16px 24px;
 }
 
 table td
