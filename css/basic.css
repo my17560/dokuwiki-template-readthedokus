@@ -271,6 +271,16 @@ abbr[title], dfn[title] {
 	text-decoration: none;
 }
 
+header
+{
+	height: __height_header__;
+}
+
+footer
+{
+	height: __height_footer__
+}
+
 .visible
 {
 	display: block;
