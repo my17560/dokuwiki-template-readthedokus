@@ -66,15 +66,24 @@ div.error, div.info, div.success, div.notify
 	width: auto;
 }
 
+.dokuwiki .secedit
+{
+	float: none;
+	display: inline-block;
+	margin-top: 0;
+	text-align: right;
+	width: 100%;
+}
+
 .dokuwiki .secedit button
 {
     font-size: 75%;
 	font-weight: bold;
     border: none;
-    cursor: pointer;
     background: transparent;
-    color: gray;
 	box-shadow: none;
+    color: gray;
+    cursor: pointer;
 }
 
 #config__manager .selection,
