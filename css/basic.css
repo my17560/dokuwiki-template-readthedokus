@@ -113,6 +113,17 @@ dl dd
 	margin: 0 0 12px 24px;
 }
 
+dl.file dd
+{
+	margin-left: 0;
+}
+
+dl.file dt
+{
+	font-size: 80%;
+	margin-left: 0;
+	margin-bottom: 8px;
+}
 pre
 {
 	background-color: __background_code__;
