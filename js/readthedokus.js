@@ -192,10 +192,21 @@ ReadtheDokus.prototype._getStartPage = function(basePage, delimiter)
 
 	var result = "";
 
+	console.log("@@@", basePage, delimiter);
+
 	if (basePage && delimiter)
 	{
-		var re = new RegExp("\\" + delimiter + "[^\\" + delimiter + "]*[^\\" + delimiter + "]*$");
-		result = basePage.replace(re, "").replace(re, "") + delimiter + "start";
+		switch(delimiter)
+		{
+			case ":":
+				var re = new RegExp("\\" + delimiter + "[^\\" + delimiter + "]*[^\\" + delimiter + "]*$");
+				result = basePage.replace(re, "").replace(re, "") + delimiter + "start";
+				break;
+			case "/":
+				var re = new RegExp("\\" + delimiter + "[^\\" + delimiter + "]*[^\\" + delimiter + "]*$");
+				result = basePage.replace(re, "").replace(re, "") + delimiter + "start";
+				break;
+		}
 	}
 
 	return result;
