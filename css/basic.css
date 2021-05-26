@@ -21,7 +21,7 @@ body
 {
     background-color: __background_alt__;
     color: __text__;
-    font-family: Lato,proxima-nova,Helvetica Neue,Arial,sans-serif;
+    font-family: Lato,proxima-nova,"Helvetica Neue",Arial,sans-serif,"Font Awesome 5 Free";
     font-weight: 400;
 	margin: 0;
     min-height: 100%;
