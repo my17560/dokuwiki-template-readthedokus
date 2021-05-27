@@ -305,6 +305,21 @@ div.error, div.info, div.success, div.notify
 	height: auto;
 }
 
+#acl_manager #acl__tree ul
+{
+	margin: 0;
+}
+
+#acl_manager #acl__tree ul li
+{
+	padding-left: 0;
+}
+
+#acl_manager #acl__tree > ul > li
+{
+	margin-left: 12px;
+}
+
 #acl_manager #acl__detail
 {
 	float: none;
