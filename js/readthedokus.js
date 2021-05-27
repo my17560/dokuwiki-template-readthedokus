@@ -143,7 +143,7 @@ ReadtheDokus.prototype.toggleSidebar = function(elem)
 		document.querySelector("#dokuwiki__site").classList.toggle("showSidebarSP");
 	}
 
-}
+};
 
 ReadtheDokus.prototype.showSidebar = function(elem)
 {
@@ -158,7 +158,7 @@ ReadtheDokus.prototype.showSidebar = function(elem)
 		document.querySelector("#dokuwiki__site").classList.add("showSidebarSP");
 	}
 
-}
+};
 
 ReadtheDokus.prototype.hideSidebar = function(elem)
 {
@@ -172,7 +172,7 @@ ReadtheDokus.prototype.hideSidebar = function(elem)
 		document.querySelector("#dokuwiki__site").classList.remove("showSidebarSP");
 	}
 
-}
+};
 
 
 ReadtheDokus.prototype._enumSidebarLinks = function(callback)
