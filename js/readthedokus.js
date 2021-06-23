@@ -1,3 +1,10 @@
+// -----------------------------------------------------------------------------
+//  Constructor
+// -----------------------------------------------------------------------------
+
+/**
+ * Constructor.
+ */
 function ReadtheDokus()
 {
 
@@ -9,29 +16,31 @@ function ReadtheDokus()
 	this._sidebar = document.querySelector("#dokuwiki__aside");
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
 	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].split(":").join("/") );
-	this._startPage = "";
+	this._startPage = "/";
 
 }
 
+// -----------------------------------------------------------------------------
+//  Methods
+// -----------------------------------------------------------------------------
+
+/**
+ * Run the application.
+ */
 ReadtheDokus.prototype.run = function()
 {
 
-	// Enum sidebar items to
-	//   - embed toc in the corresponding sidebar item
-	//   - collect all page links
+	// Enum sidebar link items
 	var isFound = false;
 	this._pages = [];
 	if (JSINFO["ACT"] == "show")
 	{
 		this._enumSidebarLinks(function(elem) {
-			// Embed toc
-			if (!isFound)
+			// Embed TOC if the current page id matches to the sidebar link
+			if (!isFound && elem.href.indexOf(this._id) > -1)
 			{
-				if (elem.href.indexOf(this._id) > -1)
-				{
-					this._embedToc(elem, this._toc);
-					isFound = true;
-				}
+				this._embedToc(elem, this._toc);
+				isFound = true;
 			}
 
 			// Collect page links
@@ -39,7 +48,7 @@ ReadtheDokus.prototype.run = function()
 		}.bind(this));
 	}
 
-	// Start page
+	// Get start page
 	if (this._pages.length > 0)
 	{
 		this._startPage = this._getStartPage(this._pages[0], this._delimiter);
@@ -51,18 +60,19 @@ ReadtheDokus.prototype.run = function()
 		}.bind(this));
 	}
 
-	// Show toc on top of sidebar if item was not found in sidebar
+	// Show TOC on top of sidebar if matching item was not found in the sidebar
 	if (!isFound && this._toc)
 	{
 		this._showToc(this._toc);
-		this.showSidebar();
 	}
 
+	// Init
 	this._initToc(this._toc);
 	this._initMobileHeader();
 	this._initPageButtons();
 	this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", "Search docs");
 
+	// Scroll the TOC to the top
 	if (this._toc)
 	{
 		this._toc.scrollIntoView(true);
@@ -70,13 +80,27 @@ ReadtheDokus.prototype.run = function()
 
 };
 
-ReadtheDokus.prototype.getMediaQuery = function(elem)
+// -----------------------------------------------------------------------------
+
+/**
+ * Return the media query value depending on the current screen size.
+ *
+ * @return  {String}		"pc" for PC, "tb" for Tablets, or "sp" for Smartphones.
+ */
+ReadtheDokus.prototype.getMediaQuery = function()
 {
 
 	return getComputedStyle(document.querySelector("#__media_query")).getPropertyValue("--media-query").trim() || getComputedStyle(document.querySelector("#__media_query"))["-media-query"].trim();
 
 };
 
+// -----------------------------------------------------------------------------
+
+/**
+ * Toggle a TOC menu item.
+ *
+ * @param	{HTMLElement}	elem				A TOC item element.
+ */
 ReadtheDokus.prototype.toggleTocMenu = function(elem)
 {
 
@@ -92,7 +116,14 @@ ReadtheDokus.prototype.toggleTocMenu = function(elem)
 
 };
 
-ReadtheDokus.prototype.expandTocMenu = function(elem, allChildren)
+// -----------------------------------------------------------------------------
+
+/**
+ * Expand a TOC menu item.
+ *
+ * @param	{HTMLElement}	elem				A toc item element.
+ */
+ReadtheDokus.prototype.expandTocMenu = function(elem)
 {
 
 	if (elem && elem.classList.contains("expandable"))
@@ -111,7 +142,14 @@ ReadtheDokus.prototype.expandTocMenu = function(elem, allChildren)
 
 };
 
-ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
+// -----------------------------------------------------------------------------
+
+/**
+ * Collapse a TOC menu item.
+ *
+ * @param	{HTMLElement}	elem				A toc item element.
+ */
+ReadtheDokus.prototype.collapseTocMenu = function(elem)
 {
 
 	if (elem && elem.classList.contains("expandable"))
@@ -129,8 +167,12 @@ ReadtheDokus.prototype.collapseTocMenu = function(elem, allChildren)
 	}
 
 };
+// -----------------------------------------------------------------------------
 
-ReadtheDokus.prototype.toggleSidebar = function(elem)
+/**
+ * Toggle the sidebar.
+ */
+ReadtheDokus.prototype.toggleSidebar = function()
 {
 
 	var mq = this.getMediaQuery();
@@ -145,7 +187,12 @@ ReadtheDokus.prototype.toggleSidebar = function(elem)
 
 };
 
-ReadtheDokus.prototype.showSidebar = function(elem)
+// -----------------------------------------------------------------------------
+
+/**
+ * Show the sidebar.
+ */
+ReadtheDokus.prototype.showSidebar = function()
 {
 
 	var mq = this.getMediaQuery();
@@ -160,7 +207,12 @@ ReadtheDokus.prototype.showSidebar = function(elem)
 
 };
 
-ReadtheDokus.prototype.hideSidebar = function(elem)
+// -----------------------------------------------------------------------------
+
+/**
+ * Hide the sidebar.
+ */
+ReadtheDokus.prototype.hideSidebar = function()
 {
 
 	if (dokus.getMediaQuery() == "pc" || dokus.getMediaQuery() == "tb")
@@ -174,35 +226,61 @@ ReadtheDokus.prototype.hideSidebar = function(elem)
 
 };
 
+// -----------------------------------------------------------------------------
+//  Privates
+// -----------------------------------------------------------------------------
 
+/**
+ * Enumerates the sidebar links and call the callback function on each item.
+ *
+ * @param	{Function}		callback			A callback function.
+ */
 ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 {
 
 	callback = ( typeof callback === "function" ? callback : function(){} );
 	var links = this._sidebar.querySelectorAll(".aside > #sidebar > ul .level1 a");
 	var nodes = Array.prototype.slice.call(links, 0);
+
 	nodes.forEach(function(elem) {
 		callback(elem);
 	});
 
 };
+// -----------------------------------------------------------------------------
 
+/**
+ * Build and return the start page id.
+ *
+ * @param	{String}		basePage			A base page for the start page.
+ * @param	{String}		delimiter			An id delimiter char.
+ */
 ReadtheDokus.prototype._getStartPage = function(basePage, delimiter)
 {
 
-	var result = "";
+	var result = "/";
 
+	/*
 	if (basePage && delimiter)
 	{
 		var re = new RegExp("\\" + delimiter + "[^\\" + delimiter + "]*[^\\" + delimiter + "]*$");
 		result = basePage.replace(re, "").replace(re, "") + delimiter + "start";
 
 	}
+	*/
 
 	return result;
 
 };
 
+// -----------------------------------------------------------------------------
+
+/**
+ * Embed the TOC in the sidebar. Replace an elmenent with the TOC.
+ *
+ * @param	{HTMLElement}	target				An HTML element to embed the TOC.
+ * @param	{HTMLElement}	toc					A TOC HTML element.
+ */
 ReadtheDokus.prototype._embedToc = function(target, toc)
 {
 
@@ -214,6 +292,13 @@ ReadtheDokus.prototype._embedToc = function(target, toc)
 
 };
 
+// -----------------------------------------------------------------------------
+
+/**
+ * Show the TOC on the current position.
+ *
+ * @param	{HTMLElement}	toc					A TOC HTML element.
+ */
 ReadtheDokus.prototype._showToc = function(toc)
 {
 
@@ -224,6 +309,13 @@ ReadtheDokus.prototype._showToc = function(toc)
 
 };
 
+// -----------------------------------------------------------------------------
+
+/**
+ * Initialize the TOC menu.
+ *
+ * @param	{HTMLElement}	toc					A TOC HTML element.
+ */
 ReadtheDokus.prototype._initToc = function(toc)
 {
 
@@ -236,7 +328,11 @@ ReadtheDokus.prototype._initToc = function(toc)
 
 };
 
-// Install click handler to highlight and expand toc menu
+// -----------------------------------------------------------------------------
+
+/**
+ * Install a click handler to highlight and expand a TOC menu item.
+ */
 ReadtheDokus.prototype._installTocSelectHandler = function()
 {
 
@@ -244,17 +340,17 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 	var nodes = Array.prototype.slice.call(list, 0);
 	nodes.forEach(function(elem) {
 		elem.addEventListener("click", function() {
-			// Get level2 parent
+			// Get the level2 parent element
 			let p = this._getParent(elem, "level2");
 
-			// Remove all current
+			// Remove all "current" class
 			var list2 = this._toc.querySelectorAll(".current");
 			var nodes2 = Array.prototype.slice.call(list2, 0);
 			nodes2.forEach(function(elem) {
 				elem.classList.remove("current");
 			});
 
-			// Set current to this and level2 parent
+			// Add "current" class to the clicked item and its level2 parent
 			if (p)
 			{
 				p.parentNode.classList.add("current");
@@ -263,10 +359,10 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 				elem.scrollIntoView(true);
 			}
 
-			// Expand
+			// Expand the item
 			this.expandTocMenu(elem);
 
-			// Fold the other level2 items
+			// Fold all the other level2 items
 			var list3 = this._toc.querySelectorAll(".level2 > div.li.expandable");
 			var nodes3 = Array.prototype.slice.call(list3, 0);
 			nodes3.forEach(function(item) {
@@ -280,11 +376,15 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 
 };
 
-// Install click handler to expand/collapse toc menu
+// -----------------------------------------------------------------------------
+
+/**
+ * Install a click handler to expand/collapse a TOC menu item.
+ */
 ReadtheDokus.prototype._installTocMenuHandler = function()
 {
 
-	// Search for toc menu items which have children
+	// Search for TOC menu items which have children
 	var list = this._toc.querySelectorAll("div.li");
 	var nodes = Array.prototype.slice.call(list, 0);
 	nodes.forEach(function(elem) {
@@ -310,7 +410,7 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 			}
 		}
 
-		// Install click handler to move an clicked item to top
+		// Install a click handler to move an clicked item to top
 		elem.addEventListener("click", function() {
 			elem.scrollIntoView(true);
 		});
@@ -318,7 +418,11 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 
 };
 
-// Install click handler to jump to anchor taking fixed header into account
+// -----------------------------------------------------------------------------
+
+/**
+ * Install a click handler to jump to the anchor taking the fixed header height into account.
+ */
 ReadtheDokus.prototype._installTocJumpHandler = function()
 {
 
@@ -346,6 +450,15 @@ ReadtheDokus.prototype._installTocJumpHandler = function()
 	}.bind(this));
 
 };
+
+// -----------------------------------------------------------------------------
+
+/**
+ * Return a specified level parent TOC item of the specified element.
+ *
+ * @param	{HTMLElement}	elem				An HTML element.
+ * @param	{String}		level				A depth level.
+ */
 ReadtheDokus.prototype._getParent = function(elem, level)
 {
 
@@ -365,6 +478,11 @@ ReadtheDokus.prototype._getParent = function(elem, level)
 
 };
 
+// -----------------------------------------------------------------------------
+
+/**
+ * Initialize the mobile header. Add an click event listener to toggle the sidebar.
+ */
 ReadtheDokus.prototype._initMobileHeader = function()
 {
 
@@ -375,6 +493,11 @@ ReadtheDokus.prototype._initMobileHeader = function()
 
 };
 
+// -----------------------------------------------------------------------------
+
+/**
+ * Initialize previous/next page buttons. Show/hide buttons depending on the current page index.
+ */
 ReadtheDokus.prototype._initPageButtons = function()
 {
 
