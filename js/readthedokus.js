@@ -338,17 +338,17 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 	var nodes = Array.prototype.slice.call(list, 0);
 	nodes.forEach(function(elem) {
 		elem.addEventListener("click", function() {
-			// Get level2 parent
+			// Get the level2 parent element
 			let p = this._getParent(elem, "level2");
 
-			// Remove all current
+			// Remove all "current" class
 			var list2 = this._toc.querySelectorAll(".current");
 			var nodes2 = Array.prototype.slice.call(list2, 0);
 			nodes2.forEach(function(elem) {
 				elem.classList.remove("current");
 			});
 
-			// Set current to this and level2 parent
+			// Add "current" class to the clicked item and its level2 parent
 			if (p)
 			{
 				p.parentNode.classList.add("current");
@@ -357,10 +357,10 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 				elem.scrollIntoView(true);
 			}
 
-			// Expand
+			// Expand the item
 			this.expandTocMenu(elem);
 
-			// Fold the other level2 items
+			// Fold all the other level2 items
 			var list3 = this._toc.querySelectorAll(".level2 > div.li.expandable");
 			var nodes3 = Array.prototype.slice.call(list3, 0);
 			nodes3.forEach(function(item) {
@@ -408,7 +408,7 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 			}
 		}
 
-		// Install click handler to move an clicked item to top
+		// Install a click handler to move an clicked item to top
 		elem.addEventListener("click", function() {
 			elem.scrollIntoView(true);
 		});
