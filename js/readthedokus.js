@@ -16,7 +16,7 @@ function ReadtheDokus()
 	this._sidebar = document.querySelector("#dokuwiki__aside");
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
 	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].split(":").join("/") );
-	this._startPage = "";
+	this._startPage = "/";
 
 }
 
@@ -258,14 +258,16 @@ ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 ReadtheDokus.prototype._getStartPage = function(basePage, delimiter)
 {
 
-	var result = "";
+	var result = "/";
 
+	/*
 	if (basePage && delimiter)
 	{
 		var re = new RegExp("\\" + delimiter + "[^\\" + delimiter + "]*[^\\" + delimiter + "]*$");
 		result = basePage.replace(re, "").replace(re, "") + delimiter + "start";
 
 	}
+	*/
 
 	return result;
 
