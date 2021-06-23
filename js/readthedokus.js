@@ -64,7 +64,6 @@ ReadtheDokus.prototype.run = function()
 	if (!isFound && this._toc)
 	{
 		this._showToc(this._toc);
-		this.showSidebar();
 	}
 
 	// Init
