@@ -180,6 +180,78 @@
     margin-bottom: 30px;
 }
 
+/* Admonition */
+
+.admonition
+{
+	margin-bottom: 24px;
+	padding-bottom: 1px;
+}
+
+.admonition p
+{
+	padding: 12px;
+	margin-bottom: 0 !important;
+}
+
+.admonition ul:first-child
+{
+	margin: 12px 0 12px 0 !important;
+}
+
+.admonition:before
+{
+	display: block;
+	color: white;
+	font-weight: bold;
+	margin-bottom: 0 !important;
+	padding: 6px 12px;
+}
+
+.admonition.caution:before,
+{
+	background-color: #f0b37e;
+	content: "\f06a\00a0 Caution";
+}
+
+.admonition.caution,
+{
+	background-color: #ffedcc;
+}
+
+.admonition.danger:before,
+{
+	background-color: #f29f97;
+	content: "\f06a\00a0 Danger";
+}
+
+.admonition.danger,
+{
+	background-color: #fdf3f2;
+}
+
+.admonition.tip:before
+{
+	background-color: #1abc9c;
+	content: "\f06a\00a0 Tip";
+}
+
+.admonition.tip
+{
+	background-color: #dbfaf4;
+}
+
+.admonition.note:before
+{
+	background-color: #6ab0de;
+	content: "\f06a\00a0 Note";
+}
+
+.admonition.note
+{
+	background-color: #e7f2fa;
+}
+
 @media (max-width: __media_query_sp__)
 {
 
