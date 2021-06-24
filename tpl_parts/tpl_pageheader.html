@@ -9,7 +9,7 @@
 	<div style="display:flex;align-items:center">
 		<!-- Breadcrumbs -->
 		<div class="breadcrumbs">
-			<?php if ($ACT == "show") { ?>
+			<?php if ($ACT == "show" || $ACT == "search") { ?>
 				<span class="home"><a href="/">Docs</a></span>
 			<?php } else { ?>
 				<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true,'&'); ?>">Admin</a></span>
