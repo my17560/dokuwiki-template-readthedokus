@@ -78,6 +78,23 @@ ReadtheDokus.prototype.run = function()
 		this._toc.scrollIntoView(true);
 	}
 
+	// Anchor jump
+	// 	- Hide the jump target element to prevent the default scroll first.
+	if (document.location.hash)
+	{
+		var style;
+		var elem = document.querySelector(document.location.hash);
+		if (elem)
+		{
+			style = elem.style.display;
+			elem.style.display = "none";
+		}
+		setTimeout(function(){
+			elem.style.display = style;
+			this._jumpToAnchor(document.location.hash);
+		}.bind(this), 0);
+	}
+
 };
 
 // -----------------------------------------------------------------------------
@@ -426,30 +443,52 @@ ReadtheDokus.prototype._installTocMenuHandler = function()
 ReadtheDokus.prototype._installTocJumpHandler = function()
 {
 
-	var headerHeight = this._header.offsetHeight;
-	var list = this._toc.querySelectorAll('a[href*="#"]');
+	var list = document.querySelectorAll('a[href*="#"]');
 	var nodes = Array.prototype.slice.call(list, 0);
 	nodes.forEach(function(elem){
 		elem.addEventListener("click", function(e) {
-			var hash = elem.getAttribute("href");
-			var target = document.querySelector(hash);
-			if (target)
+			var href = elem.getAttribute("href");
+			var hash;
+
+			// Do anchor jump if the link destination is in the same page
+			if (href.substring(0,1) == "#" || elem.getAttribute("title") == document.body.getAttribute("data-id"))
 			{
-				if (dokus.getMediaQuery() == "sp")
-				{
-					this.hideSidebar();
-				}
-
-				var top = target.getBoundingClientRect().top;
-				window.scrollTo(0, window.pageYOffset + top - headerHeight);
+				var index = href.indexOf("#");
+				hash = href.substring(index);
+				this._jumpToAnchor(hash);
+				e.preventDefault();
+				return false;
 			}
-
-			e.preventDefault();
-			return false;
 		}.bind(this));
 	}.bind(this));
 
 };
+
+// -----------------------------------------------------------------------------
+
+/**
+ * Jump to an anchor taking the header height in account.
+ *
+ * @param	{HTMLElement}	elem				An HTML element.
+ * @param	{String}		level				A depth level.
+ */
+ReadtheDokus.prototype._jumpToAnchor = function(hash)
+{
+
+	var target = document.querySelector(hash);
+	if (target)
+	{
+		var headerHeight = this._header.offsetHeight;
+		if (dokus.getMediaQuery() == "sp")
+		{
+			this.hideSidebar();
+		}
+
+		var top = target.getBoundingClientRect().top;
+		window.scrollTo(0, window.pageYOffset + top - headerHeight);
+	}
+
+}
 
 // -----------------------------------------------------------------------------
 
