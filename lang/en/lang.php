@@ -37,4 +37,3 @@ $lang['__height_header__'] = 'Header height';
 $lang['__height_footer__'] = 'Footer height';
 $lang['__media_query_sp__'] = 'CSS breakpoint for smart phones';
 $lang['__media_query_tb__'] = 'CSS breakpoint for tablets';
-$lang['__position_sidebar__'] = 'Sidebar position';
