@@ -507,3 +507,18 @@ div#user__manager > div:nth-child(2) table > tbody:nth-child(3)
 	margin-top: 20px;
 	text-align: right;
 }
+
+.mode_login #dokuwiki__content > .group,
+.mode_resendpwd #dokuwiki__content > .group,
+.mode_register #dokuwiki__content > .group
+{
+	min-height: 100vh;
+	max-width: __width_content__;
+}
+
+#dw__login fieldset,
+#dw__resendpwd fieldset,
+#dw__register fieldset
+{
+	padding: 30px;
+}

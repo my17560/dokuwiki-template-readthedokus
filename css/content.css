@@ -63,6 +63,123 @@
 	margin-bottom: 24px;
 }
 
+.ui-dialog
+{
+	padding: 0;
+	border-radius: 0 !important;
+}
+
+.ui-widget-header
+{
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+.ui-dialog .ui-dialog-content
+{
+	/* padding: 10px !important; */
+}
+
+.ui-dialog .ui-dialog-content > div:first-child
+{
+	padding: 0 10px;
+}
+
+#link__wiz input
+{
+	border: none;
+}
+
+#link__wiz_result
+{
+	border: none !important;
+}
+
+#link__wiz_result div a
+{
+	font-size: 90%;
+	line-height: 24px;
+}
+
+#link__wiz_result div a
+{
+	padding-left: 27px;
+}
+
+#link__wiz_result span
+{
+	font-size: 70%;
+	margin-left: 25px;
+}
+
+#link__wiz_result .type_u,
+#link__wiz_result .type_d,
+#link__wiz_result .type_f
+{
+	height: 45px;
+}
+
+#link__wiz_result div.even
+{
+	background-color: __background_alt__;
+}
+
+#link__wiz_result > div:first-child
+{
+	border-top: dotted 1px lightgray;
+}
+
+#link__wiz_result > div
+{
+	border-bottom: dotted 1px lightgray;
+}
+
+#link__wiz_result > div:hover
+{
+	background-color: pink;
+}
+
+.dokuwiki .search_fullpage_result
+{
+	margin-bottom: 40px;
+}
+
+.dokuwiki dl.search_results dt
+{
+	font-weight: bold;
+    font-size: 120%;
+}
+
+.dokuwiki dl.search_results dd.meta
+{
+	color: #777;
+	font-size: 90%;
+    margin-bottom: .5em;
+}
+
+.dokuwiki dl.search_results dd.snippet
+{
+	color: #404040;
+	font-size: 90%;
+	line-height:24px;
+}
+
+.dokuwiki .search-results-form fieldset.search-form
+{
+	border: none;
+	padding: 0;
+}
+
+.dokuwiki .search-results-form fieldset.search-form input[name="q"]
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.dokuwiki .search-results-form fieldset.search-form button.toggleAssistant {
+    margin-bottom: 30px;
+}
+
 @media (max-width: __media_query_sp__)
 {
 
