@@ -1,7 +1,7 @@
 base     readthedokus
 author   Masaki Yasutake
 email    my17560@gmail.com
-date     2021-05-16
+date     2021-06-24
 name     Read the Dokus Template
 desc     Read the Docs taste template
 url      https://www.dokuwiki.org/template:readthedokus
