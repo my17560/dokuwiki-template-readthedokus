@@ -489,7 +489,7 @@ ReadtheDokus.prototype._jumpToAnchor = function(hash)
 		window.scrollTo(0, window.pageYOffset + top - headerHeight);
 	}
 
-}
+};
 
 // -----------------------------------------------------------------------------
 
