@@ -71,6 +71,7 @@ ReadtheDokus.prototype.run = function()
 	this._initMobileHeader();
 	this._initPageButtons();
 	this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", "Search docs");
+	document.body.setAttribute("data-contentlang", document.body.getAttribute("data-id").split(":")[0]);
 
 	// Scroll the TOC to the top
 	if (this._toc)
