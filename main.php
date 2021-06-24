@@ -26,7 +26,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <?php tpl_includeFile('meta.html') ?>
 </head>
 <body id="dokuwiki__top" data-id="<?php echo $ID ?>" data-namespace="<?php echo $INFO['namespace'] ?>" data-useragent="<?php echo $_SERVER['HTTP_USER_AGENT'] ?>" data-contentlang="<?php echo $conf["lang"] ?>">
-	<div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ); ?>">
+<div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ); ?> <?php echo ($conf["tpl"]["readthedokus"]["sidebarposition"] == "right" ? "rightSidebar" : "leftSidebar" ) ?>">
 		<!-- Header -->
         <?php tpl_includeFile('tpl_parts/tpl_header.html') ?>
 
