@@ -4,11 +4,13 @@
 	<div class="aside include group">
 		<?php tpl_includeFile('tpl_parts/tpl_sidebarheader.html') ?>
 		<div id="sidebar">
+			<?php tpl_includeFile('sidebartop.html') ?>
 			<div style="display:none">
 				<p><strong>Table of Contents</strong></p>
 				<?php tpl_toc()?>
 			</div>
 			<?php tpl_include_page($conf['sidebar'], 1, 1) ?>
+			<?php tpl_includeFile('sidebarbottom.html') ?>
 		</div>
 		<?php tpl_includeFile('tpl_parts/tpl_sidebarfooter.html') ?>
 	</div>
