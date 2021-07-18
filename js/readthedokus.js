@@ -457,6 +457,7 @@ ReadtheDokus.prototype._installTocJumpHandler = function()
 				var index = href.indexOf("#");
 				hash = href.substring(index);
 				this._jumpToAnchor(hash);
+				history.replaceState(undefined, undefined, hash);
 				e.preventDefault();
 				return false;
 			}
