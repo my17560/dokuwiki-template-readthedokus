@@ -84,7 +84,8 @@ ReadtheDokus.prototype.run = function()
 	if (document.location.hash)
 	{
 		var style;
-		var elem = document.querySelector(document.location.hash);
+		var hash = decodeURI(document.location.hash);
+		var elem = document.querySelector(hash);
 		if (elem)
 		{
 			style = elem.style.display;
@@ -92,7 +93,7 @@ ReadtheDokus.prototype.run = function()
 		}
 		setTimeout(function(){
 			elem.style.display = style;
-			this._jumpToAnchor(document.location.hash);
+			this._jumpToAnchor(hash);
 		}.bind(this), 0);
 	}
 
