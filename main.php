@@ -50,5 +50,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
 	<!-- Utils -->
     <div class="no" style="display:none"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
 	<div id="__media_query"></div>
+    <?php tpl_includeFile('util.html'); ?>
 </body>
 </html>
