@@ -1,4 +1,6 @@
 /* DOKUWIKI:include js/readthedokus.js */
 
-var dokus = new ReadtheDokus();
-dokus.run();
+document.addEventListener("DOMContentLoaded", () => {
+	var dokus = new ReadtheDokus();
+	dokus.run();
+});
