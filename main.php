@@ -7,7 +7,7 @@
  * @license  MIT
  */
 
-global $conf, $ID, $INFO, $conf;
+global $conf, $ID, $INFO;
 
 if (!defined('DOKU_INC')) die();
 $showSidebar = page_findnearest($conf['sidebar']);
@@ -24,9 +24,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('tpl_parts/tpl_meta.html') ?>
     <?php tpl_includeFile('meta.html') ?>
+    <?php tpl_includeFile('tpl_parts/tpl_extrafonts.html') ?>
 </head>
 <body id="dokuwiki__top" data-id="<?php echo $ID ?>" data-namespace="<?php echo $INFO['namespace'] ?>" data-useragent="<?php echo $_SERVER['HTTP_USER_AGENT'] ?>" data-contentlang="<?php echo $conf["lang"] ?>">
-<div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ); ?> <?php echo ($conf["tpl"]["readthedokus"]["sidebarposition"] == "right" ? "rightSidebar" : "leftSidebar" ) ?>">
+<div id="dokuwiki__site" class="<?php echo tpl_classes(); ?> <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?> <?php echo ( $showSidebar ? "showSidebar" : "" ); ?> <?php echo (tpl_getConf("sidebarposition") == "right" ? "rightSidebar" : "leftSidebar" ) ?>">
 		<!-- Header -->
         <?php tpl_includeFile('tpl_parts/tpl_header.html') ?>
 

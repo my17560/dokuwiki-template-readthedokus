@@ -1,0 +1,14 @@
+<?php
+// Fontawesome
+if (tpl_getConf("fontawesome_enable"))
+{
+	echo tpl_getConf("fontawesome_tag");
+	tpl_includeFile('tpl_parts/tpl_nosubstitute.css');
+}
+
+// Google font
+if (tpl_getConf("googlefont_enable"))
+{
+	echo tpl_getConf("googlefont_tag");
+}
+?>
