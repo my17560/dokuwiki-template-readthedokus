@@ -130,6 +130,11 @@ div.error, div.info, div.success, div.notify
 	width:100%;
 }
 
+#config__manager td textarea.edit
+{
+	width:100%;
+}
+
 #config__manager tr input[type="checkbox"]
 {
 	width: auto;
