@@ -1,7 +1,7 @@
 <?php
 
 $conf["sidebarposition"] = "left";
-$conf["dokuwikibreadcrums_enable"] = false;
+$conf["dokuwikibreadcrumbs_enable"] = false;
 $conf["startpage"] = "/";
 $conf["fontawesome_enable"] = false;
 $conf["fontawesome_tag"] = '';
