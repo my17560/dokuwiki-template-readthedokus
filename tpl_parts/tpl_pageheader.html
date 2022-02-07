@@ -9,13 +9,17 @@
 	<div style="display:flex;align-items:center">
 		<!-- Breadcrumbs -->
 		<div class="breadcrumbs">
-			<?php if ($ACT == "show" || $ACT == "search") { ?>
-				<span class="home"><a href="/">Docs</a></span>
+			<?php if (tpl_getConf("dokuwikibreadcrums_enable")) { ?>
+				<?php tpl_breadcrumbs(); ?>
+				<?php tpl_youarehere(); ?>
 			<?php } else { ?>
-				<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true,'&'); ?>">Admin</a></span>
+				<?php if ($ACT == "show" || $ACT == "search") { ?>
+					<span class="home"><a href="<?php echo tpl_getConf('startpage'); ?>">Docs</a></span>
+				<?php } else { ?>
+					<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true,'&'); ?>">Admin</a></span>
+				<?php } ?>
+				»  <bdi><?php tpl_pagetitle(); ?></bdi>
 			<?php } ?>
-
-			 »  <bdi><?php tpl_pagetitle(); ?></bdi>
 		</div>
 
 		<!-- Edit this page -->

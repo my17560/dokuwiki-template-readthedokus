@@ -1,8 +1,9 @@
 <?php
 
 $conf["sidebarposition"] = "left";
+$conf["dokuwikibreadcrums_enable"] = false;
+$conf["startpage"] = "/";
 $conf["fontawesome_enable"] = false;
-$conf["fontawesome_tag"] = '<script src="https://kit.fontawesome.com/<your code>.js" crossorigin="anonymous"></script>';
+$conf["fontawesome_tag"] = '';
 $conf["googlefont_enable"] = false;
-$conf["googlefont_tag"] = '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">';
+$conf["googlefont_tag"] = '';

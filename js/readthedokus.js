@@ -53,11 +53,13 @@ ReadtheDokus.prototype.run = function()
 	{
 		this._startPage = this._getStartPage(this._pages[0], this._delimiter);
 		this._pages.unshift(this._startPage);
+		/*
 		var list = document.querySelectorAll("#sidebarheader > div.home > a, #pageheader .breadcrumbs > .home > a");
 		var nodes = Array.prototype.slice.call(list, 0);
 		nodes.forEach(function(elem) {
 			elem.href = this._startPage;
 		}.bind(this));
+		*/
 	}
 
 	// Show TOC on top of sidebar if matching item was not found in the sidebar
@@ -277,7 +279,7 @@ ReadtheDokus.prototype._enumSidebarLinks = function(callback)
 ReadtheDokus.prototype._getStartPage = function(basePage, delimiter)
 {
 
-	var result = "/";
+	var result = document.querySelector("#sidebarheader > div.home > a").href;
 
 	/*
 	if (basePage && delimiter)
