@@ -21,12 +21,11 @@ body
 {
     background-color: __background_alt__;
     color: __text__;
-    font-family: Lato,proxima-nova,"Helvetica Neue",Arial,sans-serif,"Font Awesome 5 Free";
+    font-family: Lato,proxima-nova,"Helvetica Neue",Arial,sans-serif;
     font-weight: 400;
 	margin: 0;
     min-height: 100%;
 	overflow-y: hidden;
-	-webkit-font-smoothing: antialiased;
 }
 
 a
@@ -105,7 +104,7 @@ dl
 
 dl dt
 {
-	font-weight: bold;
+	font-weight: 700;
 	margin-bottom: 12px;
 }
 
@@ -200,7 +199,7 @@ button,
     display: inline-block;
     font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
     font-size: 100%;
-    font-weight: normal;
+    font-weight: 400;
 	height: 35px;
     line-height: normal;
     padding: 6px 12px 8px 12px;
@@ -249,7 +248,7 @@ table thead
 table th
 {
     border-bottom: solid 2px __border__;
-	font-weight: bold;
+	font-weight: 700;
 	padding: 8px 16px 24px;
 }
 
