@@ -14,6 +14,7 @@ function ReadtheDokus()
 	this._toc = document.getElementById("dw__toc");
 	this._header = document.querySelector("header");
 	this._sidebar = document.querySelector("#dokuwiki__aside");
+	this._targetSidebarItem;
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
 	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].split(":").join("/") );
 	this._startPage = "/";
@@ -41,6 +42,7 @@ ReadtheDokus.prototype.run = function()
 			{
 				this._embedToc(elem, this._toc);
 				isFound = true;
+				this._targetSidebarItem = elem;
 			}
 
 			// Collect page links
@@ -80,9 +82,13 @@ ReadtheDokus.prototype.run = function()
 	{
 		this._toc.scrollIntoView(true);
 	}
+	else
+	{
+		this._targetSidebarItem.scrollIntoView(true);
+	}
 
 	// Anchor jump
-	// 	- Hide the jump target element to prevent the default scroll first.
+	// 	- Hide the jump target element first to prevent the default scroll.
 	if (document.location.hash)
 	{
 		var style;
@@ -307,8 +313,8 @@ ReadtheDokus.prototype._embedToc = function(target, toc)
 
 	if (target && toc)
 	{
-		target.parentNode.parentNode.appendChild(toc);
-		target.parentNode.style.display = "none";
+		target.parentNode.appendChild(toc);
+		target.style.display = "none";
 	}
 
 };
