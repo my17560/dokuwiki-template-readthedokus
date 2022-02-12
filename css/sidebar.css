@@ -65,6 +65,22 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	background-color: __background_sidebar_hover__;
 }
 
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 {
+	margin-left: 10px;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 {
+	margin-left: 20px;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 {
+	margin-left: 30px;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > ul > li.level5 {
+	margin-left: 40px;
+}
+
 #dokuwiki__aside #dw__toc
 {
 	background-color: __background_sidebar_toc__;
