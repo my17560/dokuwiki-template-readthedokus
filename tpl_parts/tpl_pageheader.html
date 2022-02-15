@@ -23,7 +23,7 @@
 		</div>
 
 		<!-- Edit this page -->
-		<?php if ($ACT == "show" && $INFO["userinfo"]) { ?>
+		<?php if ($ACT == "show" && $INFO["editable"]) { ?>
 			<a style="margin-left:auto" href="<?php echo wl($ID,array('do'=>'edit'),true,'&'); ?>">
 				<i class="fas fa-pencil-alt"></i>
 				<span> Edit this page</span>
