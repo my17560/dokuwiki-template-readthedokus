@@ -74,7 +74,10 @@ ReadtheDokus.prototype.run = function()
 	this._initToc(this._toc);
 	this._initMobileHeader();
 	this._initPageButtons();
-	this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", "Search docs");
+	var placeHolder = LANG.template.readthedokus.searchform_placeholder;
+	if (placeHolder) {
+		this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", placeHolder);
+	}
 	document.body.setAttribute("data-contentlang", document.body.getAttribute("data-id").split(":")[0]);
 
 	// Scroll the TOC to the top

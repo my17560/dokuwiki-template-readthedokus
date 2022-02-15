@@ -14,9 +14,9 @@
 				<?php tpl_youarehere(); ?>
 			<?php } else { ?>
 				<?php if ($ACT == "show" || $ACT == "search") { ?>
-					<span class="home"><a href="<?php echo tpl_getConf('startpage'); ?>">Docs</a></span>
+				<span class="home"><a href="<?php echo tpl_getConf('startpage'); ?>"><?php echo tpl_getlang("breadcrumbs_docs"); ?></a></span>
 				<?php } else { ?>
-					<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true,'&'); ?>">Admin</a></span>
+				<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true,'&'); ?>"><?php echo tpl_getlang("breadcrumbs_admin"); ?></a></span>
 				<?php } ?>
 				»  <bdi><?php tpl_pagetitle(); ?></bdi>
 			<?php } ?>
@@ -26,7 +26,7 @@
 		<?php if ($ACT == "show" && $INFO["editable"]) { ?>
 			<a style="margin-left:auto" href="<?php echo wl($ID,array('do'=>'edit'),true,'&'); ?>">
 				<i class="fas fa-pencil-alt"></i>
-				<span> Edit this page</span>
+				<span> <?php echo tpl_getlang("pageheader_editthispage"); ?></span>
 			</a>
 		<?php } ?>
 	</div>

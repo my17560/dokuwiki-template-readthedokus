@@ -37,3 +37,10 @@ $lang['__height_header__'] = 'Header height';
 $lang['__height_footer__'] = 'Footer height';
 $lang['__media_query_sp__'] = 'CSS breakpoint for smart phones';
 $lang['__media_query_tb__'] = 'CSS breakpoint for tablets';
+
+$lang['breadcrumbs_docs'] = 'Docs';
+$lang['breadcrumbs_admin'] = 'Admin';
+$lang['pageheader_editthispage'] = 'Edit this page';
+$lang['btn_next'] = 'Next';
+$lang['btn_previous'] = 'Previous';
+$lang['js']['searchform_placeholder'] = 'Search docs';
