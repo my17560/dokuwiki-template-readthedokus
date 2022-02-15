@@ -82,7 +82,7 @@ ReadtheDokus.prototype.run = function()
 	{
 		this._toc.scrollIntoView(true);
 	}
-	else
+	else if (this._targetSidebarItem)
 	{
 		this._targetSidebarItem.scrollIntoView(true);
 	}
