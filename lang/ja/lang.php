@@ -45,4 +45,5 @@ $lang['breadcrumbs_admin'] = '管理';
 $lang['pageheader_editthispage'] = 'このページを編集する';
 $lang['btn_next'] = '進む';
 $lang['btn_previous'] = '戻る';
+$lang['toc_title'] = '目次';
 $lang['js']['searchform_placeholder'] = '文書を検索';

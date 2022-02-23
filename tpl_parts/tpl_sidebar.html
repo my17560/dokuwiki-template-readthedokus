@@ -6,7 +6,7 @@
 		<div id="sidebar">
 			<?php tpl_includeFile('sidebartop.html') ?>
 			<div style="display:none">
-				<p><strong>Table of Contents</strong></p>
+				<p><strong><?php echo tpl_getlang("toc_title") ?></strong></p>
 				<?php tpl_toc()?>
 			</div>
 			<?php tpl_include_page($conf['sidebar'], 1, 1) ?>

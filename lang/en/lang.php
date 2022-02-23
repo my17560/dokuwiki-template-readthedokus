@@ -43,4 +43,5 @@ $lang['breadcrumbs_admin'] = 'Admin';
 $lang['pageheader_editthispage'] = 'Edit this page';
 $lang['btn_next'] = 'Next';
 $lang['btn_previous'] = 'Previous';
+$lang['toc_title'] = 'Table of Contents';
 $lang['js']['searchform_placeholder'] = 'Search docs';
