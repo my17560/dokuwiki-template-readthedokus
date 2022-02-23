@@ -16,7 +16,7 @@ function ReadtheDokus()
 	this._sidebar = document.querySelector("#dokuwiki__aside");
 	this._targetSidebarItem;
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
-	this._id = ( this._delimiter == ":" ? JSINFO["id"] : JSINFO["id"].split(":").join("/") );
+	this._id = JSINFO["id"];
 	this._startPage = "/";
 
 }
@@ -38,7 +38,7 @@ ReadtheDokus.prototype.run = function()
 	{
 		this._enumSidebarLinks(function(elem) {
 			// Embed TOC if the current page id matches to the sidebar link
-			if (!isFound && elem.href.indexOf(this._id) > -1)
+			if (!isFound && elem.getAttribute("data-wiki-id") === this._id)
 			{
 				this._embedToc(elem, this._toc);
 				isFound = true;
