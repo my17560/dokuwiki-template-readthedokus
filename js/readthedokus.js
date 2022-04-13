@@ -469,7 +469,6 @@ ReadtheDokus.prototype._installTocJumpHandler = function()
 				var index = href.indexOf("#");
 				hash = href.substring(index);
 				this._jumpToAnchor(hash);
-				history.replaceState(undefined, undefined, hash);
 				e.preventDefault();
 				return false;
 			}
@@ -492,12 +491,17 @@ ReadtheDokus.prototype._jumpToAnchor = function(hash)
 	var target = document.querySelector(hash);
 	if (target)
 	{
+		// Jump to Anchor
+		location.href = hash;
+
+		// Get Header Height
 		var headerHeight = this._header.offsetHeight;
 		if (dokus.getMediaQuery() == "sp")
 		{
 			this.hideSidebar();
 		}
 
+		// Scroll to the position of Target Element + Header Height
 		var top = target.getBoundingClientRect().top;
 		window.scrollTo(0, window.pageYOffset + top - headerHeight);
 	}
