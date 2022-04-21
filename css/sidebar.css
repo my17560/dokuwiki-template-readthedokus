@@ -48,8 +48,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	white-space: nowrap;
 }
 
-#dokuwiki__aside ul > li > div.li > a,
-#dokuwiki__aside ul > li > div.li > span > a
+#dokuwiki__aside #sidebar ul li a
 {
 	color: __text_sidebar__;
 	display: block;
@@ -59,8 +58,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	position: relative;
 }
 
-#dokuwiki__aside #sidebar > ul > li > div.li > a:hover,
-#dokuwiki__aside #sidebar > ul > li > div.li > span > a:hover
+#dokuwiki__aside #sidebar ul li a:hover
 {
 	background-color: __background_sidebar_hover__;
 }
@@ -145,10 +143,6 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
     border-bottom: solid 1px __background_sidebar_toc_highlight__;
     border-top: solid 1px __background_sidebar_toc_highlight__;
 	background-color: __background__;
-}
-
-#dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child > a
-{
 	font-weight: bold;
 }
 
@@ -186,6 +180,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #dw__toc ul > li.level3 > div.li > a
 {
+	font-size: 80%;
 	padding-left: 3.2em;
 }
 
@@ -196,6 +191,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #dw__toc ul > li.level4 > div.li > a
 {
+	font-size: 80%;
 	padding-left: 4em;
 }
 
@@ -206,7 +202,41 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #dw__toc ul > li.level5 > div.li > a
 {
+	font-size: 80%;
 	padding-left: 4.8em;
+}
+
+/* Plugin Support (simplenavi plugin) */
+
+#dokuwiki__aside .plugin__simplenavi
+{
+	margin: 12px 0 0;
+}
+
+#dokuwiki__aside .plugin__simplenavi ul
+{
+	padding-left: 24px;
+}
+
+#dokuwiki__aside .plugin__simplenavi ul li a
+{
+	padding: .4em 0em;
+}
+
+#dokuwiki__aside .plugin__simplenavi ul li strong > a
+{
+	color: __text_sidebar_caption__;
+}
+
+#dokuwiki__aside .plugin__simplenavi #dw__toc
+{
+	margin-left: -20px;
+	width: unset;
+}
+
+#dokuwiki__aside .plugin__simplenavi #dw__toc > div > .toc > .level1 > div.li:first-child > a
+{
+	padding-left: 20px;
 }
 
 @media (max-width: __media_query_sp__)
