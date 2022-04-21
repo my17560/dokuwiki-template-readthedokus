@@ -208,7 +208,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 /* Plugin Support (simplenavi plugin) */
 
-#dokuwiki__aside .plugin__simplenavi
+#dokuwiki__aside #sidebar .plugin__simplenavi
 {
 	margin: 12px 0 0;
 }
@@ -218,17 +218,17 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	padding-left: 24px;
 }
 
-#dokuwiki__aside .plugin__simplenavi ul li a
+#dokuwiki__aside #sidebar .plugin__simplenavi ul li a
 {
 	padding: .4em 0em;
 }
 
-#dokuwiki__aside .plugin__simplenavi ul li strong > a
+#dokuwiki__aside #sidebar .plugin__simplenavi ul li strong > a
 {
 	color: __text_sidebar_caption__;
 }
 
-#dokuwiki__aside .plugin__simplenavi #dw__toc
+#dokuwiki__aside #sidebar .plugin__simplenavi #dw__toc
 {
 	margin-left: -20px;
 	width: unset;
