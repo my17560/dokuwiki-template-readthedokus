@@ -1,6 +1,8 @@
 # Read the Dokus - Dokuwiki Template
 
-This is a theme that imitates "Read the Docs". 
+This is a Dokuwiki theme that imitates "Read the Docs". 
+
+![c7467c9c43ba585265cf829dd5d1c230 media](https://user-images.githubusercontent.com/49435291/164868953-d272c665-57e4-4c17-87c1-8b238b5ea5d3.png)
 
 Featuring:
 - “Read the Docs” appearance
