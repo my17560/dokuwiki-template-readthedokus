@@ -218,6 +218,10 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	padding-left: 24px;
 }
 
+#dokuwiki__aside #sidebar .plugin__simplenavi strong {
+	font-weight: normal;
+}
+
 #dokuwiki__aside #sidebar .plugin__simplenavi ul li a
 {
 	padding: .4em 0em;
