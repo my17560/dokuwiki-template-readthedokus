@@ -58,6 +58,11 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	position: relative;
 }
 
+#dokuwiki__aside #sidebar ul li a.wikilink2
+{
+	color: gray;
+}
+
 #dokuwiki__aside #sidebar ul li a:hover
 {
 	background-color: __background_sidebar_hover__;
