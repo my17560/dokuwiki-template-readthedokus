@@ -239,7 +239,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #sidebar .plugin__simplenavi #dw__toc
 {
-	margin-left: -20px;
+	margin-left: -24px;
 	width: unset;
 }
 
