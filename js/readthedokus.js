@@ -101,11 +101,20 @@ ReadtheDokus.prototype.run = function()
 		{
 			style = elem.style.display;
 			elem.style.display = "none";
+
+			setTimeout(function(){
+				elem.style.display = style;
+				this._jumpToAnchor(hash);
+			}.bind(this), 0);
+
+			// Select the item in TOC
+			var sidebarItem = document.querySelector("#sidebar #dw__toc a[href='" + hash + "']");
+			if (sidebarItem)
+			{
+				this.expandParentTocMenu(sidebarItem);
+				sidebarItem.click();
+			}
 		}
-		setTimeout(function(){
-			elem.style.display = style;
-			this._jumpToAnchor(hash);
-		}.bind(this), 0);
 	}
 
 };
@@ -168,6 +177,37 @@ ReadtheDokus.prototype.expandTocMenu = function(elem)
 		img.classList.remove("plus");
 		img.classList.add("minus");
 		img.src= DOKU_BASE + "lib/images/minus.gif";
+	}
+
+};
+
+// -----------------------------------------------------------------------------
+
+/**
+ * Expand all the parent TOC menu of the specified element.
+ *
+ * @param	{HTMLElement}	elem				A toc item element.
+ */
+ReadtheDokus.prototype.expandParentTocMenu = function(elem)
+{
+
+	var p = elem.parentNode;
+	while (p)
+	{
+		if (p.classList.contains("toc"))
+		{
+			if (p.previousElementSibling && p.previousElementSibling.classList.contains("expandable"))
+			{
+				this.expandTocMenu(p.previousElementSibling);
+			}
+		}
+
+		if (p.id === "dw__toc")
+		{
+			break;
+		}
+
+		p = p.parentNode;
 	}
 
 };
