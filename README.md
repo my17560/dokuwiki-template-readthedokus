@@ -88,7 +88,7 @@ Note!
 </WRAP>
 ```
 
-If you use the plugin, do not forget to add classes to the "noPrefix" plugin option otherwise admonitions will not be styled correctly. You need to add four types listed above and "admonition" to the option value.
+If you use the plugin, do not forget to add classes (admonition,danger,caution,note,tip) to the "noPrefix" plugin option otherwise admonitions will not be styled correctly. You need to add four types listed above and "admonition" to the option value.
 
 ## Customization
 
