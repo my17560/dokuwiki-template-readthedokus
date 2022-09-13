@@ -14,7 +14,7 @@
 
 <?php } ?>
 
-<?php if (isset($INFO["userinfo"])) { ?>
+<?php if (tpl_getConf("showtoolboxalways_enable") || isset($INFO["userinfo"])) { ?>
 	<nav class="tools" aria-label="<?php echo $lang['tools'] ?>">
 		<div style="display:flex">
 			<div id="dokuwiki__sitetools">
