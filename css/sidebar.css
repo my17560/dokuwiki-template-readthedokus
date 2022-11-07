@@ -22,7 +22,8 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	right: calc(~"(-16px + 100vw - "__width_site__~")/2");
 }
 
-#dokuwiki__aside > .aside {
+#dokuwiki__aside > .aside
+{
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 100%;
@@ -68,19 +69,23 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	background-color: __background_sidebar_hover__;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 {
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2
+{
 	margin-left: 10px;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 {
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3
+{
 	margin-left: 20px;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 {
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4
+{
 	margin-left: 30px;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > ul > li.level5 {
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > ul > li.level5
+{
 	margin-left: 40px;
 }
 
@@ -223,7 +228,8 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	padding-left: 24px;
 }
 
-#dokuwiki__aside #sidebar .plugin__simplenavi strong {
+#dokuwiki__aside #sidebar .plugin__simplenavi strong
+{
 	font-weight: normal;
 }
 
