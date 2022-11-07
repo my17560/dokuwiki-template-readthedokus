@@ -26,6 +26,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 {
 	overflow-y: scroll;
 	overflow-x: hidden;
+	font-size: 90%;
 	height: 100%;
 	width: calc(__width_sidebar__ + 15);
 }
@@ -39,7 +40,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 {
 	color: __text_sidebar_caption__;
 	display: block;
-	font-size: 85%;
+	font-size: 95%;
 	font-weight: bold;
 	height: 32px;
 	line-height: 32px;
@@ -49,14 +50,24 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	white-space: nowrap;
 }
 
+#dokuwiki__aside #sidebar .li
+{
+	line-height: 18px;
+	padding: .4em 0;
+}
+
+#dokuwiki__aside #sidebar .li:has(> #dw__toc)
+{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
 #dokuwiki__aside #sidebar ul li a
 {
 	color: __text_sidebar__;
 	display: block;
-	font-size: 90%;
-	line-height: 18px;
-	padding: .4em 1.6em;
 	position: relative;
+	width: 100%;
 }
 
 #dokuwiki__aside #sidebar ul li a.wikilink2
@@ -64,29 +75,65 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	color: gray;
 }
 
-#dokuwiki__aside #sidebar ul li a:hover
+#dokuwiki__aside #sidebar ul .li:has(a):hover
+/* #dokuwiki__aside #sidebar ul .li:hover */
 {
 	background-color: __background_sidebar_hover__;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2
+#dokuwiki__aside #sidebar ul .li:has(#dw__toc):hover
 {
-	margin-left: 10px;
+	background-color: __background_sidebar__;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3
+#dokuwiki__aside #sidebar > ul > li.level1 > .li
 {
-	margin-left: 20px;
+	padding-left: 1.6em;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4
+#dokuwiki__aside #sidebar > ul > li.level1 > .li:has(#dw__toc)
 {
-	margin-left: 30px;
+	padding-left: 0;
 }
 
-#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > ul > li.level5
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > .li
 {
-	margin-left: 40px;
+	padding-left: 2.4em;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > .li:has(#dw__toc)
+{
+	padding-left: 0;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > .li
+{
+	padding-left: 3.2em;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > .li:has(#dw__toc)
+{
+	padding-left: 0;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > .li
+{
+	padding-left: 4em;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > .li:has(#dw__toc)
+{
+	padding-left: 0;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > ul > li.level5 > .li
+{
+	padding-left: 4.8em;
+}
+
+#dokuwiki__aside #sidebar > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > ul > li.level5 > .li:has(#dw__toc)
+{
+	padding-left: 0;
 }
 
 #dokuwiki__aside #dw__toc
@@ -117,11 +164,6 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	display: none;
 }
 
-#dokuwiki__aside #dw__toc ul > li > div.li
-{
-	padding: 0;
-}
-
 #dokuwiki__aside #dw__toc ul > li > div.li > a
 {
 	color: __text_sidebar_toc__;
@@ -148,12 +190,17 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	width: 11px;
 }
 
-#dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child > a
+#dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child
 {
     border-bottom: solid 1px __background_sidebar_toc_highlight__;
     border-top: solid 1px __background_sidebar_toc_highlight__;
 	background-color: __background__;
 	font-weight: bold;
+}
+
+#dokuwiki__aside #dw__toc > div > .toc > .level1 > div.li:first-child a
+{
+	background-color: __background__;
 }
 
 #dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li.current
@@ -166,7 +213,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	font-weight: bold;
 }
 
-#dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li > a:hover
+#dokuwiki__aside #dw__toc ul.toc > .level1 ul.toc > li > div.li:hover
 {
 	background-color: __background_sidebar_toc_hover__;
 }
@@ -176,6 +223,11 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 #dokuwiki__aside #dw__toc ul > li.level4 > div.li > a .btn-expand i
 {
 	color: __text_sidebar_expand2__;
+}
+
+#dokuwiki__aside #dw__toc ul > li.level1 > div.li > a
+{
+	padding-left: 1.6em;
 }
 
 #dokuwiki__aside #dw__toc ul > li.level2 > div.li > a
@@ -233,11 +285,6 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	font-weight: normal;
 }
 
-#dokuwiki__aside #sidebar .plugin__simplenavi ul li a
-{
-	padding: .4em 0em;
-}
-
 #dokuwiki__aside #sidebar .plugin__simplenavi ul li strong > a
 {
 	color: __text_sidebar_caption__;
@@ -245,13 +292,76 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #sidebar .plugin__simplenavi #dw__toc
 {
-	margin-left: -24px;
+	margin-left: -20px;
 	width: unset;
 }
 
 #dokuwiki__aside .plugin__simplenavi #dw__toc > div > .toc > .level1 > div.li:first-child > a
 {
 	padding-left: 20px;
+}
+
+/* Plugin Support (nspages plugin) */
+
+#dokuwiki__aside #sidebar .plugin_nspages
+{
+	margin: 12px 0 0;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages #dw__toc
+{
+	margin-left: -24px;
+	width: unset;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages > ul > li.level1 > div.li
+{
+	padding-left: 1.6em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages > ul > li.level1 > ul > li.level2 > div.li
+{
+	padding-left: 2.4em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages > ul > li.level1 > ul > li.level2 > ul > li.level3 > div.li
+{
+	padding-left: 3.2em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > div.li
+{
+	padding-left: 4em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages > ul > li.level1 > ul > li.level2 > ul > li.level3 > ul > li.level4 > ul > li.level5 > div.li
+{
+	padding-left: 4.8em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages #dw__toc ul > li.level1 > div.li > a
+{
+	padding-left: 1.6em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages  #dw__toc ul > li.level2 > div.li > a
+{
+	padding-left: 2.4em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages  #dw__toc ul > li.level3 > div.li > a
+{
+	padding-left: 3.2em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages  #dw__toc ul > li.level4 > div.li > a
+{
+	padding-left: 4em;
+}
+
+#dokuwiki__aside #sidebar .plugin_nspages  #dw__toc ul > li.level5 > div.li > a
+{
+	padding-left: 4.8em;
 }
 
 @media (max-width: __media_query_sp__)
