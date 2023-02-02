@@ -28,7 +28,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	overflow-x: hidden;
 	font-size: 90%;
 	height: 100%;
-	width: calc(__width_sidebar__ + 15);
+	width: calc(__width_sidebar__ + 17);
 }
 
 #dokuwiki__aside ul li
