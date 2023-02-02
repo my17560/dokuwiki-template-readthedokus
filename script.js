@@ -2,6 +2,8 @@
 
 var dokus;
 document.addEventListener("DOMContentLoaded", function() {
-	dokus = new ReadtheDokus();
-	dokus.run();
+	if (document.body.id === "dokuwiki__top") {
+		dokus = new ReadtheDokus();
+		dokus.run();
+	}
 });
