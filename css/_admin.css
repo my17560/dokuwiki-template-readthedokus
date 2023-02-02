@@ -528,3 +528,13 @@ div#user__manager > div:nth-child(2) table > tbody:nth-child(3)
 {
 	padding: 30px;
 }
+
+#dw__login label.block {
+	text-align: center;
+}
+
+#dw__login label[for="remember__me"] {
+    display: block;
+	margin-left: 0;
+	text-align: center;
+}
