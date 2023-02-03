@@ -10,8 +10,12 @@
 		<!-- Breadcrumbs -->
 		<div class="breadcrumbs">
 			<?php if (tpl_getConf("dokuwikibreadcrumbs_enable")) { ?>
-				<?php tpl_breadcrumbs(); ?>
-				<?php tpl_youarehere(); ?>
+				<?php if($conf['youarehere']): ?>
+					<div class="youarehere"><?php tpl_youarehere() ?></div>
+				<?php endif ?>
+				<?php if($conf['breadcrumbs']): ?>
+					<div class="trace"><?php tpl_breadcrumbs() ?></div>
+				<?php endif ?>
 			<?php } else { ?>
 				<?php if ($ACT == "show" || $ACT == "search") { ?>
 				<span class="home"><a href="<?php echo tpl_getConf('startpage'); ?>"><?php echo tpl_getlang("breadcrumbs_docs"); ?></a></span>
