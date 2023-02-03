@@ -54,7 +54,8 @@
 #dokuwiki__content img,
 #dokuwiki__content svg
 {
-	max-width: 100%
+	height: auto;
+	max-width: 100%;
 }
 
 #dokuwiki__content .page p
