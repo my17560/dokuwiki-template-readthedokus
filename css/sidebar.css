@@ -270,12 +270,14 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 /* Plugin Support (simplenavi plugin) */
 
-#dokuwiki__aside #sidebar .plugin__simplenavi
+#dokuwiki__aside #sidebar .plugin__simplenavi,
+#dokuwiki__aside #sidebar .acmenu
 {
 	margin: 12px 0 0;
 }
 
-#dokuwiki__aside .plugin__simplenavi ul
+#dokuwiki__aside .plugin__simplenavi ul,
+#dokuwiki__aside .acmenu ul
 {
 	padding-left: 24px;
 }
@@ -290,13 +292,15 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	color: __text_sidebar_caption__;
 }
 
-#dokuwiki__aside #sidebar .plugin__simplenavi #dw__toc
+#dokuwiki__aside #sidebar .plugin__simplenavi #dw__toc,
+#dokuwiki__aside #sidebar .acmenu #dw__toc
 {
 	margin-left: -20px;
 	width: unset;
 }
 
-#dokuwiki__aside .plugin__simplenavi #dw__toc > div > .toc > .level1 > div.li:first-child > a
+#dokuwiki__aside .plugin__simplenavi #dw__toc > div > .toc > .level1 > div.li:first-child > a,
+#dokuwiki__aside .acmenu #dw__toc > div > .toc > .level1 > div.li:first-child > a
 {
 	padding-left: 20px;
 }
