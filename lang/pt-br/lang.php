@@ -3,7 +3,6 @@
 // style.ini values
 
 $lang['__link__'] = 'Cor do link';
-$lang['__existing__'] = 'Cor do link (existente)';
 $lang['__missing__'] = 'Cor do link (inexistente)';
 $lang['__text_theme__'] = 'Cor do tema na cor do texto';
 $lang['__background_theme__'] = 'Cor principal do tema';
