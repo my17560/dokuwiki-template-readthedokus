@@ -3,6 +3,8 @@
 // style.ini values
 
 $lang['__link__'] = 'Link color';
+$lang['__existing__'] = 'Link color (existing)';
+$lang['__missing__'] = 'Link color (missing)';
 $lang['__text_theme__'] = 'Text color on theme color';
 $lang['__background_theme__'] = 'Main theme color';
 $lang['__text_sidebar__'] = 'Sidebar text color';
