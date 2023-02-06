@@ -72,7 +72,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #sidebar ul li a.wikilink2
 {
-	color: gray;
+	color: __missing__;
 }
 
 #dokuwiki__aside #sidebar ul .li:has(a):hover
