@@ -51,6 +51,12 @@
 	margin-left: auto;
 }
 
+#dokuwiki__content div.table
+{
+	margin-bottom: 24px;
+	overflow-x: auto;
+}
+
 #dokuwiki__content img,
 #dokuwiki__content svg
 {
