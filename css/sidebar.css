@@ -50,6 +50,11 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	white-space: nowrap;
 }
 
+#dokuwiki__aside #sidebar
+{
+    width: __width_sidebar__;
+}
+
 #dokuwiki__aside #sidebar .li
 {
 	line-height: 18px;

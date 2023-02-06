@@ -5,6 +5,7 @@
 	padding: 5px .8em;
 	position: absolute;
 	right: 0;
+    width: __width_sidebar__;
 }
 
 #sidebarfooter > div
