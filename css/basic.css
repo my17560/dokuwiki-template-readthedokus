@@ -43,8 +43,8 @@ a:hover
 
 .dokuwiki a.wikilink2
 {
-	color: gray;
-	text-decoration: underline gray 1px dashed !important;
+	color: __missing__;
+	text-decoration: underline __missing__ 1px dashed !important;
 }
 
 .dokuwiki a.wikilink2:link,
