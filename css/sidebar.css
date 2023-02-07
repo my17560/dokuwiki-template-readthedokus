@@ -340,6 +340,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #sidebar .dTreeNode a.navSel {
     color: __text_sidebar_caption__;
+	font-weight: bold;
 }
 
 /* Plugin Support (nspages plugin) */
