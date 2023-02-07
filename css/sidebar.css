@@ -273,7 +273,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	padding-left: 4.8em;
 }
 
-/* Plugin Support (simplenavi plugin) */
+/* Plugin Support (simplenavi and acmenu plugins) */
 
 #dokuwiki__aside #sidebar .plugin__simplenavi,
 #dokuwiki__aside #sidebar .acmenu
@@ -308,6 +308,39 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 #dokuwiki__aside .acmenu #dw__toc > div > .toc > .level1 > div.li:first-child > a
 {
 	padding-left: 20px;
+}
+
+/* Plugin Support (indexmenu plugin) */
+
+#dokuwiki__aside #sidebar .dtree {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#dokuwiki__aside #sidebar > .dtree {
+	margin: 12px 0 0;
+	padding-left: 1.6em;
+}
+
+#dokuwiki__aside #sidebar .dTreeNode {
+    line-height: 18px;
+    padding: 0.4em 0;
+}
+
+#dokuwiki__aside #sidebar .dTreeNode:hover {
+    background-color: __background_sidebar_hover__;
+}
+
+#dokuwiki__aside #sidebar .dtree a:visited, 
+#dokuwiki__aside #sidebar .dtree a:link {
+    color: __text_sidebar__;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#dokuwiki__aside #sidebar .dTreeNode a.navSel {
+    color: __text_sidebar_caption__;
+	font-weight: bold;
 }
 
 /* Plugin Support (nspages plugin) */
