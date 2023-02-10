@@ -534,3 +534,13 @@ div#user__manager > div:nth-child(2) table > tbody:nth-child(3)
 	margin-left: 0;
 	text-align: center;
 }
+
+/* Plugin Support (DokuWiki Synchronization Plugin) */
+
+#sync__direction__table .sync__push,
+#sync__direction__table .sync__skip,
+#sync__direction__table .sync__pull {
+	padding-left: 0;
+	padding-right: 0;
+	text-align: center;
+}
