@@ -197,6 +197,16 @@
     margin-bottom: 30px;
 }
 
+.dokuwiki .JSpopup {
+    background-color: @ini_background;
+    color: @ini_text;
+    border: 1px solid @ini_border;
+    box-shadow: .1em .1em .1em @ini_border;
+    border-radius: 2px;
+    padding: .3em .5em;
+    font-size: .9em;
+}
+
 /* Admonition */
 
 .admonition
