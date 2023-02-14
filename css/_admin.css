@@ -359,9 +359,20 @@ div.error, div.info, div.success, div.notify
 	margin-bottom: 50px;
 }
 
+div#user__manager > div.edit_user:nth-child(3)
+{
+	float: right;
+}
+
+div#user__manager > div.edit_user:nth-child(3) table > tbody:nth-child(3),
 div#user__manager > div:nth-child(2) table > tbody:nth-child(3)
 {
 	text-align: right;
+}
+
+div#user__manager > div.import_users
+{
+	clear: both;
 }
 
 #user__manager table
