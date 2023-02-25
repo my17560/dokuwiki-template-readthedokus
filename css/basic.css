@@ -271,10 +271,18 @@ table tr:nth-child(2n)
 	background-color: #f3f6f6;
 }
 
-sup
-{
-	font-size: 80%;
-	vertical-align: super;
+sub,
+sup {
+    font-size: .8em;
+    line-height: 1;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+sup {
+    vertical-align: super;
 }
 
 blockquote
