@@ -28,7 +28,7 @@
 
 		<!-- Edit this page -->
 		<?php if ($ACT == "show" && (isset($INFO["editable"]) && $INFO["editable"])) { ?>
-			<a style="margin-left:auto" href="<?php echo wl($ID,array('do'=>'edit'),true,'&'); ?>">
+			<a style="margin-left:auto" href="<?php echo (new \dokuwiki\Menu\Item\Edit())->getLink(); ?>">
 				<i class="fas fa-pencil-alt"></i>
 				<span> <?php echo tpl_getlang("pageheader_editthispage"); ?></span>
 			</a>
