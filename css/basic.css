@@ -187,13 +187,6 @@ button:focus
     outline: none;
 }
 
-blockquote
-{
-    line-height: 24px;
-    margin-bottom: 24px;
-    margin-left: 24px;
-}
-
 .qq-upload-button,
 button,
 .btn
@@ -285,11 +278,16 @@ sup {
     vertical-align: super;
 }
 
-blockquote
-{
-    margin-left: 24px;
+blockquote {
+    padding: 0 .5em;
+    border: solid @ini_border;
+    border-width: 0 0 0 .25em;
     line-height: 24px;
     margin-bottom: 24px;
+}
+
+[dir=rtl] blockquote {
+    border-width: 0 .25em 0 0;
 }
 
 abbr[title], dfn[title] {
