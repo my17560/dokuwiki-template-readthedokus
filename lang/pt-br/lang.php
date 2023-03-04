@@ -46,3 +46,10 @@ $lang['btn_next'] = 'Próxima';
 $lang['btn_previous'] = 'Anterior';
 $lang['toc_title'] = 'Índice de Conteúdo';
 $lang['js']['searchform_placeholder'] = 'Pesquisar';
+
+// Admonition
+
+$lang['admonition_note'] = 'Note';
+$lang['admonition_tip'] = 'Tip';
+$lang['admonition_danger'] = 'Danger';
+$lang['admonition_caution'] = 'Caution';

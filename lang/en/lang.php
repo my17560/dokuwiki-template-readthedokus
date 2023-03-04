@@ -46,3 +46,10 @@ $lang['btn_next'] = 'Next';
 $lang['btn_previous'] = 'Previous';
 $lang['toc_title'] = 'Table of Contents';
 $lang['js']['searchform_placeholder'] = 'Search docs';
+
+// Admonition
+
+$lang['admonition_note'] = 'Note';
+$lang['admonition_tip'] = 'Tip';
+$lang['admonition_danger'] = 'Danger';
+$lang['admonition_caution'] = 'Caution';
