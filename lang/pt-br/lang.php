@@ -49,7 +49,7 @@ $lang['js']['searchform_placeholder'] = 'Pesquisar';
 
 // Admonition
 
-$lang['admonition_note'] = 'Note';
-$lang['admonition_tip'] = 'Tip';
-$lang['admonition_danger'] = 'Danger';
-$lang['admonition_caution'] = 'Caution';
+$lang['admonition_note'] = 'Observação';
+$lang['admonition_tip'] = 'Dica';
+$lang['admonition_danger'] = 'Atenção';
+$lang['admonition_caution'] = 'Importante';
