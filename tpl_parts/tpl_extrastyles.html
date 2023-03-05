@@ -1,0 +1,21 @@
+<?php
+// i18n admonition titles
+$icon = ( tpl_getConf("fontawesome_enable") ? "\\f06a\\00a0 " : "" );
+print("
+.admonition.caution:before
+{
+	content: '" . $icon . tpl_getlang("admonition_caution") . "';
+}
+.admonition.danger:before
+{
+	content: '" . $icon . tpl_getlang("admonition_danger") . "';
+}
+.admonition.tip:before
+{
+	content: '" . $icon . tpl_getlang("admonition_tip") . "';
+}
+.admonition.note:before
+{
+	content: '" . $icon . tpl_getlang("admonition_note") . "';
+");
+?>
