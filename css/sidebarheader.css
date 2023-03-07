@@ -5,7 +5,7 @@
 	display: block;
 	padding: .8em;
 	text-align: center;
-    width: __width_sidebar__;
+    width: 100%;
 }
 
 #sidebarheader .home > a

@@ -28,7 +28,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	overflow-x: hidden;
 	font-size: 90%;
 	height: 100%;
-	width: calc(__width_sidebar__ + 17);
+	width: calc(~"100% + 17px");
 }
 
 #dokuwiki__aside ul li
@@ -52,7 +52,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #sidebar
 {
-    width: __width_sidebar__;
+    width: 100%;
 }
 
 #dokuwiki__aside #sidebar .li
