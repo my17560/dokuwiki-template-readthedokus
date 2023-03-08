@@ -35,9 +35,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <?php tpl_includeFile('tpl_parts/tpl_header.html') ?>
 
         <div class="wrapper group">
-			<!-- Sidebar -->
-           	<?php tpl_includeFile('tpl_parts/tpl_sidebar.html') ?>
-
 			<!-- Content -->
 			<main id="dokuwiki__content">
         		<?php tpl_includeFile('tpl_parts/tpl_mobileheader.html') ?>
@@ -45,6 +42,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
             		<?php tpl_includeFile('tpl_parts/tpl_content.html') ?>
 				</div>
 			</main>
+
+			<!-- Sidebar -->
+           	<?php tpl_includeFile('tpl_parts/tpl_sidebar.html') ?>
         </div>
 
 		<!-- Footer -->
