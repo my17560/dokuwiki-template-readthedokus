@@ -28,7 +28,13 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	overflow-x: hidden;
 	font-size: 90%;
 	height: 100%;
-	width: calc(~"100% + 17px");
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	width: 100%;
+}
+
+#dokuwiki__aside > .aside::-webkit-scrollbar {
+	display: none;
 }
 
 #dokuwiki__aside ul li
