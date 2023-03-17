@@ -36,7 +36,6 @@
 #dokuwiki__content > .group
 {
 	padding: 1.618em 3.236em;
-	height: 100%;
 	margin: 0;
 	background-color: __background__;
 }
@@ -303,6 +302,11 @@
 	#dokuwiki__content > .group
 	{
 		padding: 1.6em;
+	}
+
+	.mode_show #dokuwiki__content > .group
+	{
+		max-width: 100%;
 	}
 
 }
