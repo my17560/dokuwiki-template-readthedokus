@@ -40,6 +40,7 @@
 	background-color: __background__;
 }
 
+.mode_search #dokuwiki__content > .group,
 .mode_show #dokuwiki__content > .group
 {
 	max-width: __width_content__;
@@ -304,7 +305,8 @@
 		padding: 1.6em;
 	}
 
-	.mode_show #dokuwiki__content > .group
+	.mode_show #dokuwiki__content > .group,
+	.mode_search #dokuwiki__content > .group
 	{
 		max-width: 100%;
 	}
