@@ -524,7 +524,6 @@ div#user__manager > div.import_users
 	text-align: right;
 }
 
-.mode_search #dokuwiki__content > .group,
 .mode_login #dokuwiki__content > .group,
 .mode_resendpwd #dokuwiki__content > .group,
 .mode_register #dokuwiki__content > .group
