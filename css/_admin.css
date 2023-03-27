@@ -15,6 +15,14 @@
 	-webkit-background-size: 7px 7px;
 }
 
+.dokuwiki table.diff th,
+.dokuwiki table.diff td,
+.dokuwiki table.diff tr:nth-child(2n),
+.dokuwiki table.diff td.diff-context
+{
+	background-color: transparent;
+}
+
 div.error, div.info, div.success, div.notify
 {
 	margin-bottom: 30px;
