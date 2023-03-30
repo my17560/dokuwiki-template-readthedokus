@@ -544,6 +544,7 @@ div#user__manager > div.import_users
 #dw__resendpwd fieldset,
 #dw__register fieldset
 {
+	max-width: 100%;
 	padding: 30px;
 }
 
@@ -561,4 +562,16 @@ div#user__manager > div.import_users
 	padding-left: 0;
 	padding-right: 0;
 	text-align: center;
+}
+
+@media (max-width: __media_query_sp__)
+{
+
+	.mode_login #dokuwiki__content > .group,
+	.mode_resendpwd #dokuwiki__content > .group,
+	.mode_register #dokuwiki__content > .group
+	{
+		max-width: 100%;
+	}
+
 }
