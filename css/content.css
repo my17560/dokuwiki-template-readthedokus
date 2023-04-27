@@ -279,6 +279,30 @@
 	background-color: #e7f2fa;
 }
 
+/* Plugin Support (Bookcreator Plugin) */
+
+div.bookcreator__bookbar
+{
+	margin-bottom: 1.6em;
+	font-size: 90%;
+	line-height: 19.6px;
+	width: 100% !important;
+	background-position: 15px 5px;
+	padding: 5px 5px 5px 70px;
+}
+
+div.bookcreator__bookbar:after
+{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+div.bookcreator__panel
+{
+	margin-right: 20px;
+}
+
 @media (max-width: __media_query_sp__)
 {
 
@@ -309,6 +333,24 @@
 	.mode_search #dokuwiki__content > .group
 	{
 		max-width: 100%;
+	}
+
+	/* Plugin Support (Bookcreator Plugin) */
+
+	div.bookcreator__bookbar > .bookcreator__panel > br
+	{
+		display: none;
+	}
+
+	div.bookcreator__bookbar > .bookcreator__panel > b
+	{
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	div.bookcreator__bookbar > .bookcreator__panel > a
+	{
+		display: inline-block;
 	}
 
 }
