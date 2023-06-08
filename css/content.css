@@ -41,6 +41,8 @@
 }
 
 .mode_search #dokuwiki__content > .group,
+.mode_edit #dokuwiki__content > .group,
+.mode_preview #dokuwiki__content > .group,
 .mode_show #dokuwiki__content > .group
 {
 	max-width: __width_content__;
@@ -329,6 +331,8 @@ div.bookcreator__panel
 		padding: 1.6em;
 	}
 
+	.mode_preview #dokuwiki__content > .group,
+	.mode_edit #dokuwiki__content > .group,
 	.mode_show #dokuwiki__content > .group,
 	.mode_search #dokuwiki__content > .group
 	{
