@@ -564,6 +564,16 @@ div#user__manager > div.import_users
 	text-align: center;
 }
 
+/* Plugin Support (DokuWiki Searchindex Plugin) */
+
+#plugin__searchindex .msg p {
+    margin-left: 24px !important;
+}
+
+#plugin__searchindex .updating {
+    background-position: 5px 7px;
+}
+
 @media (max-width: __media_query_sp__)
 {
 
