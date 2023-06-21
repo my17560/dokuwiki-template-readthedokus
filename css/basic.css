@@ -1,27 +1,3 @@
-html:has(#dokuwiki__site.rightSidebar) {
-	height: 100%;
-	overflow-y: hidden;
-}
-
-body:has(#dokuwiki__site.rightSidebar) {
-	height: 100%;
-}
-
-#dokuwiki__site.rightSidebar {
-	height: 100%;
-	overflow-y: hidden;
-}
-
-#dokuwiki__site.rightSidebar > div.wrapper.group
-{
-	height: 100%;
-	overflow-y: hidden;
-}
-
-#dokuwiki__site.rightSidebar #dokuwiki__content {
-	overflow-y: auto;
-}
-
 * {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
