@@ -533,6 +533,7 @@ div#user__manager > div.import_users
 }
 
 .mode_login #dokuwiki__content > .group,
+.mode_denied #dokuwiki__content > .group,
 .mode_resendpwd #dokuwiki__content > .group,
 .mode_register #dokuwiki__content > .group
 {
@@ -578,6 +579,7 @@ div#user__manager > div.import_users
 {
 
 	.mode_login #dokuwiki__content > .group,
+	.mode_denied #dokuwiki__content > .group,
 	.mode_resendpwd #dokuwiki__content > .group,
 	.mode_register #dokuwiki__content > .group
 	{
