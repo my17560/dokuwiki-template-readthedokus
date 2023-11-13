@@ -74,6 +74,7 @@
 {
 	line-height: 24px;
 	margin: 0 0 24px;
+	overflow-wrap: break-word;
 }
 
 #dokuwiki__content .page ul,ol
