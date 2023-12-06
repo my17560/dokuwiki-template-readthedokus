@@ -318,6 +318,22 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 /* Plugin Support (indexmenu plugin) */
 
+/* No JS */
+
+#dokuwiki__aside #sidebar .indexmenu_nojs > ul.idx {
+	margin-left: 1.6em;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_nojs div.li:has(#dw__toc) {
+	margin-left: -1.6em;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_nojs > ul.idx ul.idx {
+	margin-left: 0.8em;
+}
+
+/* JS */
+
 #dokuwiki__aside #sidebar .dtree {
     font-family: inherit;
     font-size: inherit;
@@ -337,7 +353,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
     background-color: __background_sidebar_hover__;
 }
 
-#dokuwiki__aside #sidebar .dtree a:visited, 
+#dokuwiki__aside #sidebar .dtree a:visited,
 #dokuwiki__aside #sidebar .dtree a:link {
     color: __text_sidebar__;
     background-color: transparent;
