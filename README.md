@@ -9,7 +9,7 @@ This is a DokuWiki theme that imitates "Read the Docs".
 - Embedded foldable TOC in the sidebar
 - Auto generated “Previous”, “Next” buttons to follow the pages on the sidebar
 
-## Installtion
+## Installation
 
 Use DokuWiki's Extention Manager to install the template. If you want to install manually, you can download from [here.](https://github.com/my17560/dokuwiki-template-readthedokus/archive/refs/heads/main.zip)
 
