@@ -70,6 +70,16 @@
 	max-width: 100%;
 }
 
+#dokuwiki__content .mediaright
+{
+	margin: .2em 0 .2em 1em;
+}
+
+#dokuwiki__content .medialeft
+{
+	margin: 0.2em 1em 0.2em 0;
+}
+
 #dokuwiki__content .page
 {
 	overflow-wrap: break-word;
