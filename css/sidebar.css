@@ -332,7 +332,42 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	margin-left: 0.8em;
 }
 
-/* JS */
+/* JS (Treenew) */
+
+#dokuwiki__aside #sidebar > .indexmenu_js2 {
+    padding-left: 1.6em;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node {
+    padding: 0.4em 0;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node:hover {
+    background-color: __background_sidebar_hover__;   
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-folder-o,
+#dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-folder-open-o,
+#dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-file-o {
+    display: none;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node,
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-title {
+    font-family: Lato,proxima-nova,"Helvetica Neue",Arial,sans-serif,"Font Awesome 5 Free";
+    color: __text_sidebar__;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-active span.fancytree-title {
+    background-color: transparent;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-active span.fancytree-title a {
+    color: __link__;
+    font-weight: bold;
+}
+
+/* JS (Treeold) */
 
 #dokuwiki__aside #sidebar .dtree {
     font-family: inherit;
