@@ -28,7 +28,7 @@ function ReadtheDokus()
 /**
  * Run the application.
  */
-ReadtheDokus.prototype.run = function()
+ReadtheDokus.prototype.run = function(options)
 {
 
 	// Enum sidebar link items
@@ -36,7 +36,8 @@ ReadtheDokus.prototype.run = function()
 	this._pages = [];
 	if (JSINFO["ACT"] == "show")
 	{
-		this._enumSidebarLinks(function(elem) {
+		var selector = options && options["linkSelector"] || ""
+		this._enumSidebarLinks(selector, function(elem) {
 			// Embed TOC if the current page id matches to the sidebar link
 			if (!isFound && elem.getAttribute("data-wiki-id") === this._id)
 			{
@@ -303,13 +304,15 @@ ReadtheDokus.prototype.hideSidebar = function()
 /**
  * Enumerates the sidebar links and call the callback function on each item.
  *
+ * @param	{String}		selector			A selector to select link nodes.
  * @param	{Function}		callback			A callback function.
  */
-ReadtheDokus.prototype._enumSidebarLinks = function(callback)
+ReadtheDokus.prototype._enumSidebarLinks = function(selector, callback)
 {
 
 	callback = ( typeof callback === "function" ? callback : function(){} );
-	var links = this._sidebar.querySelectorAll(".aside > #sidebar a[data-wiki-id]");
+	selector = selector || ".aside > #sidebar a[data-wiki-id]";
+	var links = this._sidebar.querySelectorAll(selector);
 	var nodes = Array.prototype.slice.call(links, 0);
 
 	nodes.forEach(function(elem) {
