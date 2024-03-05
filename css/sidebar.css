@@ -153,6 +153,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	float: none;
 	margin: 0;
 	width: 100%;
+	min-width: 12em;
 }
 
 #dokuwiki__aside #dw__toc ul.toc
@@ -342,6 +343,10 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
     padding: 0.4em 0;
 }
 
+#dokuwiki__aside #sidebar .indexmenu_js2 ul li {
+    overflow-y: scroll;
+}
+
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node:hover {
     background-color: __background_sidebar_hover__;   
 }
@@ -365,6 +370,14 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-active span.fancytree-title a {
     color: __link__;
     font-weight: bold;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-active span.fancytree-title #dw__toc a {
+    color: __text_sidebar_toc__;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-active span.fancytree-title #dw__toc li.level2 div:not(.current) a {
+    font-weight: normal;
 }
 
 /* JS (Treeold) */
