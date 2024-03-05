@@ -36,7 +36,7 @@ ReadtheDokus.prototype.run = function(options)
 	this._pages = [];
 	if (JSINFO["ACT"] == "show")
 	{
-		var selector = options && options["linkSelector"] || ""
+		var selector = options && options["linkSelector"] || "";
 		this._enumSidebarLinks(selector, function(elem) {
 			// Embed TOC if the current page id matches to the sidebar link
 			if (!isFound && elem.getAttribute("data-wiki-id") === this._id)
