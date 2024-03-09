@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			dokus.run({"linkSelector":selector});
 		});
 		jQuery(".indexmenu_js2").on("fancytreeexpand", (e) =>{
-			dokus.run({"linkSelector":selector});
+			dokus.refreshPageLinks(selector);
 		});
 	} else {
 		/* Without Indexmenu */

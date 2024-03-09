@@ -8,16 +8,12 @@
 function ReadtheDokus()
 {
 
-	this._currentPage;
-	this._currentPageIndex;
 	this._pages;
+	this._options;
 	this._toc = document.getElementById("dw__toc");
 	this._header = document.querySelector("header");
 	this._sidebar = document.querySelector("#dokuwiki__aside");
-	this._targetSidebarItem;
 	this._delimiter = ( window.location.search.indexOf(":") > -1 ? ":" : "/");
-	this._id = JSINFO["id"];
-	this._startPage = "/";
 
 }
 
@@ -27,72 +23,32 @@ function ReadtheDokus()
 
 /**
  * Run the application.
+ *
+ * @param	{Object}		options				Options. Has following keys:
+ * 												"selector": selector to the sidebar links.
  */
 ReadtheDokus.prototype.run = function(options)
 {
 
-	// Enum sidebar link items
-	var isFound = false;
-	this._pages = [];
-	if (JSINFO["ACT"] == "show")
-	{
-		var selector = options && options["linkSelector"] || "";
-		this._enumSidebarLinks(selector, function(elem) {
-			// Embed TOC if the current page id matches to the sidebar link
-			if (!isFound && elem.getAttribute("data-wiki-id") === this._id)
-			{
-				this._embedToc(elem, this._toc);
-				isFound = true;
-				this._targetSidebarItem = elem;
-			}
-
-			// Collect page links
-			this._pages.push(elem.href);
-		}.bind(this));
-	}
-
-	// Get start page
-	if (this._pages.length > 0)
-	{
-		this._startPage = this._getStartPage(this._pages[0], this._delimiter);
-		this._pages.unshift(this._startPage);
-		/*
-		var list = document.querySelectorAll("#sidebarheader > div.home > a, #pageheader .breadcrumbs > .home > a");
-		var nodes = Array.prototype.slice.call(list, 0);
-		nodes.forEach(function(elem) {
-			elem.href = this._startPage;
-		}.bind(this));
-		*/
-	}
-
-	// Show TOC on top of sidebar if matching item was not found in the sidebar
-	if (!isFound && this._toc)
-	{
-		this._showToc(this._toc);
-	}
+	this._options = options || {};
 
 	// Init
 	this._initToc(this._toc);
 	this._initMobileHeader();
-	this._initPageButtons();
 	var placeHolder = LANG.template.readthedokus.searchform_placeholder;
 	if (placeHolder) {
 		this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", placeHolder);
 	}
 	document.body.setAttribute("data-contentlang", document.body.getAttribute("data-id").split(":")[0]);
 
-	// Scroll the TOC to the top
-	if (this._toc)
-	{
-		this._toc.scrollIntoView(true);
-	}
-	else if (this._targetSidebarItem)
-	{
-		this._targetSidebarItem.scrollIntoView(true);
-	}
+	// Embed TOC
+	var selector = options && options["linkSelector"] || "";
+	this.embedTOC(selector);
+
+	// Collect page links
+	this.refreshPageLinks(selector);
 
 	// Anchor jump
-	// 	- Hide the jump target element first to prevent the default scroll.
 	if (document.location.hash)
 	{
 		var style;
@@ -100,6 +56,7 @@ ReadtheDokus.prototype.run = function(options)
 		var elem = document.querySelector(hash);
 		if (elem)
 		{
+			// Hide the jump target element first to prevent the default scroll.
 			style = elem.style.display;
 			elem.style.display = "none";
 
@@ -117,6 +74,92 @@ ReadtheDokus.prototype.run = function(options)
 			}
 		}
 	}
+
+};
+
+// -----------------------------------------------------------------------------
+
+/**
+ * Embed the TOC in the sidebar. Replace an elmenent with the TOC.
+ *
+ * @param	{String}		selector			A selector to the sidebar links.
+ */
+ReadtheDokus.prototype.embedTOC = function(selector)
+{
+
+	var isFound = false;
+	var sidebarItem;
+
+	if (JSINFO["ACT"] == "show")
+	{
+		this._enumSidebarLinks(selector, function(elem) {
+			// Embed TOC if the current page id matches to the sidebar link
+			if (!isFound && elem.getAttribute("data-wiki-id") === JSINFO["id"])
+			{
+				if (elem && this._toc)
+				{
+					// Embed
+					elem.parentNode.appendChild(this._toc);
+					elem.style.display = "none";
+				}
+
+				isFound = true;
+				sidebarItem = elem;
+			}
+		}.bind(this));
+	}
+
+	// Show TOC on top of sidebar if matching item was not found in the sidebar
+	if (!isFound && this._toc )
+	{
+		this._toc.parentNode.style.display = "block";
+	}
+
+	// Scroll the TOC to the top
+	if (this._toc)
+	{
+		this._toc.scrollIntoView(true);
+	}
+	else if (sidebarItem)
+	{
+		sidebarItem.scrollIntoView(true);
+	}
+
+};
+
+// -----------------------------------------------------------------------------
+
+/**
+ * Re-collect page links from the side bar and refresh next/prev buttons.
+ *
+ * @param	{String}		selector			A selector to the sidebar links.
+ */
+ReadtheDokus.prototype.refreshPageLinks = function(selector)
+{
+
+	this._pages = [];
+
+	// Collect page links
+	this._enumSidebarLinks(selector, function(elem) {
+		this._pages.push(elem.href);
+	}.bind(this));
+
+	// Get start page
+	if (this._pages.length > 0)
+	{
+		var startPage = this._getStartPage(this._pages[0], this._delimiter);
+		this._pages.unshift(startPage);
+		/*
+		var list = document.querySelectorAll("#sidebarheader > div.home > a, #pageheader .breadcrumbs > .home > a");
+		var nodes = Array.prototype.slice.call(list, 0);
+		nodes.forEach(function(elem) {
+			elem.href = this._startPage;
+		}.bind(this));
+		*/
+	}
+
+	// Init next/prev buttons
+	this._initPageButtons();
 
 };
 
@@ -349,42 +392,6 @@ ReadtheDokus.prototype._getStartPage = function(basePage, delimiter)
 // -----------------------------------------------------------------------------
 
 /**
- * Embed the TOC in the sidebar. Replace an elmenent with the TOC.
- *
- * @param	{HTMLElement}	target				An HTML element to embed the TOC.
- * @param	{HTMLElement}	toc					A TOC HTML element.
- */
-ReadtheDokus.prototype._embedToc = function(target, toc)
-{
-
-	if (target && toc)
-	{
-		target.parentNode.appendChild(toc);
-		target.style.display = "none";
-	}
-
-};
-
-// -----------------------------------------------------------------------------
-
-/**
- * Show the TOC on the current position.
- *
- * @param	{HTMLElement}	toc					A TOC HTML element.
- */
-ReadtheDokus.prototype._showToc = function(toc)
-{
-
-	if (toc)
-	{
-		this._toc.parentNode.style.display = "block";
-	}
-
-};
-
-// -----------------------------------------------------------------------------
-
-/**
  * Initialize the TOC menu.
  *
  * @param	{HTMLElement}	toc					A TOC HTML element.
@@ -581,7 +588,7 @@ ReadtheDokus.prototype._getParent = function(elem, level)
 // -----------------------------------------------------------------------------
 
 /**
- * Initialize the mobile header. Add an click event listener to toggle the sidebar.
+ * Initialize the mobile header. Add a click event listener to toggle the sidebar.
  */
 ReadtheDokus.prototype._initMobileHeader = function()
 {
@@ -601,24 +608,22 @@ ReadtheDokus.prototype._initMobileHeader = function()
 ReadtheDokus.prototype._initPageButtons = function()
 {
 
-	// Get current page (remove hash)
-	this._currentPage = window.location.href.replace(/#.*$/, "");
-
-	// Get current page index
-	this._currentPageIndex = this._pages.indexOf(this._currentPage);
+	// Get current page (remove hash) and index
+	var currentPage = window.location.href.replace(/#.*$/, "");
+	var currentPageIndex = this._pages.indexOf(currentPage);
 
 	// Show prev button
-	if (this._currentPageIndex > 0)
+	if (currentPageIndex > 0)
 	{
 		document.getElementById("btn-prevpage").classList.remove("invisible");
-		document.getElementById("btn-prevpage").href = this._pages[this._currentPageIndex - 1];
+		document.getElementById("btn-prevpage").href = this._pages[currentPageIndex - 1];
 	}
 
 	// Show next button
-	if (this._currentPageIndex > -1 && this._currentPageIndex < this._pages.length - 1)
+	if (currentPageIndex > -1 && currentPageIndex < this._pages.length - 1)
 	{
 		document.getElementById("btn-nextpage").classList.remove("invisible");
-		document.getElementById("btn-nextpage").href = this._pages[this._currentPageIndex + 1];
+		document.getElementById("btn-nextpage").href = this._pages[currentPageIndex + 1];
 	}
 
 };
