@@ -94,7 +94,7 @@ ReadtheDokus.prototype.embedTOC = function(selector)
 	{
 		this._enumSidebarLinks(selector, function(elem) {
 			// Embed TOC if the current page id matches to the sidebar link
-			if (!isFound && elem.getAttribute("data-wiki-id") === JSINFO["id"])
+			if (!isFound && (elem.getAttribute("data-wiki-id") === JSINFO["id"] || elem.getAttribute("data-wiki-id") === (JSINFO["id"] + ":")))
 			{
 				if (elem && this._toc)
 				{
