@@ -128,7 +128,7 @@ div.error, div.info, div.success, div.notify
 	width: 50%;
 }
 
-#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault
+#config__manager tr.default .input, #config__manager tr.default input, #config__manager tr.default textarea, #config__manager tr.default select, #config__manager .selectiondefault, #config__manager tr.protected .selection
 {
     width: 100%;
 }
