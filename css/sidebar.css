@@ -398,8 +398,8 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 }
 
 #dokuwiki__aside #sidebar .dTreeNode {
+    color: __text_sidebar__;
     line-height: 18px;
-    padding: 0.4em 0;
 }
 
 #dokuwiki__aside #sidebar .dTreeNode:hover {
@@ -413,9 +413,13 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
     text-decoration: none;
 }
 
-#dokuwiki__aside #sidebar .dTreeNode a.navSel {
+#dokuwiki__aside #sidebar .dtree .dTreeNode a.navSel {
     color: __text_sidebar_caption__;
 	font-weight: bold;
+}
+
+#dokuwiki__aside #sidebar .dtree .indexmenu_tocbullet {
+	margin: 3px 0 0 3px;
 }
 
 /* Plugin Support (nspages plugin) */
