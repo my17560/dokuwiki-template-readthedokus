@@ -337,7 +337,8 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 #dokuwiki__aside #sidebar .indexmenu_js2 ul.fancytree-container {
 	font-family: inherit;
 	overflow-x: hidden;
-	padding: 0 0 0 1.6em;
+	padding: 0;
+	white-space: normal;
 }
 
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-title {
