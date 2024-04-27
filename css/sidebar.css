@@ -365,6 +365,11 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	margin-left: -1.58em;
 }
 
+#dokuwiki__aside #sidebar > .indexmenu_js2 li:has(> .fancytree-folder > .fancytree-title #dw__toc) ~ li{
+	background-color: red;
+	margin-left: 21px;
+}
+
 #dokuwiki__aside #sidebar > .indexmenu_js2.skin-awesome span.fancytree-active span.fancytree-title {
 	background-color: transparent;
 }
