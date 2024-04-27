@@ -352,13 +352,13 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node {
 	display: flex;
 	min-width: 0;
-	overflow: hidden;
 	white-space: nowrap;
 }
 
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node,
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-title {
     color: __text_sidebar__;
+	overflow: hidden;
 }
 
 #dokuwiki__aside #sidebar > .indexmenu_js2 span:not(.fancytree-folder) > .fancytree-title:has(> #dw__toc) {
