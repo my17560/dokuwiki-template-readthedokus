@@ -349,6 +349,13 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	width: 100%;
 }
 
+#dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node {
+	display: flex;
+	min-width: 0;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node,
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-title {
     color: __text_sidebar__;
