@@ -320,8 +320,18 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 /* No JS */
 
+#dokuwiki__aside #sidebar .indexmenu_nojs span.curid a,
+#dokuwiki__aside #sidebar .indexmenu_nojs a.indexmenu_idx_head {
+	font-weight: normal;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_nojs #dw__toc > div > .toc > .level1 > div.li:first-child a {
+	font-weight: bold;
+}
+
 #dokuwiki__aside #sidebar .indexmenu_nojs > ul.idx {
-	margin-left: 1.6em;
+	margin-left: 2.4em;
+	white-space: nowrap;
 }
 
 #dokuwiki__aside #sidebar .indexmenu_nojs div.li:has(#dw__toc) {
@@ -358,23 +368,8 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node,
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-title {
     color: __text_sidebar__;
+	line-height: 1.4em;
 	overflow: hidden;
-}
-
-#dokuwiki__aside #sidebar > .indexmenu_js2 span:not(.fancytree-folder) > .fancytree-title:has(> #dw__toc) {
-	margin-left: -1.58em;
-}
-
-#dokuwiki__aside #sidebar > .indexmenu_js2 li:has(> .fancytree-folder > .fancytree-title #dw__toc) ~ li{
-	margin-left: 21px;
-}
-
-#dokuwiki__aside #sidebar > .indexmenu_js2.skin-awesome span.fancytree-active span.fancytree-title {
-	background-color: transparent;
-}
-
-#dokuwiki__aside #sidebar > .indexmenu_js2.skin-awesome span.fancytree-focused span.fancytree-title {
-	outline: none;
 }
 
 #dokuwiki__aside #sidebar .indexmenu_js2 span.fancytree-node:not(:has(#dw__toc)) {
@@ -385,15 +380,62 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
     background-color: __background_sidebar_hover__;
 }
 
+/* (skin-win7) */
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-win7 span.fancytree-title {
+	background: none;
+	border-radius: 0px;
+}
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-win7 span.fancytree-node:has(#dw__toc) > .fancytree-icon {
+	margin-top: 7px;
+}
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-win7  span.fancytree-icon {
+	margin: 1px 5px 0 0
+}
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-win7 span.fancytree-title:hover {
+	background: none;
+	border: none;
+}
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-win7 span.fancytree-node {
+	line-height: inherit;
+	min-height: 0;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2.skin-win7 .fancytree-active > .fancytree-title:has(#dw__toc) {
+	margin-left: -1.8em;
+}
+
+/* (skin-awesome) */
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-awesome span:not(.fancytree-folder) > .fancytree-title:has(> #dw__toc) {
+	margin-left: -1.58em;
+}
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-awesome span.fancytree-active span.fancytree-title {
+	background-color: transparent;
+}
+
+#dokuwiki__aside #sidebar > .indexmenu_js2.skin-awesome span.fancytree-focused span.fancytree-title {
+	outline: none;
+}
+
 #dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-expander {
 	margin-right: 5px;
-	margin-top: -1px !important;
+	margin-top: 1px !important;
 }
 
 #dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-folder-o,
 #dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-folder-open-o,
 #dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-file-o {
     display: none;
+}
+
+#dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome li:has(> .fancytree-folder > .fancytree-title #dw__toc) ~ li{
+	margin-left: 21px;
 }
 
 /* JS (Treeold) */
@@ -405,6 +447,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 
 #dokuwiki__aside #sidebar > .dtree {
 	margin: 12px 0 0;
+	overflow-x: hidden;
 	padding-left: 1.6em;
 }
 
