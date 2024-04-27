@@ -405,7 +405,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	min-height: 0;
 }
 
-#dokuwiki__aside #sidebar .indexmenu_js2.skin-win7 .fancytree-active > .fancytree-title:has(#dw__toc) {
+#dokuwiki__aside #sidebar .indexmenu_js2.skin-win7 .fancytree-title:has(#dw__toc) {
 	margin-left: -1.8em;
 }
 
