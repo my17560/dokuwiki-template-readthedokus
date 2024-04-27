@@ -65,6 +65,7 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 {
 	line-height: 18px;
 	padding: .4em 0;
+	white-space: nowrap;
 }
 
 #dokuwiki__aside #sidebar .li:has(> #dw__toc)
