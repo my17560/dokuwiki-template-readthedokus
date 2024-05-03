@@ -419,7 +419,7 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 	var list = this._toc.querySelectorAll(".level1 div.li");
 	var nodes = Array.prototype.slice.call(list, 0);
 	nodes.forEach(function(elem) {
-		elem.addEventListener("click", function() {
+		elem.addEventListener("click", function(e) {
 			// Get the level2 parent element
 			let p = this._getParent(elem, "level2");
 
@@ -451,6 +451,8 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 					this.collapseTocMenu(item);
 				}
 			}.bind(this));
+
+			e.preventDefault();
 		}.bind(this));
 	}.bind(this));
 
