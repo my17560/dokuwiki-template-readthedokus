@@ -429,6 +429,10 @@ body[data-useragent*='Trident'] .rightSidebar #dokuwiki__aside
 	margin-top: 1px !important;
 }
 
+#dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-expander:has(~ .fancytree-title > #dw__toc) {
+	margin-top: 7px !important;
+}
+
 #dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-folder-o,
 #dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-folder-open-o,
 #dokuwiki__aside #sidebar .indexmenu_js2.skin-awesome span.fancytree-icon.fa-file-o {

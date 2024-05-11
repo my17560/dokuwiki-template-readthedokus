@@ -452,7 +452,7 @@ ReadtheDokus.prototype._installTocSelectHandler = function()
 				}
 			}.bind(this));
 
-			e.preventDefault();
+			e.stopPropagation();
 		}.bind(this));
 	}.bind(this));
 
