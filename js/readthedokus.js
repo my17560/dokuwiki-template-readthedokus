@@ -35,7 +35,7 @@ ReadtheDokus.prototype.run = function(options)
 	// Init
 	this._initToc(this._toc);
 	this._initMobileHeader();
-	var placeHolder = LANG.template.readthedokus.searchform_placeholder;
+	var placeHolder = this.safeGet(LANG, "template.readthedokus.searchform_placeholder");
 	if (placeHolder) {
 		this._sidebar.querySelector("#sidebarheader #qsearch__in").setAttribute("placeholder", placeHolder);
 	}
@@ -93,6 +93,7 @@ ReadtheDokus.prototype.embedTOC = function(selector)
 	if (JSINFO["ACT"] == "show")
 	{
 		this._enumSidebarLinks(selector, function(elem) {
+			console.log("@@@", elem);
 			// Embed TOC if the current page id matches to the sidebar link
 			if (!isFound && (elem.getAttribute("data-wiki-id") === JSINFO["id"] || elem.getAttribute("data-wiki-id") === (JSINFO["id"] + ":")))
 			{
@@ -627,5 +628,40 @@ ReadtheDokus.prototype._initPageButtons = function()
 		document.getElementById("btn-nextpage").classList.remove("invisible");
 		document.getElementById("btn-nextpage").href = this._pages[currentPageIndex + 1];
 	}
+
+};
+
+// -----------------------------------------------------------------------------
+
+/**
+ * Get an value from object. Return default value when specified key is not available.
+ *
+ * @param	{Object}		store				Object that holds keys/values.
+ * @param	{String}		key					Key to get.
+ * @param	{Object}		defaultValue		Value returned when key is not found.
+ *
+ * @return  {*}				Value.
+ */
+ReadtheDokus.prototype.safeGet = function(store, key, defaultValue)
+{
+
+	let current = store;
+	let found = true;
+
+	let keys = key.split(".");
+	for (let i = 0; i < keys.length; i++)
+	{
+		if (current !== null && typeof current === "object" && keys[i] in current)
+		{
+			current = current[keys[i]];
+		}
+		else
+		{
+			found = false;
+			break;
+		}
+	}
+
+	return ( found ? current : defaultValue);
 
 };
