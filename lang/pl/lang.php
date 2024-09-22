@@ -6,7 +6,7 @@ $lang['__link__'] = 'Kolor łącza';
 $lang['__missing__'] = 'Kolor łącza (nieistniejącego)';
 $lang['__text_theme__'] = 'Kolor tekstu na kolorze motywu';
 $lang['__background_theme__'] = 'Główny kolor motywu';
-$lang['__text_sidebar__'] = 'Kolor teksu w pasku bocznym';
+$lang['__text_sidebar__'] = 'Kolor tekstu w pasku bocznym';
 $lang['__background_sidebar__'] = 'Kolor tła paska bocznego';
 $lang['__background_sidebar_hover__'] = 'Kolor podświetlonego tła w pasku bocznym (po najechaniu)';
 $lang['__text_sidebar_caption__'] = 'Kolor nagłówka paska bocznego';
@@ -39,11 +39,11 @@ $lang['__height_footer__'] = 'Wysokość stopki';
 $lang['__media_query_sp__'] = 'Szerokość graniczna dla telefonów';
 $lang['__media_query_tb__'] = 'Szerokość graniczna dla tabletów';
 
-$lang['breadcrumbs_docs'] = 'Docs';
-$lang['breadcrumbs_admin'] = 'Admin';
+$lang['breadcrumbs_docs'] = '<i class="fas fa-home"></i>';
+$lang['breadcrumbs_admin'] = '<i class="fas fa-cog"></i>';
 $lang['pageheader_editthispage'] = 'Edytuj stronę';
 $lang['btn_next'] = 'Następna';
-$lang['btn_previous'] = 'Poprzedna';
+$lang['btn_previous'] = 'Poprzednia';
 $lang['toc_title'] = 'Spis treści';
 $lang['js']['searchform_placeholder'] = 'Szukaj';
 
