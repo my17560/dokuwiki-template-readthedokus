@@ -1,4 +1,4 @@
-<?php global $conf, $lang, $ACT, $INFO, $ID, $DOKU_BASE ?>
+<?php global $conf, $lang, $ACT, $INFO, $ID, $DOKU_BASE, $INPUT ?>
 
 <div id="pageheader">
 	<!-- Messages -->
@@ -17,12 +17,41 @@
 					<div class="trace"><?php tpl_breadcrumbs() ?></div>
 				<?php endif ?>
 			<?php } else { ?>
-				<?php if ($ACT == "show" || $ACT == "search") { ?>
-				<span class="home"><a href="<?php echo tpl_getConf('startpage'); ?>"><?php echo tpl_getlang("breadcrumbs_docs"); ?></a></span>
-				<?php } else { ?>
-				<span class="admin"><a href="<?php echo wl($ID,array('do'=>'admin'),true,'&'); ?>"><?php echo tpl_getlang("breadcrumbs_admin"); ?></a></span>
-				<?php } ?>
-				»  <bdi><?php tpl_pagetitle(); ?></bdi>
+				<?php
+					if ("show" == $ACT) {
+						//build full path
+						$orgValue = $conf['youarehere'];
+						$conf['youarehere'] = true;
+						$youarehere = tpl_youarehere('» ', true);
+						$conf['youarehere'] = $orgValue;
+
+						//remove text youarehere
+						$youarehere = preg_replace('/.*?bchead.*?span>/', '', $youarehere);
+
+						//replace home
+						$youarehere = preg_replace('/.*?home.*?span>/', '<span class="home"><a href="'.tpl_getConf('startpage').'">'.tpl_getlang("breadcrumbs_docs").'</a></span>', $youarehere);
+
+						//replace current page
+						$matches = array();
+						preg_match_all('/<bdi>.*?<\/bdi>/', $youarehere, $matches);
+
+						$last = end($matches[0]);
+						if (false === $last) {
+							$youarehere .= '» <bdi>'.tpl_pagetitle(null, true).'</bdi>';
+						} else {
+							$youarehere = str_replace($last, '<bdi>'.tpl_pagetitle(null, true).'</bdi>', $youarehere);
+						}
+
+					} else if ("search" == $ACT ) {
+						$youarehere = '<span class="home"><a href="'.tpl_getConf('startpage').'">'.tpl_getlang("breadcrumbs_docs").'</a></span>» <bdi>'.tpl_pagetitle(null, true).'</bdi>';
+					} else if ("showtag" == $ACT) {
+						$youarehere = '<span class="home"><a href="'.tpl_getConf('startpage').'">'.tpl_getlang("breadcrumbs_docs").'</a></span>» <bdi>TAG: '.hsc(str_replace('_', ' ', $INPUT->str('tag'))).'</bdi>';
+					} else {
+						$youarehere = '<span class="admin"><a href="'.wl($ID,array('do'=>'admin'),true,'&').'">'.tpl_getlang("breadcrumbs_admin").'</a></span>» <bdi>'.tpl_pagetitle(null, true).'</bdi>';
+					}
+
+					echo $youarehere;
+					?>
 			<?php } ?>
 		</div>
 
