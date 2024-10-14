@@ -1,6 +1,7 @@
 <?php
 
 $lang["sidebarposition"] = "Sidebar position";
+$lang["breadcrumbs_fullpath"] = "Use a full path breadcrumbs";
 $lang["dokuwikibreadcrumbs_enable"] = "Use Dokuwiki breadcrumbs";
 $lang["showtoolboxalways_enable"] = "Show toolbox even when logged out";
 $lang["startpage"] = "Start Page";

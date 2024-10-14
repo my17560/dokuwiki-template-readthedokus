@@ -1,6 +1,7 @@
 <?php
 
 $conf["sidebarposition"] = "left";
+$conf["breadcrumbs_fullpath"] = false;
 $conf["dokuwikibreadcrumbs_enable"] = false;
 $conf["showtoolboxalways_enable"] = false;
 $conf["startpage"] = "/";

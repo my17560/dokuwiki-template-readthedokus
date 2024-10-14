@@ -1,6 +1,7 @@
 <?php
 
 $lang["sidebarposition"] = "Sidebarの位置を指定します。";
+$lang["breadcrumbs_fullpath"] = "オンにするとパンくずをフルパスで表示します。";
 $lang["dokuwikibreadcrumbs_enable"] = "Dokuwikiのパンくずを使う場合、オンにします。";
 $lang["showtoolboxalways_enable"] = "ログアウト時にもツールボックスを表示します。";
 $lang["startpage"] = "最初のページのURLを指定します。";
