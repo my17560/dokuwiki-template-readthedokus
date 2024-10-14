@@ -1,6 +1,7 @@
 <?php
 
 $meta["sidebarposition"] = array("multichoice", "_choices" => array("left", "right"));
+$meta["breadcrumbs_fullpath"] = array("onoff");
 $meta["dokuwikibreadcrumbs_enable"] = array("onoff");
 $meta["showtoolboxalways_enable"] = array("onoff");
 $meta["startpage"] = array("string");

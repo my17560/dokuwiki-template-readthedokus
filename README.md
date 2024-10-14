@@ -22,6 +22,7 @@ These are template settings for this theme.
 |Option|Description|
 -------|------------
 |Sidebar position|Choose “left” for the left sidebar, “right” for the right sidebar.|
+|Use a full path breadcrums|Show a full path breadcrumbs instead of only a page title.|
 |Use DokuWiki breadcrums|Check to use DokuWiki style breadcrumbs.|
 |Show toolbox even when logged out|Check to show the Toolbox always. By default, it is not shown unless you log in.|
 |Start Page|Set start page URL. This page is shown when the “previous” button is pressed on the first page.|
