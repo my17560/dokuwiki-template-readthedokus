@@ -146,18 +146,6 @@ pre
 	white-space: pre;
 }
 
-code
-{
-	background-color: __background_monospace__;
-	border: 1px solid __border_monospace__;
-	color: __text_monospace__;
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
-	font-size: 75%;
-	max-width: 100%;
-	padding: 2px 5px;
-	overflow-wrap: break-word;
-}
-
 hr
 {
     border: 0;
