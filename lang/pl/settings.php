@@ -1,6 +1,7 @@
 <?php
 
 $lang["sidebarposition"] = "Pozycja paska bocznego";
+$lang["breadcrumbs_fullpath"] = "Pokaż pełną ścieżkę w breadcrumbs";
 $lang["dokuwikibreadcrumbs_enable"] = "Użyj breadcrumbs Dokuwiki";
 $lang["showtoolboxalways_enable"] = "Pokaż pasek narzędzi, nawet gdy jesteś wylogowany";
 $lang["startpage"] = "Strona startowa";
