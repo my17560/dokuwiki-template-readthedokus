@@ -1,21 +1,21 @@
 <?php
 // i18n admonition titles
-$icon = ( tpl_getConf("fontawesome_enable") ? "\\f06a\\00a0 " : "" );
+$faEnabled = tpl_getConf("fontawesome_enable");
 print("
 .admonition.caution:before
 {
-	content: '" . $icon . tpl_getlang("admonition_caution") . "';
+	content: '" . ( $faEnabled ? "\\f071\\00a0 " : "" ) . tpl_getlang("admonition_caution") . "';
 }
 .admonition.danger:before
 {
-	content: '" . $icon . tpl_getlang("admonition_danger") . "';
+	content: '" . ( $faEnabled ? "\\f06a\\00a0 " : "" )  . tpl_getlang("admonition_danger") . "';
 }
 .admonition.tip:before
 {
-	content: '" . $icon . tpl_getlang("admonition_tip") . "';
+	content: '" . ( $faEnabled ? "\\f0eb\\00a0 " : "" ) . tpl_getlang("admonition_tip") . "';
 }
 .admonition.note:before
 {
-	content: '" . $icon . tpl_getlang("admonition_note") . "';
+	content: '" . ( $faEnabled ? "\\f05a\\00a0 " : "" ) . tpl_getlang("admonition_note") . "';
 ");
 ?>
