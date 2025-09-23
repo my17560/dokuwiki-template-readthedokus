@@ -484,6 +484,12 @@ div#user__manager > div.import_users
 	width: 100%;
 }
 
+#extension__list section.extension > .screenshot .popularity img {
+    vertical-align: middle;
+    height: 1.2rem;
+    width: auto;
+}
+
 #dw__editform div.editBar
 {
 	display: flex;

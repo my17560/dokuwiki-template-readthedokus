@@ -41,7 +41,7 @@
 	#mobileheader #btn-mobilemenu
 	{
 		cursor:pointer;
-		position: relative;
+		position: absolute;
 		width: 30px;
 		height: 30px;
 	}

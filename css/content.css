@@ -59,11 +59,6 @@
 	overflow-x: auto;
 }
 
-#dokuwiki__content svg
-{
-	height: auto;
-}
-
 #dokuwiki__content img,
 #dokuwiki__content svg
 {
