@@ -1,6 +1,9 @@
 <div id="sidebarheader">
+	<?php
+		$startpage = (tpl_getConf('startpage') ? tpl_getConf('startpage') : wl());
+	?>
 	<div class="home">
-		<a href="<?php echo tpl_getConf('startpage'); ?>">
+		<a href="<?php echo $startpage; ?>">
 			<i class="fas fa-home"></i> <?php global $conf; echo $conf["title"] ?>
 		</a>
 	</div>
