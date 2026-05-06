@@ -18,6 +18,7 @@
 				<?php endif ?>
 			<?php } else { ?>
 				<?php
+					$startpage = (tpl_getConf('startpage') ? tpl_getConf('startpage') : wl());
 					if ("show" == $ACT && tpl_getConf("breadcrumbs_fullpath")) {
 						//build full path
 						$orgValue = $conf['youarehere'];
@@ -29,7 +30,7 @@
 						$youarehere = preg_replace('/.*?bchead.*?span>/', '', $youarehere);
 
 						//replace home
-						$youarehere = preg_replace('/.*?home.*?span>/', '<span class="home"><a href="'.tpl_getConf('startpage').'">'.tpl_getlang("breadcrumbs_docs").'</a></span>', $youarehere);
+						$youarehere = preg_replace('/.*?home.*?span>/', '<span class="home"><a href="'.$startpage.'">'.tpl_getlang("breadcrumbs_docs").'</a></span>', $youarehere);
 
 						//replace current page
 						$matches = array();
@@ -42,12 +43,12 @@
 							$youarehere = str_replace($last, '<bdi>'.tpl_pagetitle(null, true).'</bdi>', $youarehere);
 						}
 					} else if ("showtag" == $ACT) {
-						$youarehere = '<span class="home"><a href="'.tpl_getConf('startpage').'">'.tpl_getlang("breadcrumbs_docs").'</a></span>» <bdi>TAG: '.hsc(str_replace('_', ' ', $INPUT->str('tag'))).'</bdi>';
+						$youarehere = '<span class="home"><a href="'.$startpage.'">'.tpl_getlang("breadcrumbs_docs").'</a></span>» <bdi>TAG: '.hsc(str_replace('_', ' ', $INPUT->str('tag'))).'</bdi>';
 					} else if ("admin" == $ACT) {
 						$youarehere = '<span class="admin"><a href="'.wl($ID,array('do'=>'admin'),true,'&').'">'.tpl_getlang("breadcrumbs_admin").'</a></span>» <bdi>'.tpl_pagetitle(null, true).'</bdi>';
 					} else {
 						// Set default breadcrums
-						$youarehere = '<span class="home"><a href="'.tpl_getConf('startpage').'">'.tpl_getlang("breadcrumbs_docs").'</a></span>» <bdi>'.tpl_pagetitle(null, true).'</bdi>';
+						$youarehere = '<span class="home"><a href="'.$startpage.'">'.tpl_getlang("breadcrumbs_docs").'</a></span>» <bdi>'.tpl_pagetitle(null, true).'</bdi>';
 					}
 
 					echo $youarehere;
