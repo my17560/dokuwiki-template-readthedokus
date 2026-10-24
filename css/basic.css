@@ -216,6 +216,12 @@ button,
     -ms-user-select: none;
 }
 
+/* Preserve hidden buttons used by the code clipboard handler. */
+button[hidden]
+{
+    display: none;
+}
+
 button:hover,
 .btn:hover
 {
